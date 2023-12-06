@@ -81,6 +81,20 @@ const controllers = {
 			video_gallery_video,
 		});
 	},
+	audio_gallery: async function (req, res) {
+
+		let video_gallery_category = await videoGalleryCategoriyModel.find();
+		let tags = await tagsModel.find();
+		let blog_category = await blogCategoriesModel.find();
+		let video_gallery_video = await videoGalleryVideoModel.find();
+
+		return res.render(`frontend/gallery/audio_gallery`, {
+			video_gallery_category,
+			tags,
+			blog_category,
+			video_gallery_video,
+		});
+	},
 	home_page: async function (req, res) {
 		let profile_info = await uesrProfileInfosModel.find();
 		let photo_gallery_category = await photoGalleryCategoriyModel.find();

@@ -50,6 +50,9 @@ module.exports = (mainserver) => {
 		// video gallery routes
 		.get("/video-gallery", website_controller.video_gallery)
 
+		// audio gallery routes
+		.get("/audio-gallery", website_controller.audio_gallery)
+
 		// .get("/contemporary", website_controller.contemporary)
 		// .get("/contemporary-details/:id", website_controller.contemporary_details)
 		
