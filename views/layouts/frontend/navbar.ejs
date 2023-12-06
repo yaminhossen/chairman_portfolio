@@ -21,17 +21,54 @@
                             <a href="/posts/contemporary" class="menu_text">সংবাদ
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="/posts/contemporary" class="menu_text">ইউনিয়ন পরিষদ
                             </a>
+                        </li> -->
+                        <li class="addClass">
+                            <button class="menu_text"  onclick="inner_menuuuu.classList.toggle('active_class')">ইউনিয়ন পরিষদ
+                                <i class="fa-solid fa-angle-down"></i>
+                            </button>
+                            <!--  onclick="inner_menu.classList.toggle('active_class')"   onclick="addClass()"-->
+                            <ul class="submenu_active" id="inner_menuuuu">
+
+                                
+
+                                    <li>
+                                        <a href="#" class="menu_text">
+                                        </a>
+                                    </li>
+
+                            </ul>
                         </li>
-                        <li>
+                        <li class="addClass">
+                            <button class="menu_text"  onclick="inner_menuuu.classList.toggle('active_class')">সামাজিক কাজ
+                                <i class="fa-solid fa-angle-down"></i>
+                            </button>
+                            <!--  onclick="inner_menu.classList.toggle('active_class')"   onclick="addClass()"-->
+                            <ul class="submenu_active" id="inner_menuuu">
+
+                                <% commonData.blog_category.map( (category)=>{ %>
+
+
+                                    <li>
+                                        <a href="/posts<%= category.url %>" class="menu_text">
+                                            <%= category.title %>
+                                        </a>
+                                    </li>
+                                    <% })%>
+
+                            </ul>
+                        </li>
+                        <!-- <li>
                             <a href="/posts/social-work" class="menu_text">সামাজিক কাজ
                             </a>
-                        </li>
+                        </li> -->
+                        
                         <li>
                             <a href="/posts/book-review" class="menu_text">বই পর্যালোচনা</a>
                         </li>
+                       
                         <li class="addClass">
                             <button class="menu_text"  onclick="inner_menu.classList.toggle('active_class')">লেখালেখি
                                 <i class="fa-solid fa-angle-down"></i>
