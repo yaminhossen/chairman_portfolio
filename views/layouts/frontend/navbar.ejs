@@ -1,0 +1,103 @@
+<body id="scroll_top">
+    <!-- navigation_area start -->
+    <nav class="navigation_area">
+        <div class="container">
+            <div class="navigation_area_content">
+                <a href="/home" class="logo_area">
+                    <img src="<%= commonData.setting_titles.value %>" alt=" fjf">
+
+                </a>
+                <div class="navigation_menu_area">
+
+                    <ul>
+                        <li>
+                            <a href="/home" class="menu_text">হোম</a>
+                        </li>
+                        <li>
+                            <a href="/about" class="menu_text">আমাদের সম্পর্কে
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/posts/contemporary" class="menu_text">সমসাময়িক
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/posts/social-work" class="menu_text">সামাজিক কাজ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/posts/book-review" class="menu_text">বই পর্যালোচনা</a>
+                        </li>
+                        <li class="addClass">
+                            <button class="menu_text"  onclick="inner_menu.classList.toggle('active_class')">ব্লগ
+                                <i class="fa-solid fa-angle-down"></i>
+                            </button>
+                            <!--  onclick="inner_menu.classList.toggle('active_class')"   onclick="addClass()"-->
+                            <ul class="submenu_active" id="inner_menu">
+
+                                <% commonData.blog_category.map( (category)=>{ %>
+
+
+                                    <li>
+                                        <a href="/posts<%= category.url %>" class="menu_text">
+                                            <%= category.title %>
+                                        </a>
+                                    </li>
+                                    <% })%>
+
+                            </ul>
+                        </li>
+                        <li class="addClass">
+                            <button class="menu_text"  onclick="inner_menuu.classList.toggle('active_class')">গ্যালারি
+                                <i class="fa-solid fa-angle-down"></i>
+                            </button>
+                            <ul class="submenu_active" id="inner_menuu">
+                                <li>
+                                    <a href="/photo-gallery" class="menu_text">ফটো গ্যালারি</a>
+                                </li>
+                                <li>
+                                    <a href="/video-gallery" class="menu_text">ভিডিও গ্যালারি</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="/contact" class="menu_text">যোগাযোগ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- responsive_menu_area start -->
+                <div class="responsive_menu_area">
+                    <a href="#" class="responsive_menu_icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </a>
+                </div>
+                <!-- responsive_menu_area end -->
+
+                <script>
+                    // document.querySelectorAll(".addClass").forEach((el) => {
+                    //     el.addEventListener('click', function (e) {
+                    //         e.preventDefault();
+
+                    //         let li = e.currentTarget.children[1];
+                    //         let isActive = li.classList.contains('active_class');
+
+                    //         document.querySelectorAll('.submenu_active.active_class').forEach((menu) => {
+                    //             menu.classList.remove('active_class');
+                    //         });
+
+                    //         if (!isActive) {
+                    //             li.classList.add('active_class');
+                    //         } else {
+                    //             li.classList.remove('active_class');
+                    //         }
+
+                    //         console.log('Element:', li);
+                    //     });
+                    // });
+                </script>
+            </div>
+        </div>
+    </nav>
+    <!-- navigation_area end -->

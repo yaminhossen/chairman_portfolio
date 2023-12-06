@@ -1,0 +1,43 @@
+// pagination_area start
+.pagination_area {
+    border: $border;
+    border-top: 1px solid $brand_color;
+    padding-top: 40px;
+    .pagination_area_content {
+        border: $border;
+        ul {
+            border: $border;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            align-items: center;
+            li {
+                border: $border;
+                .pagination_text {
+                    border: $border;
+                    font-family: $font_bangla;
+                    font-size: 14px;
+                    color: $white;
+                    background-color: $brand_color;
+                    width: 70px;
+                    height: 35px;
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                    border: 1px solid $brand_color;
+                    transition-duration: .4s;
+                    &:hover{
+                        color: $brand_color;
+                        background: transparent;
+                    }
+                }
+                .pagination_number {
+                    width: 30px;
+                    height: 30px;
+                    
+                }
+            }
+        }
+    }
+}
+// pagination_area end

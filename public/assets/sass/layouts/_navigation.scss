@@ -1,0 +1,146 @@
+// navigation_area start
+.navigation_area {
+    border: $border;
+    background-color: $white;
+    padding: 20px 0px;
+    @include xs {
+        padding: 12px 0px;
+    }
+    position: sticky;
+    top: 0px;
+    z-index: 999;
+    .navigation_area_content {
+        border: $border;
+        display: flex;
+        justify-content: space-between;
+
+        .logo_area {
+            border: $border;
+            width: 115px;
+            align-items: center;
+            display: flex;
+            border-right: 1px solid $brand_color;
+            padding-right: 15px;
+            @include xs {
+                width: 100px;
+            }
+            img {
+                border: $border;
+                width: 100%;
+                height: 30px;
+                object-fit: cover;
+            }
+        }
+        .navigation_menu_area {
+            border: $border;
+            @include xs {
+                display: none;
+            }
+            @include sm {
+                display: none;
+            }
+            @include md {
+                display: none;
+            }
+            ul {
+                border: $border;
+                display: flex;
+                background-color: $blue_white;
+
+                li {
+                    border: $border;
+                    border-right: 1px solid $light_black;
+                    align-items: center;
+                    display: flex;
+                    position: relative;
+                    &:last-child {
+                        border-right: unset;
+                    }
+                    .menu_text {
+                        border: $border;
+                        color: $deep_black;
+                        font-family: $font_bangla;
+                        font-size: 16px;
+                        font-weight: bold;
+                        transition-duration: 0.4s;
+                        padding: 5px 15px;
+                        align-items: center;
+                        display: flex;
+                        background-color: transparent;
+                        i {
+                            border: $border;
+                            margin-left: 7px;
+                            margin-bottom: 2px;
+                        }
+                        &:hover {
+                            color: $white;
+                            color: $brand_color;
+                        }
+                    }
+
+                    ul {
+                        border: $border;
+                        display: block;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        width: 220px;
+                        border-top: 5px solid $brand_color;
+                        visibility: hidden;
+                        opacity: 0;
+                        // gap: 10px;
+                        // display: grid;
+
+                        li {
+                            border: $border;
+                            border-bottom: 1px solid $light_black;
+                            padding: 5px 0px;
+                            display: block;
+
+                            &:last-child {
+                                border-bottom: unset;
+                            }
+                            .menu_text {
+                                border: $border;
+                            }
+                        }
+                    }
+
+                    .active_class {
+                        visibility: visible;
+                        opacity: 1;
+                        transition-duration: 0.4s;
+                        top: 40px;
+                        left: 0px;
+                    }
+                }
+            }
+        }
+        // responsive_menu_area start
+        .responsive_menu_area {
+            border: $border;
+            display: none;
+            @include xs {
+                display: block;
+            }
+            @include sm {
+                display: block;
+            }
+            @include md {
+                display: block;
+            }
+            .responsive_menu_icon {
+                border: $border;
+                align-items: center;
+                display: flex;
+                i {
+                    border: $border;
+                    color: $brand_color;
+                    font-size: 24px;
+                }
+            }
+        }
+        // responsive_menu_area end
+    }
+}
+// navigation_area end

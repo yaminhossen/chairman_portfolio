@@ -1,0 +1,200 @@
+<!-- head area include -->
+<%- include('../../layouts/frontend/head.ejs',{title:'posts'}) %>
+
+<!-- navbar area include -->
+<%- include('../../layouts/frontend/navbar.ejs') %>
+
+    <div class="inner-page_and_side-ber-area">
+        <div class="container">
+            <div class="inner-page_and_side-ber-area_content">
+                <!-- inner_page_area start -->
+                <div class="inner_page_area">
+                    <div class="inner_page_area_content">
+                        <!-- content_title start -->
+                        <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
+                            <h2 class="title_text"><%= blog.title %></h2>
+                            <p class="description_text"><%= blog.short_description %></p>
+                        </div>
+                        <!-- content_title end -->
+
+                        <!-- inner_page_all_content start -->
+                        <div class="inner_page_all_content" data-aos="fade-up" data-aos-duration="1000">
+                            <!-- blog_card start -->
+                            <% blogs.map( (bi)=>{ %>
+                            <a href="/post/<%= bi._id %>" class="blog_card edit_inner_blog_card">
+                                <div class="blog_image">
+                                    <img src="<%= bi.photo %>" alt="<%= bi.photo_alt %>">
+                                </div>
+                                <!-- overlay_area start -->
+                                <div class="overlay_area">
+                                    <div class="blog_title">
+                                        <div class="title_area">
+                                            <h2 class="title_text">
+                                                <%= bi.title %>
+                                            </h2>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- overlay_area end -->
+                            </a>
+                            <!-- blog_card end -->
+                            <% })%>
+                            
+                        </div>
+                        <!-- inner_page_all_content end -->
+
+                        <!-- pagination_area start -->
+                        <div class="pagination_area" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="pagination_area_content">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="pagination_text">পূর্ববর্তী</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="pagination_text pagination_number">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="pagination_text pagination_number">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="pagination_text pagination_number">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="pagination_text">পরবর্তী</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- pagination-area end -->
+
+                    </div>
+                </div>
+                <!-- inner_page_area end -->
+
+                <!-- side_ber_area start -->
+                <div class="side_ber_area" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="side_ber_area_content">
+
+                        <!-- search_area start -->
+                        <div class="search_area">
+                            <form action="#">
+                                <input type="text" placeholder="Search . . .">
+                                <button class="button_area">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <!-- search_area end -->
+
+                        <!-- categories_area start -->
+                        <div class="categories_area">
+
+                            <!-- side_ber_area_title start -->
+                            <div class="side_ber_area_title">
+                                <h2 class="title_text">ক্যাটেগরীজ</h2>
+                            </div>
+                             <!-- side_ber_area_title end -->
+
+                             <div class="categories_item_alla new_categories_item_all">
+                                <ul>
+                                    <% commonData.blog_category.map( (cm)=>{ %>
+
+                                        <li>
+                                            <a href="/posts<%= cm.url %>" class="categories_namea new_categories_name">
+                                                <%= cm.title %>
+                                            </a>
+                                        </li>
+
+                                        <% })%>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!-- categories_area end -->
+
+                        <!-- recently_posted_area start -->
+                        <div class="recently_posted_area">
+
+                            <!-- side_ber_area_title start -->
+                            <div class="side_ber_area_title">
+                                <h2 class="title_text">সম্প্রতি পোস্ট</h2>
+                            </div>
+                            <!-- side_ber_area_title end -->
+
+                            <div class="recently_posted_item_all">
+
+                                <% blogs.slice(-2).map( (bi)=>{ %>
+
+                                    <!-- posted_item start -->
+                               <a href="/post/<%= bi._id %>" class="posted_item">
+                                   <div class="image_area">
+                                       <img src="<%= bi.photo %>" alt="img">
+                                   </div>
+                                   <div class="title_and_dete_area">
+                                       <div class="title_area">
+                                           <p class="title_text">
+                                              <%= bi.title %>
+                                           </p>
+                                       </div>
+                                       <div class="date_area">
+                                           <p class="date_text">
+                                               <%= bi.published_date.toISOString().substring(0, 10) %>
+                                           </p>
+                                       </div>
+                                   </div>
+                               </a>
+                               <!-- posted_item end -->
+       
+                                   <% })%>
+
+                            </div>
+
+                        </div>
+                        <!-- recently_posted_area end -->
+                      
+
+                        <!-- popular_tag_area start -->
+                        <div class="popular_tag_area">
+
+                            <!-- side_ber_area_title start -->
+                            <div class="side_ber_area_title">
+                                <h2 class="title_text">জনপ্রিয় ট্যাগ</h2>
+                            </div>
+                            <!-- side_ber_area_title end -->
+
+                            <div class="popular_tag_all">
+                                <ul>
+                                    <% commonData.tags.map( (tag)=>{ %>
+
+                                        <li>
+                                            <a href="#" class="tag_text">
+                                                <%= tag.title %>
+                                            </a>
+                                        </li>
+            
+                                        <% })%>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                        <!-- popular_tag_area end -->
+
+                    </div>
+                </div>
+                <!-- side_ber_area end -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- scroll_button_area start -->
+    <a href="#scroll_top" class="scroll-button">
+        <span class="icon">
+            <i class="fa-solid fa-angle-up"></i>
+        </span>
+    </a>
+    <!-- scroll_button_area end -->
+
+    <%- include('../../layouts/frontend/footer.ejs') %>

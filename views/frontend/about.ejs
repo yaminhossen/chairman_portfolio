@@ -1,0 +1,191 @@
+<!-- head area include -->
+<%- include('../layouts/frontend/head.ejs',{title:'about'}) %>
+
+<!-- navbar area include -->
+<%- include('../layouts/frontend/navbar.ejs') %>
+
+
+    <!-- about_area start -->
+    <div class="about_area">
+        <div class="container">
+            <div class="about_area_content">
+
+                <!-- content_title start -->
+                <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
+                    <h2 class="title_text">
+                        আমাদের সম্পর্কে</h2>
+                    <p class="description_text"><%= profile_info[0].short_bio %></p>
+                </div>
+                <!-- content_title end -->
+
+                <!-- personsl_info_area start -->
+                <div class="personsl_info_area" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="personsl_info_title">
+                        <h2 class="title_text">ব্যাক্তিগত তথ্য</h2>
+                    </div>
+                    <!-- personsl_info_content start -->
+                    <div class="personsl_info_content">
+                        <div class="all_content">
+                            <ul>
+                                <li>
+                                    <span class="title">নাম</span>
+                                    <span class="spagee">:</span>
+                                    <span class="details"><%= banner[0].name %></span>
+                                </li>
+                                <!-- <li>
+                                    <span class="title">নামের শেষাংশ</span>
+                                    <span class="spagee">:</span>
+                                    <span class="details">রহমান</span>
+                                </li> -->
+                                <li>
+                                    <span class="title">জন্ম তারিখ</span>
+                                    <span class="spagee">:</span>
+                                    <span class="details"><%= profile_info[0].date_of_birth.toISOString().substring(0, 10)%></span>
+                                </li>
+                                <li>
+                                    <span class="title">জাতীয়তা</span>
+                                    <span class="spagee">:</span>
+                                    <span class="details"><%= profile_info[0].nationality %></span>
+                                </li>
+                                <li>
+                                    <span class="title">ভাষা</span>
+                                    <span class="spagee">:</span>
+                                    <span class="details">বাংলা,আরবি, ইংরেজি</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- </div> -->
+                        <!-- <div class=""> -->
+                        <div class="all_content">
+                            <ul>
+                                <li>
+                                    <span class="title">পেশা</span>
+                                    <span class="spagee">:</span>
+                                    <span class="details"><%= profile_info[0].designation %></span>
+                                </li>
+                                <li>
+                                    <span class="title">ঠিকানা</span>
+                                    <span class="spagee">:</span>
+                                    <span class="details"><%= profile_info[0].address_present %></span>
+                                </li>
+                                <li>
+                                    <span class="title">ফোন</span>
+                                    <span class="spagee">:</span>
+                                    <a href="#" class="details">+974 000000</a>
+                                </li>
+                                <li>
+                                    <span class="title">ইমেইল</span>
+                                    <span class="spagee">:</span>
+                                    <a href="#" class="details email_details">aahidejhan@gmail.com</a>
+                                </li>
+                                <li>
+                                    <span class="title">Linkedin</span>
+                                    <span class="spagee">:</span>
+                                    <a href="#" class="details">Abcdefghij</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- personsl_info_content end -->
+
+                </div>
+                <!-- personsl_info_area end -->
+
+                <!-- education_area_and_experience_area start -->
+                <section class="education_area_and_experience_area">
+                    <div class="row">
+                        <!--  t -->
+                        <div class="col-md-12 col-lg-6">
+                            <div class="education_area education_and_experience_area" data-aos="fade-right"
+                                data-aos-duration="1000">
+                                <!-- item_title start -->
+                                <div class="item_title">
+                                    <h2 class="item_title_text">শিক্ষাগত যোগ্যতা</h2>
+                                </div>
+                                <!-- item_title end -->
+                                <!-- education_content 1 start -->
+                                <div class="item_content">
+                                    <div class="item_logo">
+                                        <div class="item_logo_icon">
+                                            <i class="fa-solid fa-graduation-cap"></i>
+                                        </div>
+                                    </div>
+                                    <div class="item_content_details">
+                                        <div class="year">
+                                            <p class="year_text"><%= user_educations[0].start_date.toISOString().substring(0,4) %> - <%= user_educations[0].end_date.toISOString().substring(0,4) %> </p>
+                                        </div>
+                                        <div class="title">
+                                            <p class="itemm_text"><%= user_educations[0].title %></p>
+                                        </div>
+                                        <div class="institution_name">
+                                            <p class="institution_name_text">University of California</p>
+                                        </div>
+                                        <div class="discription">
+                                            <p class="discription_text">সততায় অন্তরের প্রশান্তি। নাজাত লাভ, জান্নাত
+                                                অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের মাধ্যম। সততা মানব চরিত্রের
+                                                শ্রেষ্ঠ গুণ।
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- education_content 1 end -->
+
+                            </div>
+                        </div>
+                        <!-- education_area end -->
+                        <!-- experience_area start -->
+                        <div class="col-md-12 col-lg-6">
+                            <div class="experience_area education_and_experience_area" data-aos="fade-left"
+                                data-aos-duration="1000">
+                                <!-- item_title start -->
+                                <div class="item_title">
+                                    <h2 class="item_title_text">অভিজ্ঞতা</h2>
+                                </div>
+                                <!-- item_title end -->
+                                <!-- experience_content 1 start -->
+                                <div class="item_content">
+                                    <div class="item_logo">
+                                        <div class="item_logo_icon">
+                                            <i class="fa-brands fa-medium"></i>
+                                        </div>
+                                    </div>
+                                    <div class="item_content_details">
+                                        <div class="year">
+                                            <p class="year_text">2022 - 2023</p>
+                                        </div>
+                                        <div class="title">
+                                            <p class="itemm_text">কেন্দ্রীয় সভাপতি ICS</p>
+                                        </div>
+                                        <div class="institution_name">
+                                            <p class="institution_name_text">ঢাকা</p>
+                                        </div>
+                                        <div class="discription">
+                                            <p class="discription_text">সততায় অন্তরের প্রশান্তি। নাজাত লাভ, জান্নাত
+                                                অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের মাধ্যম। সততা মানব চরিত্রের
+                                                শ্রেষ্ঠ গুণ।
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- experience_content 1 end -->
+
+                            </div>
+                        </div>
+                        <!-- experience_area end-->
+                    </div>
+                </section>
+                <!-- education_area_and_experience_area end -->
+
+            </div>
+        </div>
+    </div>
+    <!-- about_area end -->
+
+    <!-- scroll_button_area start -->
+    <a href="#scroll_top" class="scroll-button">
+        <span class="icon">
+            <i class="fa-solid fa-angle-up"></i>
+        </span>
+    </a>
+    <!-- scroll_button_area end -->
+    <%- include('../layouts/frontend/footer.ejs') %>
