@@ -105,7 +105,7 @@ const controllers = {
 		let settingValue = await settingModel.findOne({ title: "banner_at_a_glance_value" });
 		let banner = await bannerModel.find();
 
-		let contemp = await blogCategoriesModel.findOne({ title: "সমসাময়িক" });
+		let contemp = await blogCategoriesModel.findOne({ title: "সংবাদ" });
 
 		let contems = await blogsModel.find().where({ categories: contemp._id });
 
@@ -170,6 +170,7 @@ const controllers = {
 	},
 
 	blog_posts: async function (req, res) {
+		console.log('url', req.params.url);
 		// const model_data = await model.findOne({ _id: data.id });
 		let blog = await blogCategoriesModel.findOne({ url: "/"+req.params.url });
 		// let datas = await blogCategoriesModel.findOne({ url: "/"+req.params.url });

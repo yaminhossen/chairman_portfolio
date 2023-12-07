@@ -39,6 +39,10 @@ let blogCategorySchema = mongoose.Schema({
 		type: String,
 		require: true,
 	},
+	related_categories: {
+		type: [Schema.Types.ObjectId],
+		ref: 'blog_categories'
+	},
 	status: {
 		type: Boolean,
 		default: true,

@@ -8,6 +8,9 @@ const userSettingTitlesModel = require("../api/setting/setting_titles/model/mode
 const settingModel = require("../api/setting/setting_titles/model/model");
 module.exports = async (server, req) => {
     let blog_category = await blogCategoriesModel.find();
+    let blog_related_category = await blogCategoriesModel.findOne({ title: 'ইউনিয়ন পরিষদ' }).populate('related_categories');
+    let blog_related_category_2 = await blogCategoriesModel.findOne({ title: 'সামাজিক কাজ' }).populate('related_categories');
+    // console.log('blog_Related_categories', blog_related_category_2);
     let tags = await tagsModel.find();
     let contact_numbers = await userContactNumbersModel.find();
     let emails = await userEmailsModel.find();
@@ -24,6 +27,8 @@ module.exports = async (server, req) => {
         contact_message,
         address,
         setting_titles,
+        blog_related_category,
+        blog_related_category_2,
 
     };
 

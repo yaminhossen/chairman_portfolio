@@ -18,7 +18,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/posts/contemporary" class="menu_text">সংবাদ
+                            <a href="/posts/news" class="menu_text">সংবাদ
                             </a>
                         </li>
                         <!-- <li>
@@ -34,10 +34,15 @@
 
                                 
 
+                                <% commonData.blog_related_category?.related_categories?.map( (category)=>{ %>
+
+
                                     <li>
-                                        <a href="#" class="menu_text">
+                                        <a href="/posts<%= category.url %>" class="menu_text">
+                                            <%= category.title %>
                                         </a>
                                     </li>
+                                    <% })%>
 
                             </ul>
                         </li>
@@ -48,7 +53,7 @@
                             <!--  onclick="inner_menu.classList.toggle('active_class')"   onclick="addClass()"-->
                             <ul class="submenu_active" id="inner_menuuu">
 
-                                <% commonData.blog_category.map( (category)=>{ %>
+                                <% commonData.blog_related_category_2?.related_categories?.map( (category)=>{ %>
 
 
                                     <li>
