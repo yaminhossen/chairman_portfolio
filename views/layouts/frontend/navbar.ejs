@@ -25,11 +25,33 @@
                             <a href="/posts/contemporary" class="menu_text">ইউনিয়ন পরিষদ
                             </a>
                         </li> -->
+
                         <li class="addClass">
+                            <a href="/posts/union-porishod" class="menu_text">ইউনিয়ন পরিষদ
+                                <i class="fa-solid fa-angle-down"></i>
+                            </a>
+                          
+                            <ul class="submenu_active">
+
+                                
+
+                                <% commonData.blog_related_category?.related_categories?.map( (category)=>{ %>
+
+
+                                    <li>
+                                        <a href="/posts<%= category.url %>" class="menu_text">
+                                            <%= category.title %>
+                                        </a>
+                                    </li>
+                                    <% })%>
+
+                            </ul>
+                        </li>
+
+                      <!--   <li class="addClass">
                             <button class="menu_text"  onclick="inner_menuuuu.classList.toggle('active_class')">ইউনিয়ন পরিষদ
                                 <i class="fa-solid fa-angle-down"></i>
                             </button>
-                            <!--  onclick="inner_menu.classList.toggle('active_class')"   onclick="addClass()"-->
                             <ul class="submenu_active" id="inner_menuuuu">
 
                                 
@@ -46,12 +68,13 @@
 
                             </ul>
                         </li>
+ -->
                         <li class="addClass">
-                            <button class="menu_text"  onclick="inner_menuuu.classList.toggle('active_class')">সামাজিক কাজ
+                            <a href="/posts/social-work" class="menu_text">সামাজিক কাজ
                                 <i class="fa-solid fa-angle-down"></i>
-                            </button>
+                            </a>
                             <!--  onclick="inner_menu.classList.toggle('active_class')"   onclick="addClass()"-->
-                            <ul class="submenu_active" id="inner_menuuu">
+                            <ul class="submenu_active" >
 
                                 <% commonData.blog_related_category_2?.related_categories?.map( (category)=>{ %>
 
@@ -75,11 +98,11 @@
                         </li>
                        
                         <li class="addClass">
-                            <button class="menu_text"  onclick="inner_menu.classList.toggle('active_class')">লেখালেখি
+                            <button class="menu_text">লেখালেখি
                                 <i class="fa-solid fa-angle-down"></i>
                             </button>
                             <!--  onclick="inner_menu.classList.toggle('active_class')"   onclick="addClass()"-->
-                            <ul class="submenu_active" id="inner_menu">
+                            <ul class="submenu_active" >
 
                                 <% commonData.blog_category.map( (category)=>{ %>
 
@@ -94,10 +117,10 @@
                             </ul>
                         </li>
                         <li class="addClass">
-                            <button class="menu_text"  onclick="inner_menuu.classList.toggle('active_class')">গ্যালারি
+                            <button class="menu_text" >গ্যালারি
                                 <i class="fa-solid fa-angle-down"></i>
                             </button>
-                            <ul class="submenu_active" id="inner_menuu">
+                            <ul class="submenu_active" >
                                 <li>
                                     <a href="/photo-gallery" class="menu_text">ফটো গ্যালারি</a>
                                 </li>

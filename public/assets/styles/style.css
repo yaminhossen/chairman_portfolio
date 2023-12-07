@@ -1882,6 +1882,14 @@ html ::-webkit-scrollbar-thumb:hover {
   font-weight: bold;
 }
 
+.navigation_area .navigation_area_content .navigation_menu_area ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
+  transition-duration: 0.4s;
+  top: 40px;
+  left: 0px;
+}
+
 .banner_area {
   border: 0px solid red;
   background-repeat: no-repeat;

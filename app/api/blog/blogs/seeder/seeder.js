@@ -141,7 +141,7 @@ let data = [
 		seo_description: "মানবজীবনে ট্র্যাজেডি",
 		seo_schema_tags: "মানবজীবনে ট্র্যাজেডি",
 		published_date: "2023-07-05",
-		categories: ['65715f022f058ecfae1be5f0'],
+		categories: ['65715f022f058ecfae1be5f0','65715f022f058ecfae1be5f2'],
 		comments:[],
 		status: true,
 
@@ -188,7 +188,7 @@ let data = [
 		seo_description: "শিক্ষা ও দক্ষতা উন্নয়ন",
 		seo_schema_tags: "শিক্ষা ও দক্ষতা উন্নয়ন",
 		published_date: "2023-07-05",
-		categories: ['65715f022f058ecfae1be5f4'],
+		categories: ['65715f022f058ecfae1be5f4','65715f022f058ecfae1be5f2'],
 		comments:[],
 		status: true,
 
@@ -209,7 +209,7 @@ let data = [
 		seo_description: "স্বাস্থ্য সেবা",
 		seo_schema_tags: "স্বাস্থ্য সেবা",
 		published_date: "2023-07-05",
-		categories: ['65715f022f058ecfae1be5f4', '65715f022f058ecfae1be5f8'],
+		categories: ['65715f022f058ecfae1be5f4', '65715f022f058ecfae1be5f8','65715f022f058ecfae1be5f2'],
 		comments:[],
 		status: true,
 
@@ -252,7 +252,7 @@ let data = [
 		seo_description: "দুর্যোগ ব্যবস্থা",
 		seo_schema_tags: "দুর্যোগ ব্যবস্থা",
 		published_date: "2023-07-05",
-		categories: ['65715f022f058ecfae1be5f4'],
+		categories: ['65715f022f058ecfae1be5f4','65715f022f058ecfae1be5f2'],
 		comments:[],
 		status: true,
 
@@ -304,7 +304,7 @@ let data = [
 		seo_description: "বাংলাদেশের স্বাধীনতা",
 		seo_schema_tags: "বাংলাদেশের স্বাধীনতা",
 		published_date: "2023-07-05",
-		categories: ['65715f022f058ecfae1be5ee'],
+		categories: ['65715f022f058ecfae1be5ee','65715f022f058ecfae1be5f2'],
 		comments:[],
 		status: true,
 	},
@@ -367,7 +367,7 @@ let data = [
 		seo_description: "গণহত্যা দিবস",
 		seo_schema_tags: "গণহত্যা দিবস",
 		published_date: "2023-07-05",
-		categories: ['65715f022f058ecfae1be5ee', '65715f022f058ecfae1be5f8'],
+		categories: ['65715f022f058ecfae1be5ee', '65715f022f058ecfae1be5f8','65715f022f058ecfae1be5f2'],
 		comments:[],
 		status: true,
 	},

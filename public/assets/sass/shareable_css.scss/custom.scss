@@ -1,33 +1,39 @@
-.related_item_areaa{
+.related_item_areaa {
     border-bottom: 1px solid $brand_color;
     border-top: 1px solid $brand_color;
     padding: 20px 0px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
+
     // border: 2px solid red;
-    .social_work_image_carda{
+    .social_work_image_carda {
         // border: 1px solid red;
         display: flex;
         width: 100%;
         gap: 20px;
         height: 120px;
         overflow: hidden;
-        .item_area_image_div{
+
+        .item_area_image_div {
             width: 50%;
             object-fit: cover;
-            img{
+
+            img {
                 width: 100%;
                 height: 100%;
                 transition-duration: .4s;
             }
-            
+
         }
-        .overlay-areaa{
+
+        .overlay-areaa {
             width: 50%;
-            .overlay-area_contenta{
+
+            .overlay-area_contenta {
                 .image_titlea {
                     border: $border;
+
                     .title_texta {
                         border: $border;
                         font-family: $font_bangla;
@@ -38,9 +44,10 @@
                 }
             }
         }
-        &:hover{
-            .overlay-areaa{
-                .overlay-area_contenta{
+
+        &:hover {
+            .overlay-areaa {
+                .overlay-area_contenta {
                     .image_titlea {
                         .title_texta {
                             // border: $border;
@@ -51,7 +58,8 @@
                     }
                 }
             }
-            img{
+
+            img {
                 scale: 1.1;
             }
         }
@@ -67,11 +75,12 @@
     ul {
         border: $border;
         // gap: 5px;
-        
+
         li {
             list-style: disc;
             border: $border;
             margin-left: 20px;
+
             .new_categories_name {
                 border: $border;
                 font-family: $font_bangla;
@@ -84,13 +93,26 @@
                 // border: 1px solid $brand_color;
                 // background-color: $brand_color;
                 transition-duration: 0.4s;
+
                 &:hover {
                     color: black;
                     // background-color: transparent;
                     font-weight: bold;
                 }
             }
-            
+
         }
+    }
+}
+
+// navbar custom style change
+
+.navigation_area .navigation_area_content .navigation_menu_area ul li:hover{
+    ul {
+        visibility: visible;
+        opacity: 1;
+        transition-duration: 0.4s;
+        top: 40px;
+        left: 0px;
     }
 }

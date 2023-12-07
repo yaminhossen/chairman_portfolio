@@ -6,4 +6,6 @@
  * 4. date banglai dekhate hobe.
  * 5. post-details page e somproti poste view ta thakbena.
  * 6. pagination make dynamic.
+ * 7. search dynamic.
+ * 8. home page ekta borho search option thakbe.
  */
