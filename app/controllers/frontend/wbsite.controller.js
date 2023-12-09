@@ -204,12 +204,13 @@ const controllers = {
 		let post = await blogCategoriesModel.findOne({ title: post_details.categories[0]?.title });
 		let posts = await blogsModel.find().where({ categories: post._id });
 
+		// let filterPost = posts.filter((post) => post._id != '65717994ef419c4ca19c0f38')
 		// let posts = await post_details.populate('categories');
 
 		// let blog = await blogCategoriesModel.findOne({ url: "/"+req.params.url });
 		// let blogs = await blogsModel.find().where({ categories: blog._id });
 
-		console.log("postdd", post_details.categories[0]?.title);
+		// console.log("postdd", filterPost);
 		// let blogs = await blogsModel.find().where({ categories: blog._id });
 
 		controllers.server.locals.seo_title = post_details.seo_title;
