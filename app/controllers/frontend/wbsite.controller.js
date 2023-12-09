@@ -170,21 +170,23 @@ const controllers = {
 	},
 
 	blog_posts: async function (req, res) {
-		console.log('url', req.params.url);
+		// console.log('url', req.params.url);
 		// const model_data = await model.findOne({ _id: data.id });
 		let blog = await blogCategoriesModel.findOne({ url: "/"+req.params.url });
 		// let datas = await blogCategoriesModel.findOne({ url: "/"+req.params.url });
 
 		let blogs = await blogsModel.find().where({ categories: blog._id });
-
+		let reqUrl = req.params.url;
 		controllers.server.locals.seo_title = blog.seo_title;
 		controllers.server.locals.seo_description = blog.seo_description;
 		controllers.server.locals.seo_image = blog.photo;
 		controllers.server.locals.seo_keyword = blog.seo_keyword;
-		console.log("blog posts", blog);
+		// console.log("blog posts", blog);
+		// console.log('requrl', reqUrl);
 		return res.render(`frontend/blog/blog_posts`, {
 			blog,
 			blogs,
+			reqUrl,
 		});
 	},
 

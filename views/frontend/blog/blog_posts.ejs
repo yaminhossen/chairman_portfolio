@@ -22,7 +22,7 @@
                             <!-- blog_card start -->
                             <% blogs.map( (bi)=>{ %>
                             <a href="/post/<%= bi._id %>" class="blog_card edit_inner_blog_card">
-                                <div class="blog_image">
+                                <div class="<%= reqUrl == 'book-review' ? 'book_image' : 'blog_image' %>">
                                     <img src="<%= bi.photo %>" alt="<%= bi.photo_alt %>">
                                 </div>
                                 <!-- overlay_area start -->
