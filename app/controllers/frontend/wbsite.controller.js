@@ -206,7 +206,7 @@ const controllers = {
 		let post = await blogCategoriesModel.findOne({ title: post_details.categories[0]?.title });
 		let posts = await blogsModel.find().where({ categories: post._id });
 
-		// let filterPost = posts.filter((post) => post._id != '65717994ef419c4ca19c0f38')
+		let filterPost = posts.filter((post) => post._id != req.params.id);
 		// let posts = await post_details.populate('categories');
 
 		// let blog = await blogCategoriesModel.findOne({ url: "/"+req.params.url });
@@ -226,6 +226,7 @@ const controllers = {
 			posts,
 			post_comments,
 			post,
+			filterPost,
 		})
 
 		// return res.json({

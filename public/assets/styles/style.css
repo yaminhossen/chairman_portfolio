@@ -228,11 +228,140 @@ html ::-webkit-scrollbar-thumb:hover {
   border: 0px solid red;
 }
 .navigation_area .navigation_area_content .navigation_menu_area ul li .active_class {
+  left: 0px;
   visibility: visible;
   opacity: 1;
+}
+.navigation_area .navigation_area_content .navigation_menu_area ul li .search_area {
+  border: 0px solid red;
+  align-items: center;
+  display: flex;
+  background: transparent;
+  padding: 10px 15px;
+}
+@media screen and (max-width: 575.9px) {
+  .navigation_area .navigation_area_content .navigation_menu_area ul li .search_area {
+    display: none;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.9px) {
+  .navigation_area .navigation_area_content .navigation_menu_area ul li .search_area {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.9px) {
+  .navigation_area .navigation_area_content .navigation_menu_area ul li .search_area {
+    display: none;
+  }
+}
+.navigation_area .navigation_area_content .navigation_menu_area ul li .search_area i {
+  border: 0px solid red;
+  color: #666;
+  font-size: 18px;
+  line-height: 18px;
   transition-duration: 0.4s;
-  top: 40px;
-  left: 0px;
+}
+.navigation_area .navigation_area_content .navigation_menu_area ul li .search_area:hover i {
+  color: #5dabbe;
+}
+.navigation_area .navigation_area_content .navigation_menu_area ul li .search_area .close_icon {
+  display: none;
+}
+.navigation_area .navigation_area_content .navigation_menu_area ul li .search_area .close_icon i {
+  border: 0px solid red;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 18px;
+}
+.navigation_area .navigation_area_content .navigation_menu_area ul li .search_item {
+  border: 0px solid red;
+  width: 700px;
+  padding: 15px 30px;
+  background-color: #5dabbe;
+  position: relative;
+  position: absolute;
+  right: 0px;
+  position: absolute;
+  top: -16px;
+  opacity: 0;
+  visibility: hidden;
+  transition-duration: 0.4s;
+}
+@media screen and (max-width: 575.9px) {
+  .navigation_area .navigation_area_content .navigation_menu_area ul li .search_item {
+    width: 100%;
+    padding: 11px 13px;
+    background-color: #f9f9f9;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.9px) {
+  .navigation_area .navigation_area_content .navigation_menu_area ul li .search_item {
+    width: 100%;
+    padding: 11px 13px;
+    background-color: #f9f9f9;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.9px) {
+  .navigation_area .navigation_area_content .navigation_menu_area ul li .search_item {
+    width: 100%;
+    padding: 11px 13px;
+    background-color: #f9f9f9;
+  }
+}
+.navigation_area .navigation_area_content .navigation_menu_area ul li .search_item input {
+  border: 0px solid red;
+  width: 100%;
+  outline: 0;
+  border: 1px solid #d8d8d8;
+  padding: 5px 40px 5px 10px;
+  font-size: 14px;
+  line-height: 14px;
+  font-family: "Poppins-Medium";
+  background-color: #f2f4f8;
+}
+.navigation_area .navigation_area_content .navigation_menu_area ul li .search_item .search_icon {
+  border: 0px solid red;
+  width: 35px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  background: transparent;
+}
+@media screen and (max-width: 575.9px) {
+  .navigation_area .navigation_area_content .navigation_menu_area ul li .search_item .search_icon {
+    top: 11px;
+    right: 13px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.9px) {
+  .navigation_area .navigation_area_content .navigation_menu_area ul li .search_item .search_icon {
+    top: 11px;
+    right: 13px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.9px) {
+  .navigation_area .navigation_area_content .navigation_menu_area ul li .search_item .search_icon {
+    top: 11px;
+    right: 13px;
+  }
+}
+.navigation_area .navigation_area_content .navigation_menu_area ul li .search_item .search_icon i {
+  border: 0px solid red;
+  font-size: 14px;
+  color: #666;
+}
+.navigation_area .navigation_area_content .navigation_menu_area ul li .active_search {
+  top: 59px;
+  right: 0px;
+  opacity: 1;
+  visibility: visible;
+}
+.navigation_area .navigation_area_content .navigation_menu_area ul .button_position {
+  position: relative;
 }
 .navigation_area .navigation_area_content .responsive_menu_area {
   border: 0px solid red;

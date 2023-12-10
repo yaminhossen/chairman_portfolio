@@ -18,6 +18,44 @@
                                 <p class="description_text">
                                     <%= post_details.subtitle %>
                                 </p>
+                                <p>
+                                    <% 
+                                        
+                                        // Function to convert English digits to Bengali (Bangla) digits
+                                        function englishToBanglaDigits(number) {
+                                            const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+                                            return number.toString().replace(/\d/g, digit => banglaDigits[digit]);
+                                        }
+
+                                        // Function to convert English month names to Bengali (Bangla) month names
+                                        function getBanglaMonthName(month) {
+                                        const banglaMonths = [
+                                            'জানুয়ারি', 'ফেব্রুয়ারি', 'মার্চ', 'এপ্রিল',
+                                            'মে', 'জুন', 'জুলাই', 'আগস্ট',
+                                            'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর'
+                                        ];
+                                        return banglaMonths[month];
+                                        }
+
+                                        // Function to convert English date string to Bangla (Bengali) date format
+                                        function convertToBanglaDate(englishDateString) {
+                                            const englishDate = new Date(englishDateString);
+                                            const banglaDay = englishToBanglaDigits(englishDate.getDate());
+                                            const banglaMonth = getBanglaMonthName(englishDate.getMonth());
+                                            const banglaYear = englishToBanglaDigits(englishDate.getFullYear());
+                                        
+                                            const banglaDate = `${banglaDay} ${banglaMonth}, ${banglaYear}`;
+                                            return banglaDate;
+                                        }
+
+                                        // English date string
+                                        const englishDateString = post_details.published_date.toISOString().substring(0, 10);
+
+                                        // Convert English date string to Bangla date format
+                                        const banglaDate = convertToBanglaDate(englishDateString);
+                                        
+                                        %>
+                                </p>
                             </div>
                             <!-- content_title end -->
 
@@ -31,12 +69,14 @@
                                     <div class="date_and_comment_area">
                                         <div class="date_area date_comment_area">
                                             <p class="date_area_text date_comment_area_text">
-                                                <%= post_details.published_date.toISOString().substring(0, 10) %>
+                                                <%= banglaDate %>
                                             </p>
                                         </div>
                                         <div class="comment_area date_comment_area">
-                                            <a href="#" class="comment_area_text date_comment_area_text"><%= post_comments?.comments?.length %> <span
-                                                    class="color_text">Comments</span></a>
+                                            <a href="#" class="comment_area_text date_comment_area_text">
+                                                <%= post_comments?.comments?.length %> <span
+                                                        class="color_text">Comments</span>
+                                            </a>
                                         </div>
                                     </div>
 
@@ -70,11 +110,13 @@
                                                                 placeholder="name">
                                                             <input name="email" class="comment_form_area" type="text"
                                                                 placeholder="email">
-                                                            <input name="post_id" class="comment_form_area" type="hidden" value="<%= post_details._id %>"
+                                                            <input name="post_id" class="comment_form_area"
+                                                                type="hidden" value="<%= post_details._id %>"
                                                                 placeholder="comment id">
                                                         </div>
-                                                       
-                                                            <textarea class="comment_form_area" name="comment" placeholder="comment" id="" cols="20" rows="10"></textarea>
+
+                                                        <textarea class="comment_form_area" name="comment"
+                                                            placeholder="comment" id="" cols="20" rows="10"></textarea>
                                                     </div>
                                                 </div>
 
@@ -88,18 +130,20 @@
                                             <!-- comment_text_area start -->
                                             <div class="comment_text_area">
                                                 <% post_comments?.comments.slice(-5).map( (pc)=>{ %>
-                                                <div class="user-image_area_and_comment_text_area">
-                                                    <div class="mb-3 user-image_area">
-                                                        <img src="/assets/images/profile_image/img2.png" alt="img">
-                                                    </div>
-                                                    <div class="comment_text">
-                                                        <p class="text"><%= pc.comment %></p>
-                                                        <div class="button_area">
-                                                            <!-- <button class="cancel_and_submit_button">Replay</button> -->
+                                                    <div class="user-image_area_and_comment_text_area">
+                                                        <div class="mb-3 user-image_area">
+                                                            <img src="/assets/images/profile_image/img2.png" alt="img">
+                                                        </div>
+                                                        <div class="comment_text">
+                                                            <p class="text">
+                                                                <%= pc.comment %>
+                                                            </p>
+                                                            <div class="button_area">
+                                                                <!-- <button class="cancel_and_submit_button">Replay</button> -->
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <% })%>
+                                                    <% })%>
                                             </div>
                                             <!-- comment_text_area end -->
 
@@ -128,7 +172,9 @@
 
                                     <!-- related_item_area start -->
                                     <div class="related_item_area_top">
-                                        <h4><%= post_details.title.slice(0,20) %> বিষয়ে আরো .....</h4>
+                                        <h4>
+                                            <%= post_details.title.slice(0,20) %> বিষয়ে আরো .....
+                                        </h4>
                                         <div class="related_item_areaa">
                                             <% posts.sort((a, b)=> b.total_view - a.total_view); %>
                                                 <% posts.slice(0,4).map( (sw)=>{ %>
@@ -136,7 +182,7 @@
                                                     <div class="item_areaa">
                                                         <a href="/post/<%= sw._id %>"
                                                             class="social_work_image_carda edit_social_work_image_carda edit_details_social_work_carda">
-                                                            
+
                                                             <!-- overlay-area start -->
                                                             <div class="overlay-areaa">
                                                                 <div class="overlay-area_contenta">
@@ -201,7 +247,8 @@
                                         <% commonData.blog_category.map( (cm)=>{ %>
 
                                             <li>
-                                                <a href="/posts<%= cm.url %>" class="categories_namea new_categories_name">
+                                                <a href="/posts<%= cm.url %>"
+                                                    class="categories_namea new_categories_name">
                                                     <%= cm.title %>
                                                 </a>
                                             </li>
@@ -223,7 +270,7 @@
                                 <!-- side_ber_area_title end -->
 
                                 <div class="recently_posted_item_all">
-                                    <% posts.filter(product => product._id != post_details._id).forEach(product => { %>
+                                    <% filterPost.slice(-3).map( (product)=>{ %>
                                         <!-- posted_item start -->
                                         <a href="/post/<%= product._id %>" class="posted_item">
                                             <div class="image_area">
@@ -248,48 +295,16 @@
 
                             </div>
                             <!-- recently_posted_area end -->
-                            <!-- recently_posted_area start -->
-                            <div class="recently_posted_area">
 
-                                <!-- side_ber_area_title start -->
-                                <div class="side_ber_area_title">
-                                    <h2 class="title_text">সম্প্রতি পোস্ট</h2>
-                                </div>
-                                <!-- side_ber_area_title end -->
-
-                                <div class="recently_posted_item_all">
-                                    <% posts.slice(-4).map( (sw)=>{ %>
-                                        <!-- posted_item start -->
-                                        <a href="/post/<%= sw._id %>" class="posted_item">
-                                            <div class="image_area">
-                                                <img src="<%= sw.photo %>" alt="img">
-                                            </div>
-                                            <div class="title_and_dete_area">
-                                                <div class="title_area">
-                                                    <p class="title_text">
-                                                        <%= sw.title %>
-                                                    </p>
-                                                </div>
-                                                <div class="date_area">
-                                                    <p class="date_text">
-                                                        <%= sw.published_date.toISOString().substring(0, 10) %>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <!-- posted_item end -->
-                                        <% })%>
-                                </div>
-
-                            </div>
-                            <!-- recently_posted_area end -->
                             <!-- categories details -->
                             <!-- recently_posted_area start -->
                             <div class="recently_posted_area">
 
                                 <!-- side_ber_area_title start -->
                                 <div class="side_ber_area_title">
-                                    <h2 class="title_text"><%= post.title %> বিষয়ে আরো...</h2>
+                                    <h2 class="title_text">
+                                        <%= post.title %> বিষয়ে আরো...
+                                    </h2>
                                 </div>
                                 <!-- side_ber_area_title end -->
 
@@ -370,9 +385,9 @@
                     axios.post('/save/comment', {
 
                         comment: comment,
-                        name:name,
-                        email:email,
-                        post_id:post_id,
+                        name: name,
+                        email: email,
+                        post_id: post_id,
                     })
                         .then(function (response) {
                             console.log(response);

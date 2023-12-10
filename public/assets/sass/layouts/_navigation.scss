@@ -106,14 +106,143 @@
                         }
                     }
 
+                    // active_class start
                     .active_class {
+                        left: 0px;
                         visibility: visible;
                         opacity: 1;
-                        transition-duration: 0.4s;
-                        top: 40px;
-                        left: 0px;
                     }
+                    // active_class end
+
+                    // all_nave area end
+                    // search area start
+                    .search_area {
+                        border: $border;
+                        align-items: center;
+                        display: flex;
+                        background: transparent;
+                        padding: 10px 15px;
+                        @include xs {
+                            display: none;
+                        }
+                        @include sm {
+                            display: none;
+                        }
+                        @include md {
+                            display: none;
+                        }
+                        i {
+                            border: $border;
+                            color: $deep_black;
+                            font-size: 18px;
+                            line-height: 18px;
+                            transition-duration: 0.4s;
+                        }
+                        &:hover {
+                            i {
+                                color: $brand_color;
+                            }
+                        }
+                        .close_icon {
+                            display: none;
+                            i {
+                                border: $border;
+                                color: $white;
+                                font-size: 18px;
+                                line-height: 18px;
+                            }
+                        }
+                    }
+                    .search_item {
+                        border: $border;
+                        width: 700px;
+                        padding: 15px 30px;
+                        background-color: $brand_color;
+                        position: relative;
+                        position: absolute;
+                        right: 0px;
+                        // border: 1px solid $brand_color;
+                        // display: none;
+                        position: absolute;
+                        // right: -1000px;
+                        top: -16px;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition-duration: 0.4s;
+                        @include xs {
+                            width: 100%;
+                            padding: 11px 13px;
+                            background-color: $off_white;
+                        }
+                        @include sm {
+                            width: 100%;
+                            padding: 11px 13px;
+                            background-color: $off_white;
+                        }
+                        @include md {
+                            width: 100%;
+                            padding: 11px 13px;
+                            background-color: $off_white;
+                        }
+                        input {
+                            border: $border;
+                            width: 100%;
+                            outline: 0;
+                            border: 1px solid #d8d8d8;
+                            padding: 5px 40px 5px 10px;
+                            font-size: 14px;
+                            line-height: 14px;
+                            font-family: $font_Medium;
+                            background-color: $blue_white;
+                        }
+                        .search_icon {
+                            border: $border;
+                            // align-items: center;
+                            width: 35px;
+                            height: 35px;
+                            align-items: center;
+                            justify-content: center;
+                            display: flex;
+                            position: absolute;
+                            top: 15px;
+                            right: 30px;
+                            background: transparent;
+                            @include xs {
+                                top: 11px;
+                                right: 13px;
+                            }
+                            @include sm {
+                                top: 11px;
+                                right: 13px;
+                            }
+                            @include md {
+                                top: 11px;
+                                right: 13px;
+                            }
+
+                            i {
+                                border: $border;
+                                font-size: 14px;
+                                color: $deep_black;
+                            }
+                        }
+                    }
+                    // active_search start
+                    .active_search {
+                        // display: block;
+                        // right: 0px;
+                        top: 59px;
+                        right: 0px;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                    // active_search end
+                    // search area end
                 }
+                .button_position{
+                    position: relative;
+                }
+                
             }
         }
         // responsive_menu_area start
