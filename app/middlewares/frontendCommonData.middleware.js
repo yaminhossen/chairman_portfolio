@@ -1,4 +1,5 @@
 const blogCategoriesModel = require("../api/blog/blog_categories/model/model")
+const blogsModel = require("../api/blog/blogs/model/model")
 const tagsModel = require("../api/tag/tags/model/model")
 const userContactNumbersModel = require("../api/user_contact_numbers/model/model")
 const userSocialLinksModel = require("../api/user_social_links/model/model")
@@ -10,6 +11,12 @@ module.exports = async (server, req) => {
     let blog_category = await blogCategoriesModel.find();
     let blog_related_category = await blogCategoriesModel.findOne({ title: 'ইউনিয়ন পরিষদ' }).populate('related_categories');
     let blog_related_category_2 = await blogCategoriesModel.findOne({ title: 'সামাজিক কাজ' }).populate('related_categories');
+
+    let blog = await blogCategoriesModel.findOne({ url: "/" + 'union-porishod' });
+    // let datas = await blogCategoriesModel.findOne({ url: "/"+req.params.url });
+
+    let blogs = await blogsModel.find().where({ categories: blog._id });
+
     // console.log('blog_Related_categories', blog_related_category_2);
     let tags = await tagsModel.find();
     let contact_numbers = await userContactNumbersModel.find();
@@ -29,12 +36,13 @@ module.exports = async (server, req) => {
         setting_titles,
         blog_related_category,
         blog_related_category_2,
+        blogs,
 
     };
 
     server.locals = {
         ...server.locals,
-        
+
         seo_title: 'razibur rahman',
         seo_keyword: 'razibur rahman',
         seo_schematags: 'razibur rahman',
