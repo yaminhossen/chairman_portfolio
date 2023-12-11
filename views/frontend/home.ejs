@@ -464,11 +464,10 @@
 
                 <!-- content_title start -->
                 <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
-                    <h2 class="title_text">ইউনিয়ন পরিষদ</h2>
-                    <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের
-                        মাধ্যম।
-                        সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের
-                        মাধ্যম। </p>
+                    <h2 class="title_text"><%= commonData?.blog?.title %></h2>
+                    <p class="description_text">
+                    <%= commonData?.blog?.short_description %>    
+                    </p>
                 </div>
                 <!-- content_title end -->
 
@@ -483,8 +482,8 @@
                                         <img src="./assets/images/news_image/img4.webp" alt="image">
                                     </div>
                                     <div class="box_text_area">
-                                        <h2 class="number_text">400</h2>
-                                        <p class="title_text">ঘরবাড়ি তৈরি </p>
+                                        <h2 class="number_text"><%= settingValue.value[0] %>+</h2>
+                                        <p class="title_text"> <%= settingTitle.value[0] %></p>
                                     </div>
 
                                     <span class="bg_number">400</span>
@@ -497,8 +496,8 @@
                                         <img src="./assets/images/news_image/img4.webp" alt="image">
                                     </div>
                                     <div class="box_text_area">
-                                        <h2 class="number_text">934</h2>
-                                        <p class="title_text">রাস্তা তৈরি </p>
+                                        <h2 class="number_text"><%= settingValue.value[1] %></h2>
+                                        <p class="title_text"> <%= settingTitle.value[1] %></p>
                                     </div>
 
                                     <span class="bg_number">934</span>
@@ -511,9 +510,8 @@
                                         <img src="./assets/images/news_image/img4.webp" alt="image">
                                     </div>
                                     <div class="box_text_area">
-                                        <h2 class="number_text">369</h2>
-                                        <p class="title_text">
-                                            মসজিদ তৈরি </p>
+                                        <h2 class="number_text"><%= settingValue.value[2] %></h2>
+                                        <p class="title_text"> <%= settingTitle.value[2] %></p>
                                     </div>
 
                                     <span class="bg_number">369</span>
@@ -526,9 +524,8 @@
                                         <img src="./assets/images/news_image/img4.webp" alt="image">
                                     </div>
                                     <div class="box_text_area">
-                                        <h2 class="number_text">769</h2>
-                                        <p class="title_text">আর্থিক স্বাবলম্বী
-                                        </p>
+                                        <h2 class="number_text"><%= settingValue.value[3] %></h2>
+                                        <p class="title_text"> <%= settingTitle.value[3] %></p>
                                     </div>
 
                                     <span class="bg_number">769</span>
@@ -549,29 +546,11 @@
                         <div class="union_porishad_text_and_link_area">
                             <div class="description_area">
                                 <p class="description_text">
-                                    নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের
-                                    মাধ্যম। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের
-                                    মাধ্যম। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের
-                                    মাধ্যম।
-                                    সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। ম। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং
-                                    ধনসম্পদেও বরকতের
-                                    মাধ্যম।
-                                    সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং
-                                    ধনসম্পদেও বরকতের
-                                    মাধ্যম। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের
-                                    মাধ্যম। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের
-                                    মাধ্যম।
-                                    সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। ম। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং
-                                    ধনসম্পদেও বরকতের
-                                    সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। ম। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং
-                                    ধনসম্পদেও বরকতের
-                                    সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। ম।
-
-
+                                    <%= commonData?.blog?.long_description %>
                                 </p>
                             </div>
                             <div class="link_area">
-                                <a href="#" class="link_text">ইউনিয়ন পরিষদ
+                                <a href="/posts/union-porishod" class="link_text"><%= commonData?.blog?.title %>
                                     <span class="link_area_icon">
                                         <i class="fa-solid fa-right-long"></i>
                                     </span>
@@ -585,70 +564,24 @@
 
                             <div class="all_image_area">
                                 <ul>
+                                    <% commonData.blogs.map( (bi)=>{ %>
                                     <li>
                                         <div class="card_area ">
-                                            <a href="union_porishad_details.html" class="image">
-                                                <img src="./assets/images/local_image/s7.jpg" alt="img">
+                                            <a href="/post/<%= bi._id %>" class="image">
+                                                <img src="<%= bi.photo %>" alt="<%= bi.photo_alt %>">
 
                                                
                                             </a>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="card_area ">
-                                            <a href="union_porishad_details.html" class="image">
-                                                <img src="./assets/images/local_image/s6.jpg" alt="img">
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="card_area ">
-                                            <a href="union_porishad_details.html" class="image">
-                                                <img src="./assets/images/local_image/s5.jpeg" alt="img">
-
-                                                <!-- overlay_video_area start -->
-                                                <div class="overlay_video_area">
-                                                    <i class="fa-solid fa-play"></i>
-                                                </div>
-                                                <!--  overlay_video_area end -->
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="card_area ">
-                                            <a href="union_porishad_details.html" class="image">
-                                                <img src="./assets/images/local_image/s4.jpg" alt="img">
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="card_area ">
-                                            <a href="union_porishad_details.html" class="image">
-                                                <img src="./assets/images/local_image/s3.jpg" alt="img">
-
-                                                <!-- overlay_video_area start -->
-                                                <div class="overlay_video_area">
-                                                    <i class="fa-solid fa-play"></i>
-                                                </div>
-                                                <!--  overlay_video_area end -->
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="card_area ">
-                                            <a href="union_porishad_details.html" class="image">
-                                                <img src="./assets/images/local_image/s2.jpg" alt="img">
-                                            </a>
-                                        </div>
-                                    </li>
-
-
+                                    
+                                    <% })%>
                                 </ul>
                             </div>
 
                             <!-- button_area start-->
                             <div class="button_area" style="text-align: center; margin-top: 20px;">
-                                <a href="union_porishad.html" class="button_text_area">
+                                <a href="/posts/union-porishod" class="button_text_area">
                                     <span class="button_text" style="padding: 9px 80px 9px 10px;">
                                         আরোও দেখুন
                                         <span class="dash_icon"></span>

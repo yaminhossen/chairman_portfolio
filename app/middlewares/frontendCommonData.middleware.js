@@ -17,7 +17,7 @@ module.exports = async (server, req) => {
 
     let blogs = await blogsModel.find().where({ categories: blog?._id });
 
-    // console.log('blog_Related_categories', blog_related_category_2);
+    console.log('blog_Related_categories', blog);
     let tags = await tagsModel.find();
     let contact_numbers = await userContactNumbersModel.find();
     let emails = await userEmailsModel.find();
@@ -37,6 +37,7 @@ module.exports = async (server, req) => {
         blog_related_category,
         blog_related_category_2,
         blogs,
+        blog,
 
     };
 
