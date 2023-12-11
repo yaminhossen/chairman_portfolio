@@ -15,7 +15,7 @@ module.exports = async (server, req) => {
     let blog = await blogCategoriesModel.findOne({ url: "/" + 'union-porishod' });
     // let datas = await blogCategoriesModel.findOne({ url: "/"+req.params.url });
 
-    let blogs = await blogsModel.find().where({ categories: blog._id });
+    let blogs = await blogsModel.find().where({ categories: blog?._id });
 
     // console.log('blog_Related_categories', blog_related_category_2);
     let tags = await tagsModel.find();
