@@ -243,6 +243,15 @@ const controllers = {
 		console.log('save commmetnt', new_comment);
 		// console.log('find comment blog', blog);
 	},
+	find_post: async function(req, res) {
+		let data = req.body;
+		let blog = await blogsModel.find();
+		let result = blog.filter((bb) => bb.title == 'কেমন আছেন আল মাহমুদ');
+		// let blog = await blogsModel.find().where({ _id: new_comment.post_id });
+	
+		console.log('find commmetnt', result);
+		// console.log('find comment blog', blog);
+	},
 	save_contact_message: async function(req, res) {
 		let data = req.body;
 		const new_contact_message = await contactModel.create(data);

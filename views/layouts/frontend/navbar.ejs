@@ -146,9 +146,9 @@
                             </button>
 
                             <div id="search_area_show" class="search_item" >
-                                <form>
+                                <form onsubmit="searchSubmit(event)">
 
-                                    <input type="text" placeholder="খুঁজুন...">
+                                    <input name="searchValue" type="text" placeholder="খুঁজুন...">
                                     <button class="search_icon">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </button>
@@ -166,9 +166,29 @@
                     </a>
                 </div>
                 <!-- responsive_menu_area end -->
-
                 <script>
-                    // document.querySelectorAll(".addClass").forEach((el) => {
+                    function searchSubmit(event) {
+                        event.preventDefault();
+                        console.log('comment submit hoyche');
+                        let data = event.target.searchValue.value;
+                        console.log(data);
+    
+                        event.target.searchValue.value = '';
+                        // axios.post('/api/v1/blog-comment/store', {
+                        axios.get('/find/post', {
+    
+                            data: data,
+                        })
+                            .then(function (response) {
+                                console.log(response);
+                            })
+                            .catch(function (error) {
+                                console.error(error);
+                            });
+                    };
+                </script>
+                <!-- <script> -->
+                  <!--   // document.querySelectorAll(".addClass").forEach((el) => {
                     //     el.addEventListener('click', function (e) {
                     //         e.preventDefault();
 
@@ -187,8 +207,8 @@
 
                     //         console.log('Element:', li);
                     //     });
-                    // });
-                </script>
+                    // }); -->
+                <!--  </script> -->
             </div>
         </div>
     </nav>
