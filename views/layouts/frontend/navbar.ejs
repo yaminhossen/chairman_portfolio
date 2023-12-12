@@ -144,16 +144,17 @@
                                     <i class="fa-solid fa-xmark"></i>
                                 </div> -->
                             </button>
-
+                        
                             <div id="search_area_show" class="search_item" >
                                 <form onsubmit="searchSubmit(event)">
-
+                                    
                                     <input name="searchValue" type="text" placeholder="খুঁজুন...">
                                     <button class="search_icon">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                      <i class="fa-solid fa-magnifying-glass"></i>
                                     </button>
                                 </form>
                             </div>
+                           
                             <!-- search area end -->
                         </li>
                     </ul>
@@ -166,6 +167,7 @@
                     </a>
                 </div>
                 <!-- responsive_menu_area end -->
+                <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
                 <script>
                     function searchSubmit(event) {
                         event.preventDefault();
@@ -173,19 +175,16 @@
                         let data = event.target.searchValue.value;
                         console.log(data);
     
-                        event.target.searchValue.value = '';
                         // axios.post('/api/v1/blog-comment/store', {
-                        axios.get('/find/post', {
-    
-                            data: data,
-                        })
+                            axios.get(`/search/posts?q=${data}`)
                             .then(function (response) {
                                 console.log(response);
                             })
                             .catch(function (error) {
                                 console.error(error);
                             });
-                    };
+                            event.target.searchValue.value = '';
+                        };
                 </script>
                 <!-- <script> -->
                   <!--   // document.querySelectorAll(".addClass").forEach((el) => {

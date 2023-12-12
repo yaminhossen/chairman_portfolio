@@ -181,12 +181,26 @@ const controllers = {
 		controllers.server.locals.seo_description = blog?.seo_description;
 		controllers.server.locals.seo_image = blog?.photo;
 		controllers.server.locals.seo_keyword = blog?.seo_keyword;
-		console.log("blog posts", blog);
-		console.log('requrl', blogs.length);
+		// console.log("blog posts", blog);
+		// console.log('requrl', blogs.length);
 		return res.render(`frontend/blog/blog_posts`, {
 			blog,
 			blogs,
 			reqUrl,
+		});
+	},
+
+	search_posts: async function(req, res) {
+		let blog = await blogsModel.find();
+		let blogs = blog.filter((bb) => bb.title.includes(req.query.q));
+		// let blogs = blog.filter((bb) => bb.title.includes('কেমন আছেন আল মাহমুদ'));
+		// let blog = await blogsModel.find().where({ _id: new_comment.post_id });
+		let reqUrl = 'search-items';
+		console.log('find blogs', blogs?.length);
+		console.log('find  blog data',req.query.q);
+		return res.render(`frontend/blog/search_posts`, {
+			reqUrl,
+			blogs,
 		});
 	},
 
@@ -243,15 +257,7 @@ const controllers = {
 		console.log('save commmetnt', new_comment);
 		// console.log('find comment blog', blog);
 	},
-	find_post: async function(req, res) {
-		let data = req.body;
-		let blog = await blogsModel.find();
-		let result = blog.filter((bb) => bb.title == 'কেমন আছেন আল মাহমুদ');
-		// let blog = await blogsModel.find().where({ _id: new_comment.post_id });
 	
-		console.log('find commmetnt', result);
-		// console.log('find comment blog', blog);
-	},
 	save_contact_message: async function(req, res) {
 		let data = req.body;
 		const new_contact_message = await contactModel.create(data);
