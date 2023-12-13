@@ -192,12 +192,12 @@ const controllers = {
 
 	search_posts: async function(req, res) {
 		let blog = await blogsModel.find();
-		let blogs = blog.filter((bb) => bb.title.includes(req.query.q));
+		let blogs = blog.filter((bb) => bb.title.includes(req.query.searchValue));
 		// let blogs = blog.filter((bb) => bb.title.includes('কেমন আছেন আল মাহমুদ'));
 		// let blog = await blogsModel.find().where({ _id: new_comment.post_id });
 		let reqUrl = 'search-items';
 		console.log('find blogs', blogs?.length);
-		console.log('find  blog data',req.query.q);
+		console.log('find  blog data',req.query);
 		return res.render(`frontend/blog/search_posts`, {
 			reqUrl,
 			blogs,

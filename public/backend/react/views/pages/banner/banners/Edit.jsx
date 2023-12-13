@@ -34,7 +34,7 @@ function Edit() {
   };
 
   if (data_store) {
-    const { button_url, button_text, title, sub_title, description } =
+    const { button_url, button_text, title, sub_title, description, name } =
       data_store;
     return (
       <div className="card list_card">
@@ -65,6 +65,18 @@ function Edit() {
                           type="text"
                           className="form-control"
                           defaultValue={title}
+                        />
+                      </div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Name</label>
+                      <div>:</div>
+                      <div>
+                        <input
+                          name="name"
+                          type="text"
+                          className="form-control"
+                          defaultValue={name? name : "name"}
                         />
                       </div>
                     </div>
