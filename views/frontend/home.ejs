@@ -45,7 +45,7 @@
                         <!-- right-area start -->
                         <div class="right-area" data-aos="fade-left" data-aos-duration="1000">
                             <div class="image_area">
-                                <img src="/assets/images/profile_image/image1.1.png" alt="image">
+                                <img src="<%= commonData.setting_titles.value %>" alt="image">
                             </div>
                         </div>
                         <!-- right-area end -->
@@ -274,8 +274,8 @@
                         <ul>
                             <% social_works.slice(0,4).map( (sw)=>{ %>
                                 <li class="item_area">
-                                    <a href="/post/<%= sw._id %>" class="social_work_image_card"
-                                        data-aos="fade-up" data-aos-duration="300">
+                                    <a href="/post/<%= sw._id %>" class="social_work_image_card" data-aos="fade-up"
+                                        data-aos-duration="300">
                                         <img src="<%= sw.photo %>" alt="<%= sw.photo_alt %>">
                                         <!-- overlay-area start -->
                                         <div class="overlay-area">
@@ -375,7 +375,7 @@
                         </div>
                         <!-- count_item end -->
 
-                      
+
 
                     </div>
                 </div>
@@ -457,252 +457,271 @@
         </div>
         <!-- book_review_area end -->
 
-         <!-- union_porishad_area start -->
-    <div class="union_porishad_area">
-        <div class="container">
-            <div class="union_porishad_area_content">
+        <!-- union_porishad_area start -->
+        <div class="union_porishad_area">
+            <div class="container">
+                <div class="union_porishad_area_content">
 
-                <!-- content_title start -->
-                <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
-                    <h2 class="title_text"><%= commonData?.blog?.title %></h2>
-                    <p class="description_text">
-                    <%= commonData?.blog?.short_description %>    
-                    </p>
-                </div>
-                <!-- content_title end -->
-
-                <!-- box_content_area start -->
-                <div class="box_content_area">
-                    <div class="box_content">
-
-                        <ul>
-                            <li>
-                                <a href="#" class="box" data-aos="fade-up" data-aos-duration="300">
-                                    <div class="box_image_area">
-                                        <img src="./assets/images/news_image/img4.webp" alt="image">
-                                    </div>
-                                    <div class="box_text_area">
-                                        <h2 class="number_text"><%= settingValue.value[0] %>+</h2>
-                                        <p class="title_text"> <%= settingTitle.value[0] %></p>
-                                    </div>
-
-                                    <span class="bg_number">400</span>
-                                    <span class="bg_circle"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="box" data-aos="fade-up" data-aos-duration="600">
-                                    <div class="box_image_area">
-                                        <img src="./assets/images/news_image/img4.webp" alt="image">
-                                    </div>
-                                    <div class="box_text_area">
-                                        <h2 class="number_text"><%= settingValue.value[1] %></h2>
-                                        <p class="title_text"> <%= settingTitle.value[1] %></p>
-                                    </div>
-
-                                    <span class="bg_number">934</span>
-                                    <span class="bg_circle"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="box" data-aos="fade-up" data-aos-duration="900">
-                                    <div class="box_image_area">
-                                        <img src="./assets/images/news_image/img4.webp" alt="image">
-                                    </div>
-                                    <div class="box_text_area">
-                                        <h2 class="number_text"><%= settingValue.value[2] %></h2>
-                                        <p class="title_text"> <%= settingTitle.value[2] %></p>
-                                    </div>
-
-                                    <span class="bg_number">369</span>
-                                    <span class="bg_circle"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="box" data-aos="fade-up" data-aos-duration="1200">
-                                    <div class="box_image_area">
-                                        <img src="./assets/images/news_image/img4.webp" alt="image">
-                                    </div>
-                                    <div class="box_text_area">
-                                        <h2 class="number_text"><%= settingValue.value[3] %></h2>
-                                        <p class="title_text"> <%= settingTitle.value[3] %></p>
-                                    </div>
-
-                                    <span class="bg_number">769</span>
-                                    <span class="bg_circle"></span>
-                                </a>
-                            </li>
-                        </ul>
-
+                    <!-- content_title start -->
+                    <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
+                        <h2 class="title_text">
+                            <%= commonData?.blog?.title %>
+                        </h2>
+                        <p class="description_text">
+                            <%= commonData?.blog?.short_description %>
+                        </p>
                     </div>
-                </div>
-                <!-- box_content_area end -->
+                    <!-- content_title end -->
 
-                <!-- union_porishad_left_and_right_area start -->
-                <div class="union_porishad_left_and_right_area" style="margin-top: 0px;">
+                    <!-- box_content_area start -->
+                    <div class="box_content_area">
+                        <div class="box_content">
 
-                    <!-- left_area start -->
-                    <div class="left_area" data-aos="fade-right" data-aos-duration="1000">
-                        <div class="union_porishad_text_and_link_area">
-                            <div class="description_area">
-                                <p class="description_text">
-                                    <%= commonData?.blog?.long_description %>
-                                </p>
-                            </div>
-                            <div class="link_area">
-                                <a href="/posts/union-porishod" class="link_text"><%= commonData?.blog?.title %>
-                                    <span class="link_area_icon">
-                                        <i class="fa-solid fa-right-long"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-
-
-                        <!-- image_area start -->
-                        <div class="image_area">
-
-                            <div class="all_image_area">
-                                <ul>
-                                    <% commonData.blogs.map( (bi)=>{ %>
-                                    <li>
-                                        <div class="card_area ">
-                                            <a href="/post/<%= bi._id %>" class="image">
-                                                <img src="<%= bi.photo %>" alt="<%= bi.photo_alt %>">
-
-                                               
-                                            </a>
+                            <ul>
+                                <li>
+                                    <a href="#" class="box" data-aos="fade-up" data-aos-duration="300">
+                                        <div class="box_image_area">
+                                            <img src="./assets/images/news_image/img4.webp" alt="image">
                                         </div>
-                                    </li>
-                                    
-                                    <% })%>
-                                </ul>
-                            </div>
+                                        <div class="box_text_area">
+                                            <h2 class="number_text">
+                                                <%= settingValue.value[0] %>+
+                                            </h2>
+                                            <p class="title_text">
+                                                <%= settingTitle.value[0] %>
+                                            </p>
+                                        </div>
 
-                            <!-- button_area start-->
-                            <div class="button_area" style="text-align: center; margin-top: 20px;">
-                                <a href="/posts/union-porishod" class="button_text_area">
-                                    <span class="button_text" style="padding: 9px 80px 9px 10px;">
-                                        আরোও দেখুন
-                                        <span class="dash_icon"></span>
-                                    </span>
-                                </a>
-                            </div>
-                            <!-- button_area end-->
+                                        <span class="bg_number">400</span>
+                                        <span class="bg_circle"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="box" data-aos="fade-up" data-aos-duration="600">
+                                        <div class="box_image_area">
+                                            <img src="./assets/images/news_image/img4.webp" alt="image">
+                                        </div>
+                                        <div class="box_text_area">
+                                            <h2 class="number_text">
+                                                <%= settingValue.value[1] %>
+                                            </h2>
+                                            <p class="title_text">
+                                                <%= settingTitle.value[1] %>
+                                            </p>
+                                        </div>
+
+                                        <span class="bg_number">934</span>
+                                        <span class="bg_circle"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="box" data-aos="fade-up" data-aos-duration="900">
+                                        <div class="box_image_area">
+                                            <img src="./assets/images/news_image/img4.webp" alt="image">
+                                        </div>
+                                        <div class="box_text_area">
+                                            <h2 class="number_text">
+                                                <%= settingValue.value[2] %>
+                                            </h2>
+                                            <p class="title_text">
+                                                <%= settingTitle.value[2] %>
+                                            </p>
+                                        </div>
+
+                                        <span class="bg_number">369</span>
+                                        <span class="bg_circle"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="box" data-aos="fade-up" data-aos-duration="1200">
+                                        <div class="box_image_area">
+                                            <img src="./assets/images/news_image/img4.webp" alt="image">
+                                        </div>
+                                        <div class="box_text_area">
+                                            <h2 class="number_text">
+                                                <%= settingValue.value[3] %>
+                                            </h2>
+                                            <p class="title_text">
+                                                <%= settingTitle.value[3] %>
+                                            </p>
+                                        </div>
+
+                                        <span class="bg_number">769</span>
+                                        <span class="bg_circle"></span>
+                                    </a>
+                                </li>
+                            </ul>
+
                         </div>
-                        <!-- image_area end -->
                     </div>
-                    <!-- left_area end -->
+                    <!-- box_content_area end -->
 
-                    <!-- right_area start -->
-                    <div class="right_area" data-aos="fade-left" data-aos-duration="1000">
-                        <div class="notice_and_image_area">
-                            <!-- notice_area start -->
-                            <div class="notice_area">
-                                <div class="notice_title_area">
-                                    <h2 class="notice_text">নোটিশ</h2>
+                    <!-- union_porishad_left_and_right_area start -->
+                    <div class="union_porishad_left_and_right_area" style="margin-top: 0px;">
+
+                        <!-- left_area start -->
+                        <div class="left_area" data-aos="fade-right" data-aos-duration="1000">
+                            <div class="union_porishad_text_and_link_area">
+                                <div class="description_area">
+                                    <p class="description_text">
+                                        <%= commonData?.blog?.long_description %>
+                                    </p>
                                 </div>
-
-                                <!-- all_notice_item start -->
-                                <div class="all_notice_item">
-
-                                    <!-- notice_item start -->
-                                    <div class="notice_item">
-                                        <div class="notice_date_area">
-                                            <div class="date_month">
-                                                <p class="date_text date_month_text">12</p>
-                                                <p class="month_text date_month_text">November</p>
-                                            </div>
-                                            <div class="year">
-                                                <p class="year_text">2023</p>
-                                            </div>
-                                        </div>
-                                        <div class="notice_text_area">
-                                            <p class="notice_text">
-                                                সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন, খোদার
-                                                সন্তুষ্টি
-                                                এবং সততা মানব চরিত্রের শ্রেষ্ঠ গুণ।
-                                                <span class="read_more_button_area"> <a href="#"
-                                                        class="button_text">বিস্তারিত পড়ুন . . . </a></span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <!-- notice_item end -->
-                                    <!-- notice_item start -->
-                                    <div class="notice_item">
-                                        <div class="notice_date_area">
-                                            <div class="date_month">
-                                                <p class="date_text date_month_text">12</p>
-                                                <p class="month_text date_month_text">November</p>
-                                            </div>
-                                            <div class="year">
-                                                <p class="year_text">2023</p>
-                                            </div>
-                                        </div>
-                                        <div class="notice_text_area">
-                                            <p class="notice_text">
-                                                সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন, খোদার
-                                                সন্তুষ্টি
-                                                এবং সততা মানব চরিত্রের শ্রেষ্ঠ গুণ।
-                                                <span class="read_more_button_area"> <a href="#"
-                                                        class="button_text">বিস্তারিত পড়ুন . . . </a></span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <!-- notice_item end -->
-                                    <!-- notice_item start -->
-                                    <div class="notice_item">
-                                        <div class="notice_date_area">
-                                            <div class="date_month">
-                                                <p class="date_text date_month_text">12</p>
-                                                <p class="month_text date_month_text">November</p>
-                                            </div>
-                                            <div class="year">
-                                                <p class="year_text">2023</p>
-                                            </div>
-                                        </div>
-                                        <div class="notice_text_area">
-                                            <p class="notice_text">
-                                                সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন, খোদার
-                                                সন্তুষ্টি
-                                                এবং সততা মানব চরিত্রের শ্রেষ্ঠ গুণ।
-                                                <span class="read_more_button_area"> <a href="#"
-                                                        class="button_text">বিস্তারিত পড়ুন . . . </a></span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <!-- notice_item end -->
-
+                                <div class="link_area">
+                                    <a href="/posts/union-porishod" class="link_text">
+                                        <%= commonData?.blog?.title %>
+                                            <span class="link_area_icon">
+                                                <i class="fa-solid fa-right-long"></i>
+                                            </span>
+                                    </a>
                                 </div>
-                                <!-- all_notice_item end -->
+                            </div>
 
+
+                            <!-- image_area start -->
+                            <div class="image_area">
+
+                                <div class="all_image_area">
+                                    <ul>
+                                        <% commonData.blogs.map( (bi)=>{ %>
+                                            <li>
+                                                <div class="card_area ">
+                                                    <a href="/post/<%= bi._id %>" class="image">
+                                                        <img src="<%= bi.photo %>" alt="<%= bi.photo_alt %>">
+
+
+                                                    </a>
+                                                </div>
+                                            </li>
+
+                                            <% })%>
+                                    </ul>
+                                </div>
 
                                 <!-- button_area start-->
-                                <div class="button_area" style="text-align: center; z-index: 1;">
-                                    <a href="#" class="button_text_area">
-                                        <span class="button_text">
+                                <div class="button_area" style="text-align: center; margin-top: 20px;">
+                                    <a href="/posts/union-porishod" class="button_text_area">
+                                        <span class="button_text" style="padding: 9px 80px 9px 10px;">
                                             আরোও দেখুন
                                             <span class="dash_icon"></span>
                                         </span>
                                     </a>
                                 </div>
                                 <!-- button_area end-->
+                            </div>
+                            <!-- image_area end -->
+                        </div>
+                        <!-- left_area end -->
+
+                        <!-- right_area start -->
+                        <div class="right_area" data-aos="fade-left" data-aos-duration="1000">
+                            <div class="notice_and_image_area">
+                                <!-- notice_area start -->
+                                <div class="notice_area">
+                                    <div class="notice_title_area">
+                                        <h2 class="notice_text">নোটিশ</h2>
+                                    </div>
+
+                                    <!-- all_notice_item start -->
+                                    <div class="all_notice_item">
+
+                                        <!-- notice_item start -->
+                                        <div class="notice_item">
+                                            <div class="notice_date_area">
+                                                <div class="date_month">
+                                                    <p class="date_text date_month_text">12</p>
+                                                    <p class="month_text date_month_text">November</p>
+                                                </div>
+                                                <div class="year">
+                                                    <p class="year_text">2023</p>
+                                                </div>
+                                            </div>
+                                            <div class="notice_text_area">
+                                                <p class="notice_text">
+                                                    সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন, খোদার
+                                                    সন্তুষ্টি
+                                                    এবং সততা মানব চরিত্রের শ্রেষ্ঠ গুণ।
+                                                    <span class="read_more_button_area"> <a href="#"
+                                                            class="button_text">বিস্তারিত পড়ুন . . . </a></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <!-- notice_item end -->
+                                        <!-- notice_item start -->
+                                        <div class="notice_item">
+                                            <div class="notice_date_area">
+                                                <div class="date_month">
+                                                    <p class="date_text date_month_text">12</p>
+                                                    <p class="month_text date_month_text">November</p>
+                                                </div>
+                                                <div class="year">
+                                                    <p class="year_text">2023</p>
+                                                </div>
+                                            </div>
+                                            <div class="notice_text_area">
+                                                <p class="notice_text">
+                                                    সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন, খোদার
+                                                    সন্তুষ্টি
+                                                    এবং সততা মানব চরিত্রের শ্রেষ্ঠ গুণ।
+                                                    <span class="read_more_button_area"> <a href="#"
+                                                            class="button_text">বিস্তারিত পড়ুন . . . </a></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <!-- notice_item end -->
+                                        <!-- notice_item start -->
+                                        <!-- <div class="notice_item">
+                                            <div class="notice_date_area">
+                                                <div class="date_month">
+                                                    <p class="date_text date_month_text">12</p>
+                                                    <p class="month_text date_month_text">November</p>
+                                                </div>
+                                                <div class="year">
+                                                    <p class="year_text">2023</p>
+                                                </div>
+                                            </div>
+                                            <div class="notice_text_area">
+                                                <p class="notice_text">
+                                                    সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন, খোদার
+                                                    সন্তুষ্টি
+                                                    এবং সততা মানব চরিত্রের শ্রেষ্ঠ গুণ।
+                                                    <span class="read_more_button_area"> <a href="#"
+                                                            class="button_text">বিস্তারিত পড়ুন . . . </a></span>
+                                                </p>
+                                            </div>
+                                        </div> -->
+                                        <!-- notice_item end -->
+
+                                    </div>
+                                    <!-- all_notice_item end -->
+
+
+                                    <!-- button_area start-->
+                                    <div class="button_area" style="text-align: center; z-index: 1;">
+                                        <a href="#" class="button_text_area">
+                                            <span class="button_text">
+                                                আরোও দেখুন
+                                                <span class="dash_icon"></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <!-- button_area end-->
+
+                                </div>
+                                <!-- notice_area end -->
+
 
                             </div>
-                            <!-- notice_area end -->
-
-
                         </div>
+                        <!-- right_area end -->
                     </div>
-                    <!-- right_area end -->
+                    <!-- union_porishad_left_and_right_area end -->
+
+
                 </div>
-                <!-- union_porishad_left_and_right_area end -->
-
-
             </div>
         </div>
-    </div>
-    <!-- union_porishad_area end -->
+        <!-- union_porishad_area end -->
 
         <!-- text_slider_area start -->
         <div class="text_slider_area" data-aos="fade-up" data-aos-duration="1000">
@@ -710,7 +729,10 @@
                 <div class="text_slider_area_content" data-aos="fade-up" data-aos-duration="900">
                     <div class="slider_text_area">
                         <p class="slider_text">
-                            আসসালামু আলাইকুম, শহীদি কাফেলা বাংলাদেশ ইসলামী ছাত্রশিবিরের অনলাইন দাওয়তি সপ্তাহ উপলক্ষে কিছু স্মৃতিকথা লেখার উদ্দ্যেশ্যে আল্লাহ রব্বুল আলামীনের উপর ভরসা করে টাইপিং শুরু করছি। ইসলামী আদর্শের পতাকাবাহী বাংলাদেশ ইসলামী ছাত্রশিবিরের মত একটি কাফেলায় শামিল হওয়া ছিল আমার জন্য একটি সৌভাগ্য।
+                            আসসালামু আলাইকুম, শহীদি কাফেলা বাংলাদেশ ইসলামী ছাত্রশিবিরের অনলাইন দাওয়তি সপ্তাহ উপলক্ষে
+                            কিছু স্মৃতিকথা লেখার উদ্দ্যেশ্যে আল্লাহ রব্বুল আলামীনের উপর ভরসা করে টাইপিং শুরু করছি।
+                            ইসলামী আদর্শের পতাকাবাহী বাংলাদেশ ইসলামী ছাত্রশিবিরের মত একটি কাফেলায় শামিল হওয়া ছিল আমার
+                            জন্য একটি সৌভাগ্য।
 
                         </p>
 
@@ -747,12 +769,12 @@
                     <div class="all_photo_card">
                         <% photo_gallery_category.splice(0,4).map( (photo)=>{ %>
 
-                          
+
 
                             <a class="photo_card venobox" data-gall="myGallery" href="<%= photo.photo %>">
                                 <img src="<%= photo.photo %>" alt="Thumbnail Image" />
-                                 <!-- overlay-area start -->
-                                 <div class="overlay-area">
+                                <!-- overlay-area start -->
+                                <div class="overlay-area">
                                     <div class="overlay-area_content">
                                         <div class="image_title">
                                             <h2 class="title_text">
@@ -763,7 +785,7 @@
 
                                 </div>
                                 <!-- overlay-area end -->
-                              </a>
+                            </a>
 
                             <% })%>
 
@@ -806,7 +828,8 @@
                     <div class="all_video_card">
                         <% video_gallery_video.splice(0,4).map( (video,index)=>{ %>
                             <!--card start -->
-                            <a href="<%= video.url %>" data-gall="myGallery2"  data-autoplay="true" data-vbtype="video"   class="venobox video_card" data-aos="fade-up" data-aos-duration="300">
+                            <a href="<%= video.url %>" data-gall="myGallery2" data-autoplay="true" data-vbtype="video"
+                                class="venobox video_card" data-aos="fade-up" data-aos-duration="300">
                                 <img src="<%= video.photo %>" alt="<%= video.photo_alt %>">
                                 <!-- overlay-area start -->
                                 <div class="overlay-area">
@@ -824,7 +847,7 @@
                                     </div>
 
                                 </div>
-                                
+
                                 <!-- overlay-area end -->
                             </a>
                             <!--card end -->
@@ -849,10 +872,10 @@
         <!-- video_gallery_are end -->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script>
-            $(document).ready(function(){
-              $('.venobox').venobox();
+            $(document).ready(function () {
+                $('.venobox').venobox();
             });
-          </script>
+        </script>
 
         <!-- scroll_button_area start -->
         <a href="#scroll_top" class="scroll-button">
