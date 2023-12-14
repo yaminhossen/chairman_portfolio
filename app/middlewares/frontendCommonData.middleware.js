@@ -44,11 +44,11 @@ module.exports = async (server, req) => {
     server.locals = {
         ...server.locals,
 
-        seo_title: 'razibur rahman',
-        seo_keyword: 'razibur rahman',
-        seo_schematags: 'razibur rahman',
-        seo_description: 'razibur rahman',
-        seo_image: 'razibur rahman',
+        seo_title: 'নুর মোহাম্মদ আবু তাহের',
+        seo_keyword: 'নুর মোহাম্মদ আবু তাহের',
+        seo_schematags: 'নুর মোহাম্মদ আবু তাহের',
+        seo_description: 'নুর মোহাম্মদ আবু তাহের',
+        seo_image: 'নুর মোহাম্মদ আবু তাহের',
 
     }
 

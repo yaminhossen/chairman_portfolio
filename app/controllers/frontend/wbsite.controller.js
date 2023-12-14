@@ -44,7 +44,7 @@ const controllers = {
 		let profile_info = await uesrProfileInfosModel.find();
 		let banner = await bannerModel.find();
 
-		controllers.server.locals.seo_title = 'about';
+		controllers.server.locals.seo_title = 'আমার তথ্যাদি';
 
 		// console.log('profile_info', profile_info)
 		// console.log(controllers.server);

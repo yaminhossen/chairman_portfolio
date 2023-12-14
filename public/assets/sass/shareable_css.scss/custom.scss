@@ -116,3 +116,15 @@
         left: 0px;
     }
 }
+
+
+// coatation carousel
+
+.owl-carousel {
+    display: flex;
+    flex-wrap: nowrap;
+ }
+ 
+ .owl-item {
+    width: 100%; /* Adjust the width of each carousel item */
+ }

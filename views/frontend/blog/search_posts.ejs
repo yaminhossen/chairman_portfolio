@@ -12,15 +12,15 @@
                     <div class="inner_page_area_content">
                         <!-- content_title start -->
                         <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
-                            <h2 class="title_text">ytyututu</h2>
-                            <p class="description_text">hjghjghj</p>
+                            <h2 class="title_text">অনুসন্ধান</h2>
+                            <h4 class="description_tex my-5">আপনার অনুসন্ধানকৃত ফলাফলের সংখা <%= blogs.length %></h4>
                         </div>
                         <!-- content_title end -->
-                        <%= blogs.length %>
 
                         <!-- inner_page_all_content start -->
                         <div class="inner_page_all_content" data-aos="fade-up" data-aos-duration="1000">
                             <!-- blog_card start -->
+                           <%= blogs.length == 0 ? 'এই সম্মন্ধে কিছুই পাওয়া যাইনি':'' %>
                             <% blogs.map( (bi)=>{ %>
                             <a href="/post/<%= bi._id %>" class="blog_card edit_inner_blog_card">
                                 <div class="<%= reqUrl == 'book-review' ? 'book_image' : 'blog_image' %>">

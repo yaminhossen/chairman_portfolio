@@ -2034,6 +2034,15 @@ html ::-webkit-scrollbar-thumb:hover {
   left: 0px;
 }
 
+.owl-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.owl-item {
+  width: 100%; /* Adjust the width of each carousel item */
+}
+
 .banner_area {
   border: 0px solid red;
   background-repeat: no-repeat;
