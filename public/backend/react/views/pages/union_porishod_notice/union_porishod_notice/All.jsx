@@ -31,16 +31,12 @@ function All() {
                                 
 
                                 <th className="cursor_n_resize">
-                                    Full Name
+                                    Title
                                 </th>
 
                                 <th className="cursor_n_resize">
-                                    Email
+                                    Date
                                 </th>
-                                <th className="cursor_n_resize">
-                                    Message
-                                </th>
-
                                 <th className="cursor_n_resize">
                                     Status
                                 </th>
@@ -56,17 +52,12 @@ function All() {
                                             {/* <td>{data._id}</td> */}
                                             <td>
                                                 <span onClick={() => set_data(data._id)} className="cursor_pointer text-warning">
-                                                    {data.full_name}
+                                                    {data.title}
                                                 </span>
                                             </td>
                                             <td>
                                                 <span>
-                                                    {data.email}
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <span>
-                                                    {data.message}
+                                                    {data.date}
                                                 </span>
                                             </td>
                                             <td>

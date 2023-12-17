@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { Editor } from "@tinymce/tinymce-react";
 import setup from "./config/setup";
@@ -8,12 +8,12 @@ function Edit() {
   const { id } = useParams();
   setup.dispatch = useDispatch();
   const data_store = useSelector((state) => state[setup.prefix])[setup.prefix]
-  const { get_contact_messages, set_data, update_data } = setup.actions;
+  const { get_union_porishod_notices, set_data, update_data } = setup.actions;
 
   const description_ref = useRef(null);
 
   useEffect(() => {
-    get_contact_messages(id);
+    get_union_porishod_notices(id);
     
     return () => {
       document.getElementById('form-data')?.reset();
@@ -41,6 +41,7 @@ function Edit() {
 
   if(data_store){
     const { _id, title, description, date,subject,message, createdAt, updatedAt, last_id } = data_store;
+    let formedDate = new Date(date).toISOString().substring(0, 10)
     return (
       <div className="card list_card">
         <div className="card-header ">
@@ -61,7 +62,7 @@ function Edit() {
                     <div className="custom_form_el">
                       <label htmlFor="">Title</label>
                       <div>:</div>
-                      <div><input name="title" type="text" className="form-control" defaultValue={full_name} /></div>
+                      <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
                     </div>
                     <div className="custom_form_el">
                     <label htmlFor="">Description</label>
@@ -71,7 +72,7 @@ function Edit() {
                         onInit={(evt, editor) =>
                           (description_ref.current = editor)
                         }
-                        initialValue={`<p>This is description.</p>`}
+                        initialValue= {description ? description :'no data'}
                         init={{
                           height: 300,
                           menubar: false,
@@ -94,7 +95,7 @@ function Edit() {
                     <div className="custom_form_el">
                       <label htmlFor="">Date</label>
                       <div>:</div>
-                      <div><input name="date" type="date" className="form-control" defaultValue={address} /></div>
+                      <div><input name="date" type="date" className="form-control" defaultValue={formedDate} /></div>
                     </div>
                     
                   </div>

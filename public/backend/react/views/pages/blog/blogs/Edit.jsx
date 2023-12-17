@@ -56,7 +56,7 @@ function Edit() {
 
   if (data_store) {
     const { subtitle, title,url, short_description, description, photo, photo_alt_text, seo_title, seo_keyword, seo_description, seo_schema_tags, published_date , isUrlExist} = data_store;
-    let a = new Date(published_date).toISOString().substring(0, 10)
+    let formedDate = new Date(published_date).toISOString().substring(0, 10)
     console.log('isurl', isUrlExist);
     return (
       <div className="card list_card">
@@ -157,7 +157,7 @@ function Edit() {
                     <div className="custom_form_el">
                       <label htmlFor="">Published Date</label>
                       <div>:</div>
-                      <div><input name="published_date" type="date" className="form-control" defaultValue={published_date} /></div>
+                      <div><input name="published_date" type="date" className="form-control" defaultValue={formedDate} /></div>
                     </div>
                     
                     <div className="custom_form_el">

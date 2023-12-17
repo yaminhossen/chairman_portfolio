@@ -7,10 +7,10 @@ function Details() {
     const { id } = useParams();
     setup.dispatch = useDispatch();
     const data_store = useSelector((state) => state[setup.prefix])[setup.prefix]
-    const { get_contact_messages , set_data} = setup.actions;
+    const { get_union_porishod_notices , set_data} = setup.actions;
 
     useEffect(() => {
-        get_contact_messages(id);
+        get_union_porishod_notices(id);
 
         return () =>{
             set_data(null)
@@ -57,6 +57,13 @@ function Details() {
                                         <div>:</div>
                                         <div>
                                             {description}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Date</div>
+                                        <div>:</div>
+                                        <div>
+                                            {date}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
