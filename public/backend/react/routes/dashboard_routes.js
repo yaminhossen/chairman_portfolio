@@ -26,6 +26,8 @@ import content_image_routes from '../views/pages/content/content_images/config/r
 
 import contact_message_routes from '../views/pages/contact_message/contact_messages/config/routes.js';
 
+import union_porishod_notice_routes from '../views/pages/union_porishod_notice/union_porishod_notice/config/routes.js';
+
 import banner_routes from '../views/pages/banner/banners/config/routes.js';
 
 import setting_title_routes from '../views/pages/setting/setting_titles/config/routes.js';
@@ -73,6 +75,8 @@ const router = {
         content_image_routes,
 
         contact_message_routes,
+
+        union_porishod_notice_routes,
 
         banner_routes,
 

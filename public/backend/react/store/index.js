@@ -24,6 +24,9 @@ import contentImageSlice from "../views/pages/content/content_images/config/stor
 // contact message
 import contactMessageSlice from "../views/pages/contact_message/contact_messages/config/store";
 
+// union porishod 
+import unionPorishodNoticeSlice from "../views/pages/union_porishod_notice/union_porishod_notice/config/store";
+
 //banner
 import bannerSlice from "../views/pages/banner/banners/config/store";
 
@@ -77,6 +80,9 @@ const store = configureStore({
 
         // contact message
         contact_message: contactMessageSlice.reducer,
+
+        // union porishod
+        union_porishod_notice: unionPorishodNoticeSlice.reducer,
 
         // banenr
         banner: bannerSlice.reducer,

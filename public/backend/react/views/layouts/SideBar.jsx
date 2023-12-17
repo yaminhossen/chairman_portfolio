@@ -65,6 +65,7 @@ function SideBar() {
                         <SingleLink to={'/video-gallery-categorie'} text={'video gallery'} icon={'trip_origin'}></SingleLink>
                         <SingleLink to={'/site-url'} text={'site urls'} icon={'trip_origin'}></SingleLink>
                         <SingleLink to={'/tag'} text={'tags'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/union-porishod-notice'} text={'union-porishod-notice'} icon={'trip_origin'}></SingleLink>
 
                     </ul>
                 </li>
