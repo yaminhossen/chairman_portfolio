@@ -22,6 +22,9 @@ function Details() {
 
     if (data_store) {
         const { _id, title, description, date,subject,message, createdAt, updatedAt, last_id } = data_store;
+        let formedDate = new Date(date).toISOString().substring(0, 10);
+        let formedDate1 = new Date(createdAt).toISOString().substring(0, 10);
+        let formedDate2 = new Date(updatedAt).toISOString().substring(0, 10);
         return (
             <div className='card list_card'>
                 <div className="card-header ">
@@ -63,21 +66,21 @@ function Details() {
                                         <div>Date</div>
                                         <div>:</div>
                                         <div>
-                                            {date}
+                                            {formedDate}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
                                         <div>Created At</div>
                                         <div>:</div>
                                         <div>
-                                            {createdAt}
+                                            {formedDate1}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">
                                         <div>Updated At</div>
                                         <div>:</div>
                                         <div>
-                                            {updatedAt}
+                                            {formedDate2}
                                         </div>
                                     </div>
                                 </div>

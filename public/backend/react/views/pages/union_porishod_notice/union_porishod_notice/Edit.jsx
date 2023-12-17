@@ -41,7 +41,7 @@ function Edit() {
 
   if(data_store){
     const { _id, title, description, date,subject,message, createdAt, updatedAt, last_id } = data_store;
-    let formedDate = new Date(date).toISOString().substring(0, 10)
+    let formedDate = new Date(date).toISOString().substring(0, 10);
     return (
       <div className="card list_card">
         <div className="card-header ">

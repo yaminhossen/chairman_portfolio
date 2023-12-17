@@ -18,6 +18,7 @@ const apiContentCommentRepliesSeeder = require("./app/api/content/content_commen
 const apiContentimagesSeeder = require("./app/api/content/content_images/seeder/seeder")
 const apiContactMessagesSeeder = require("./app/api/contact_message/contact_messages/seeder/seeder")
 const apiUnionPorishodNoticeSeeder = require("./app/api/union_porishod_notice/union_porishod_notice/seeder/seeder")
+const apiUserReviewSeeder = require("./app/api/user_reviews/user_reviews/seeder/seeder")
 const apiBannerSeeder = require("./app/api/banner/banners/seeder/seeder")
 const apiSettingTitleSeeder = require("./app/api/setting/setting_titles/seeder/seeder")
 const apiSettingValueSeeder = require("./app/api/setting/setting_values/seeder/seeder")
@@ -59,7 +60,10 @@ const seed = async () => {
     // await apiContactMessagesSeeder();
 
     // union porishod notice seeder!!
-    await apiUnionPorishodNoticeSeeder();
+    // await apiUnionPorishodNoticeSeeder();
+
+    // user review seeder!!
+    await apiUserReviewSeeder();
 
     // banner seeder!!
     // await apiBannerSeeder();

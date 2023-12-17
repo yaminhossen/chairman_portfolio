@@ -57,7 +57,7 @@ function All() {
                                             </td>
                                             <td>
                                                 <span>
-                                                    {data.date}
+                                                    {new Date(data?.date).toISOString().substring(0, 10)}
                                                 </span>
                                             </td>
                                             <td>

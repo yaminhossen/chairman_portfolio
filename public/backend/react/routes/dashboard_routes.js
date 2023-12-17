@@ -28,6 +28,8 @@ import contact_message_routes from '../views/pages/contact_message/contact_messa
 
 import union_porishod_notice_routes from '../views/pages/union_porishod_notice/union_porishod_notice/config/routes.js';
 
+import user_review_routes from '../views/pages/user_reviews/user_reviews/config/routes.js';
+
 import banner_routes from '../views/pages/banner/banners/config/routes.js';
 
 import setting_title_routes from '../views/pages/setting/setting_titles/config/routes.js';
@@ -77,6 +79,7 @@ const router = {
         contact_message_routes,
 
         union_porishod_notice_routes,
+        user_review_routes,
 
         banner_routes,
 

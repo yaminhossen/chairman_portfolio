@@ -27,6 +27,9 @@ import contactMessageSlice from "../views/pages/contact_message/contact_messages
 // union porishod 
 import unionPorishodNoticeSlice from "../views/pages/union_porishod_notice/union_porishod_notice/config/store";
 
+// user review  
+import userReviewSlice from "../views/pages/user_reviews/user_reviews/config/store";
+
 //banner
 import bannerSlice from "../views/pages/banner/banners/config/store";
 
@@ -83,6 +86,9 @@ const store = configureStore({
 
         // union porishod
         union_porishod_notice: unionPorishodNoticeSlice.reducer,
+
+        // union reviews
+        user_review: userReviewSlice.reducer,
 
         // banenr
         banner: bannerSlice.reducer,
