@@ -58,6 +58,7 @@ function All() {
                                             <td>
                                                 <span>
                                                     {data.title == 'map' ? "map":data.value[0]}
+                                                    {/* {data.title == 'map' ? "map":data.value.map((dd) => <p>{dd}</p>)} */}
                                                 </span>
                                             </td>
                                             <td>
