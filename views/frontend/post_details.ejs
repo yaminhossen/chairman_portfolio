@@ -45,7 +45,10 @@
                                             const banglaYear = englishToBanglaDigits(englishDate.getFullYear());
                                         
                                             const banglaDate = `${banglaDay} ${banglaMonth}, ${banglaYear}`;
-                                            return banglaDate;
+                                            const aa = `${banglaDay}`;
+                                            const bb = `${banglaMonth}`;
+                                            const cc = `${banglaYear}`;
+                                            return [banglaDate, aa, bb, cc];
                                         }
 
                                         // English date string
@@ -55,6 +58,7 @@
                                         const banglaDate = convertToBanglaDate(englishDateString);
                                         
                                         %>
+                                        <!-- <%= banglaDate[3] %> -->
                                 </p>
                             </div>
                             <!-- content_title end -->
@@ -69,7 +73,7 @@
                                     <div class="date_and_comment_area">
                                         <div class="date_area date_comment_area">
                                             <p class="date_area_text date_comment_area_text">
-                                                <%= banglaDate %>
+                                                <%= banglaDate[0] %>
                                             </p>
                                         </div>
                                         <div class="comment_area date_comment_area">
@@ -129,7 +133,7 @@
 
                                             <!-- comment_text_area start -->
                                             <div class="comment_text_area">
-                                                <% post_comments?.comments.slice(-5).map( (pc)=>{ %>
+                                                <% post_comments?.comments.slice(-2).map( (pc)=>{ %>
                                                     <div class="user-image_area_and_comment_text_area">
                                                         <div class="mb-3 user-image_area">
                                                             <img src="/assets/images/profile_image/img2.png" alt="img">
@@ -271,6 +275,9 @@
 
                                 <div class="recently_posted_item_all">
                                     <% filterPost.slice(-3).map( (product)=>{ %>
+                                      <!-- <p>
+                                        <%=convertToBanglaDate(product.published_date.toISOString().substring(0, 10))[0] %>
+                                      </p> -->
                                         <!-- posted_item start -->
                                         <a href="/post/<%= product._id %>" class="posted_item">
                                             <div class="image_area">
@@ -284,7 +291,7 @@
                                                 </div>
                                                 <div class="date_area">
                                                     <p class="date_text">
-                                                        <%= product.published_date.toISOString().substring(0, 10) %>
+                                                        <%=convertToBanglaDate(product.published_date.toISOString().substring(0, 10))[0] %>
                                                     </p>
                                                 </div>
                                             </div>
@@ -323,7 +330,7 @@
                                                 </div>
                                                 <div class="date_area">
                                                     <p class="date_text">
-                                                        <%= sw.published_date.toISOString().substring(0, 10) %>
+                                                        <%= convertToBanglaDate(sw.published_date.toISOString().substring(0, 10))[0] %>
                                                     </p>
                                                 </div>
                                             </div>

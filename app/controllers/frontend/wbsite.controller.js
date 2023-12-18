@@ -23,6 +23,7 @@ const bannerModel = require("../../api/banner/banners/model/model");
 const settingModel = require("../../api/setting/setting_titles/model/model");
 const blogCommentModel = require("../../api/blog/blog_comments/model/model");
 const contactModel = require("../../api/contact_message/contact_messages/model/model")
+const noticeModel = require("../../api/union_porishod_notice/union_porishod_notice/model/model")
 
 const { async } = require("q");
 const controllers = {
@@ -104,6 +105,7 @@ const controllers = {
 		let settingTitle = await settingModel.findOne({ title: "banner_at_a_glance_title" });
 		let settingValue = await settingModel.findOne({ title: "banner_at_a_glance_value" });
 		let banner = await bannerModel.find();
+		let notices = await noticeModel.find();
 
 		let contemp = await blogCategoriesModel.findOne({ title: "সংবাদ" });
 
@@ -165,6 +167,7 @@ const controllers = {
 			blog_politicss,
 			blog_history,
 			blog_historys,
+			notices,
 
 		});
 	},

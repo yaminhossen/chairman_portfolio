@@ -3,6 +3,45 @@
 
     <!-- navbar area include -->
     <%- include('../layouts/frontend/navbar.ejs' ,{blog_category}) %>
+    <% 
+                                        
+                                        // Function to convert English digits to Bengali (Bangla) digits
+                                        function englishToBanglaDigits(number) {
+                                            const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+                                            return number.toString().replace(/\d/g, digit => banglaDigits[digit]);
+                                        }
+
+                                        // Function to convert English month names to Bengali (Bangla) month names
+                                        function getBanglaMonthName(month) {
+                                        const banglaMonths = [
+                                            'জানুয়ারি', 'ফেব্রুয়ারি', 'মার্চ', 'এপ্রিল',
+                                            'মে', 'জুন', 'জুলাই', 'আগস্ট',
+                                            'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর'
+                                        ];
+                                        return banglaMonths[month];
+                                        }
+
+                                        // Function to convert English date string to Bangla (Bengali) date format
+                                        function convertToBanglaDate(englishDateString) {
+                                            const englishDate = new Date(englishDateString);
+                                            const banglaDay = englishToBanglaDigits(englishDate.getDate());
+                                            const banglaMonth = getBanglaMonthName(englishDate.getMonth());
+                                            const banglaYear = englishToBanglaDigits(englishDate.getFullYear());
+                                        
+                                            const banglaDate = `${banglaDay} ${banglaMonth}, ${banglaYear}`;
+                                            const aa = `${banglaDay}`;
+                                            const bb = `${banglaMonth}`;
+                                            const cc = `${banglaYear}`;
+                                            return [banglaDate, aa, bb, cc];
+                                        }
+
+                                        // English date string
+                                        // const englishDateString = post_details.published_date.toISOString().substring(0, 10);
+
+                                        // Convert English date string to Bangla date format
+                                        // const banglaDate = convertToBanglaDate(englishDateString);
+                                        
+                                        %>
 
         <!-- banner_area start -->
         <div class="banner_area" style=" background-image: url(/assets/images/background_image/bg1.jpg);">
@@ -156,7 +195,7 @@
 
                                                 <div class="date_area">
                                                     <p class="date_text">
-                                                        <%= cm.published_date.toISOString().substring(0, 10)%>
+                                                        <%= convertToBanglaDate(cm.published_date.toISOString().substring(0, 10))[0] %>
                                                     </p>
                                                 </div>
 
@@ -624,73 +663,35 @@
 
                                     <!-- all_notice_item start -->
                                     <div class="all_notice_item">
-
-                                        <!-- notice_item start -->
-                                        <div class="notice_item">
-                                            <div class="notice_date_area">
-                                                <div class="date_month">
-                                                    <p class="date_text date_month_text">12</p>
-                                                    <p class="month_text date_month_text">November</p>
+                                        <% notices.slice(0,3).map( (notice)=>{ %>
+                                            <!-- notice_item start -->
+                                            <div class="notice_item">
+                                                <div class="notice_date_area">
+                                                    <div class="date_month">
+                                                        <p class="date_text date_month_text">
+                                                            <%= convertToBanglaDate(notice.date.toISOString().substring(0, 10))[1] %>
+                                                        </p>
+                                                        <p class="month_text date_month_text">
+                                                            <%= convertToBanglaDate(notice.date.toISOString().substring(0, 10))[2] %>
+                                                        </p>
+                                                    </div>
+                                                    <div class="year">
+                                                        <p class="year_text">
+                                                            <%= convertToBanglaDate(notice.date.toISOString().substring(0, 10))[3] %>
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                                <div class="year">
-                                                    <p class="year_text">2023</p>
-                                                </div>
-                                            </div>
-                                            <div class="notice_text_area">
-                                                <p class="notice_text">
-                                                    সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন, খোদার
-                                                    সন্তুষ্টি
-                                                    এবং সততা মানব চরিত্রের শ্রেষ্ঠ গুণ।
-                                                    <span class="read_more_button_area"> <a href="#"
-                                                            class="button_text">বিস্তারিত পড়ুন . . . </a></span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <!-- notice_item end -->
-                                        <!-- notice_item start -->
-                                        <div class="notice_item">
-                                            <div class="notice_date_area">
-                                                <div class="date_month">
-                                                    <p class="date_text date_month_text">12</p>
-                                                    <p class="month_text date_month_text">November</p>
-                                                </div>
-                                                <div class="year">
-                                                    <p class="year_text">2023</p>
+                                                <div class="notice_text_area">
+                                                    <p class="notice_text">
+                                                        <%- notice.description.slice(0,150) %>
+                                                            <span class="read_more_button_area"> <a href="#"
+                                                                    class="button_text">বিস্তারিত পড়ুন . . .
+                                                                </a></span>
+                                                    </p>
                                                 </div>
                                             </div>
-                                            <div class="notice_text_area">
-                                                <p class="notice_text">
-                                                    সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন, খোদার
-                                                    সন্তুষ্টি
-                                                    এবং সততা মানব চরিত্রের শ্রেষ্ঠ গুণ।
-                                                    <span class="read_more_button_area"> <a href="#"
-                                                            class="button_text">বিস্তারিত পড়ুন . . . </a></span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <!-- notice_item end -->
-                                        <!-- notice_item start -->
-                                        <!-- <div class="notice_item">
-                                            <div class="notice_date_area">
-                                                <div class="date_month">
-                                                    <p class="date_text date_month_text">12</p>
-                                                    <p class="month_text date_month_text">November</p>
-                                                </div>
-                                                <div class="year">
-                                                    <p class="year_text">2023</p>
-                                                </div>
-                                            </div>
-                                            <div class="notice_text_area">
-                                                <p class="notice_text">
-                                                    সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন, খোদার
-                                                    সন্তুষ্টি
-                                                    এবং সততা মানব চরিত্রের শ্রেষ্ঠ গুণ।
-                                                    <span class="read_more_button_area"> <a href="#"
-                                                            class="button_text">বিস্তারিত পড়ুন . . . </a></span>
-                                                </p>
-                                            </div>
-                                        </div> -->
-                                        <!-- notice_item end -->
+                                            <!-- notice_item end -->
+                                            <% })%>
 
                                     </div>
                                     <!-- all_notice_item end -->
@@ -729,7 +730,10 @@
                 <div class="text_slider_area_content" data-aos="fade-up" data-aos-duration="900">
                     <div class="slider_text_area">
                         <p class="slider_text">
-                            সততায় অন্তরের প্রশান্তি। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের মাধ্যম। সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। মানবজীবনে এর প্রয়োজনীয়তা অপরিসীম। সততায় অন্তরের প্রশান্তি। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের মাধ্যম। সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। মানবজীবনে এর প্রয়োজনীয়তা অপরিসীম।
+                            সততায় অন্তরের প্রশান্তি। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের
+                            মাধ্যম। সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। মানবজীবনে এর প্রয়োজনীয়তা অপরিসীম। সততায় অন্তরের
+                            প্রশান্তি। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের মাধ্যম। সততা মানব
+                            চরিত্রের শ্রেষ্ঠ গুণ। মানবজীবনে এর প্রয়োজনীয়তা অপরিসীম।
 
                         </p>
 
@@ -745,7 +749,7 @@
         </div>
         <!-- text_slider_area end -->
 
-      
+
 
         <!-- photo_gallery_are start -->
         <div class="photo_gallery_are">
@@ -872,16 +876,16 @@
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <script src="path/to/owl.carousel.min.js"></script>
         <script>
-            $(document).ready(function(){
-               $('.owl-carousel').owlCarousel({
-                  items: 1, // Number of items to display
-                  loop: true, // Infinite loop
-                  margin: 10, // Margin between items
-                  autoplay: true, // Autoplay the carousel
-                 
-               });
+            $(document).ready(function () {
+                $('.owl-carousel').owlCarousel({
+                    items: 1, // Number of items to display
+                    loop: true, // Infinite loop
+                    margin: 10, // Margin between items
+                    autoplay: true, // Autoplay the carousel
+
+                });
             });
-         </script>
+        </script>
 
 
         <script>

@@ -20,6 +20,8 @@ function Edit() {
 
   console.log(data_store);
 
+ 
+
   const handleSubmit = async () => {
     let e = event;
     e.preventDefault();
@@ -74,7 +76,8 @@ function Edit() {
                     <div className="custom_form_el">
                       <label htmlFor="">Photo </label>
                       <div>:</div>
-                      <div><input name="photo" type="file" accept="image/*" className="form-control" /></div>
+                      <div><input name="photo" type="file" accept="image/*" className="form-control" />
+                     </div>
                     </div>
                     <div className="custom_form_el">
                       <label htmlFor="">photo Alt</label>
