@@ -46,6 +46,8 @@ import site_url_view_count_routes from '../views/pages/site_url/site_url_view_co
 
 import tag_routes from '../views/pages/tag/tags/config/routes.js';
 
+import owner_intro_routes from '../views/pages/owner_intro/owner_intro/config/routes.js';
+
 const router = {
     path: "/",
     element: <DashboardLayout />,
@@ -80,6 +82,8 @@ const router = {
 
         union_porishod_notice_routes,
         user_review_routes,
+
+        owner_intro_routes,
 
         banner_routes,
 

@@ -67,6 +67,7 @@ function SideBar() {
                         <SingleLink to={'/tag'} text={'tags'} icon={'trip_origin'}></SingleLink>
                         <SingleLink to={'/union-porishod-notice'} text={'union-porishod-notice'} icon={'trip_origin'}></SingleLink>
                         <SingleLink to={'/user-review'} text={'user-review'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/owner-intro'} text={'owner-intro'} icon={'trip_origin'}></SingleLink>
 
                     </ul>
                 </li>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import ModalManagement from "./components/management/ModalManagement";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,8 +12,8 @@ function Create() {
   userSetup.dispatch = useDispatch();
   const { store_data } = setup.actions;
   const { get_data: get_users } = userSetup.actions;
-  const [ selectedRole, setselectedRole ] = useState([])
-  const [ tasklist, setTasklist ] = useState(false)
+  const [selectedRole, setselectedRole] = useState([])
+  const [tasklist, setTasklist] = useState(false)
 
   const description_ref = useRef(null);
 
@@ -27,7 +27,7 @@ function Create() {
     let e = event;
     e.preventDefault();
     let form_data = new FormData(e.target);
-    selectedRole.forEach((e,index)=>{
+    selectedRole.forEach((e, index) => {
       form_data.append(`creator[${index}]`, e._id);
       console.log(e);
     });
@@ -47,11 +47,11 @@ function Create() {
           </a>
         </div>
       </div>
-              <form onSubmit={handleSubmit}>
-      <div className="card-body">
-        <div className="container py-5">
-          <div className="row">
-            <div className="col-lg-8">
+      <form onSubmit={handleSubmit}>
+        <div className="card-body">
+          <div className="container py-5">
+            <div className="row">
+              <div className="col-lg-8">
                 <div className="form-group mb-5">
                   <div className="custom_form_el">
                     <label htmlFor="">Title</label>
@@ -74,20 +74,20 @@ function Create() {
                     <div>:</div>
                     <div><input name="sub_title" type="text" className="form-control" /></div>
                   </div>
-                  
-                 
+
+
                 </div>
                 <input type="submit" value="Create" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="card-footer">
-      <button className="btn btn-outline-info" type="submit" value="Create">
+        <div className="card-footer">
+          <button className="btn btn-outline-info" type="submit" value="Create">
             Submit{" "}
           </button>
-      </div>
-              </form>
+        </div>
+      </form>
     </div>
   );
 }

@@ -52,6 +52,9 @@ import siteUrlViewCountSlice from "../views/pages/site_url/site_url_view_counts/
 // tag
 import tagSlice from "../views/pages/tag/tags/config/store";
 
+// owner intro
+import ownerIntroSlice from "../views/pages/owner_intro/owner_intro/config/store";
+
 
 import { configureStore } from "@reduxjs/toolkit";
 
@@ -87,8 +90,11 @@ const store = configureStore({
         // union porishod
         union_porishod_notice: unionPorishodNoticeSlice.reducer,
 
-        // union reviews
+        // user reviews
         user_review: userReviewSlice.reducer,
+
+        // owner intro
+        owner_intro: ownerIntroSlice.reducer,
 
         // banenr
         banner: bannerSlice.reducer,
