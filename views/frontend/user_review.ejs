@@ -19,35 +19,29 @@
                     <!-- content_title end -->
 
                     <!-- content_left_and_right_area start -->
-                    <div class="content_left_and_right_area">
-                        <div class="row">
-                            <!-- contact_area_left start -->
-                            <div class="col-md-6">
-                                
-                            </div>
-                            <!-- contact_area_left end -->
+                    <div class="content_left_and_right_area d-flex align-items-center justify-content-center">
                             <!-- contact_area_right start -->
-                            <div class="col-md-6">
+                            <div class="col-md-8 ">
                                 <div class="contact_area_right" data-aos="fade-left" data-aos-duration="1000">
                                     <form onsubmit="messageSubmit(event)">
                                         <div class="rirst_name_and_second_name_area form_item">
                                             <div class="first_name_area">
                                                 <label>পুরো নাম</label>
-                                                <input type="text" placeholder="পুরো নাম" 
-                                                name="title" ">
+                                                <input type="text" placeholder="পুরো নাম" name="title" required>
                                             </div>
-                                            <div class="second_name_area">
+                                            <div class=" second_name_area">
                                                 <label>রেটিংস</label>
-                                                <input type="text" placeholder="বিষয়" name="ratings"  >
+                                                <input type="text" placeholder="রেটিংস" name="ratings" required>
                                             </div>
                                         </div>
                                         <div class="email_area form_item">
                                             <label>সাব টাইটেল</label>
-                                            <input type="text" placeholder="সাব টাইটেল"  name="sub_title" >
+                                            <input type="text" placeholder="সাব টাইটেল" name="sub_title" required>
                                         </div>
                                         <div class="message_area form_item">
                                             <label>আপনার মতামত</label>
-                                            <textarea  cols="" rows="" name="description" placeholder="আপনার লেখা লিখুন . . .">
+                                            <textarea cols="" rows="" name="description"
+                                                placeholder="আপনার লেখা লিখুন . . .">
                                             </textarea>
                                         </div>
                                         <button class="submit_button"><i class="fa-regular fa-paper-plane"></i> Submit
@@ -56,7 +50,7 @@
                                 </div>
                             </div>
                             <!-- contact_area_right end -->
-                        </div>
+                       
                     </div>
                     <!-- content_left_and_right_area end -->
 
@@ -81,9 +75,9 @@
                     axios.post('/save/user-review', {
 
                         title: title,
-                        ratings:ratings,
-                        sub_title:sub_title,
-                        description:description,
+                        ratings: ratings,
+                        sub_title: sub_title,
+                        description: description,
                     })
                         .then(function (response) {
                             console.log(response);

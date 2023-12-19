@@ -64,21 +64,14 @@ function Create() {
                     <div>
                       <textarea
                         name="description"
-                        className="form-control"
-                        id=""
+                        className="form-control" id=""
                       ></textarea>
                     </div>
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Ratings</label>
                     <div>:</div>
-                    <div>
-                      <textarea
-                        name="ratings"
-                        className="form-control"
-                        id=""
-                      ></textarea>
-                    </div>
+                    <div><input name="ratings" type="text" className="form-control" /></div>
                   </div>
                   <div className="custom_form_el">
                     <label htmlFor="">Sub-title</label>
