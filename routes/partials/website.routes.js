@@ -28,9 +28,10 @@ module.exports = (mainserver) => {
 		.get("/home", [website_controller.home_page])
 		.get("/about", website_controller.about)
 		.get("/contact", website_controller.contact)
-		// .get("/contact", function (req, res) {
-		// 		return res.render("frontend/contact");
-		// 	})
+
+		.get("/user-review", function (req, res) {
+				return res.render("frontend/user_review");
+			})
 
 		// blog posts routes
 		.get("/posts/:url", website_controller.blog_posts)

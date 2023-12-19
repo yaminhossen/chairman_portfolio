@@ -178,11 +178,11 @@
 
                     <!-- all_blog_card start -->
                     <div class="all_video_card">
-                        <% video_gallery_video.splice(0,1).map( (video,index)=>{ %>
+                        <% ownerIntros.slice(-1).map( (intro,index)=>{ %>
                             <!--card start -->
-                            <a href="<%= video.url %>" data-gall="myGallery2" data-autoplay="true" data-vbtype="video"
+                            <a href="<%= intro.url %>" data-gall="myGallery3" data-autoplay="true" data-vbtype="video"
                                 class="venobox video_card video_card2" data-aos="fade-up" data-aos-duration="300">
-                                <img src="<%= video.photo %>" alt="<%= video.photo_alt %>">
+                                <img src="<%= intro.photo %>" alt="<%= intro.photo_alt %>">
                                 <!-- overlay-area start -->
                                 <div class="overlay-area">
                                     <div class="overlay-area_content">
@@ -196,7 +196,7 @@
                                                 <div class="video_icon">
                                                     <i class="fa-solid fa-play"></i>
                                                 </div>
-                                                <%= video.title %>
+                                                <%= intro.title %>
                                             </h2>
                                         </div>
                                     </div>
@@ -788,6 +788,69 @@
             </div>
         </div>
         <!-- union_porishad_area end -->
+
+        <!-- user review area start -->
+        <div class="user_review_area">
+            <div class="container">
+                <div class="heading_part">
+                    <h2 class="user_review_title">মানুষের বার্তা</h2>
+                    <p>সব চাই‌তে সোজা কারণ হ‌লো, আ‌মি য‌দি অ‌ন্যের মতাদ‌র্শের প্র‌তি শ্রদ্ধাশীল না থা‌কি, তাহ‌লে সেও আসার মতাদ‌র্শের প্র‌তি শ্রদ্ধাশীল থাক‌বে না। ফলস্বরূপ পরস্প‌রের ম‌ধ্যে তিক্ততা, বি‌দ্বেষ বৃ‌দ্ধি পা‌বে। বাড়‌বে হানাহা‌নি। আর উ‌ল্টো‌দি‌কে শ্রদ্ধা কর‌লে পরস্প‌রের ম‌ধ্যে সহম‌র্মিতা বাড়‌বে, বাস‌যোগ্য হ‌বে পৃ‌থিবী।</p>
+                </div>
+                <div class="description_part">
+                    <div class="reviews">
+                        <% userReview.slice(0,4).map( (review)=>{ %>
+                        <div class="review">
+                            <div class="reviewer_comment">
+                                <div class="review_star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="comment">
+                                    <%= review.description %>
+                                </div>
+                            </div>
+                            <div class="reviewer_details">
+                                <div class="user_img">
+                                    <!-- <img src="/uploads/posts/bnu.png" alt=""> -->
+                                    <img src="<%= review?.photo ? review.photo :"/uploads/posts/bnu.png" %>" alt="কমেন্ট কারি">
+                                </div>
+                                <div class="user_name">
+                                    <h4 class="title"><%= review.title %></h4>
+                                    <p class="sub_title"><%= review.sub_title %></p>
+                                </div>
+                            </div>
+                        </div>
+                        <% })%>
+                    </div>
+                </div>
+                <div class="review_footer_part">
+                    <div>
+                        <div class="button_area" style="text-align: center;" data-aos="fade-up" data-aos-duration="1000">
+                            <a href="/#" class="button_text_area">
+                                <span class="button_text">
+                                    আরো দেখুন
+                                        <span class="dash_icon"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="button_area" style="text-align: center;" data-aos="fade-up" data-aos-duration="1000">
+                            <a href="/user-review" class="button_text_area">
+                                <span class="button_text">
+                                    আপনার কথা লিখুন
+                                        <span class="dash_icon"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- user review area end -->
 
         <!-- text_slider_area start -->
         <div class="text_slider_area" data-aos="fade-up" data-aos-duration="1000">
