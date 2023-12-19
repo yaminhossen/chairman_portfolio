@@ -45,6 +45,9 @@ module.exports = (mainserver) => {
 		// save contact message routes
 		.post("/save/contact-message", website_controller.save_contact_message)
 
+		// save user review routes
+		.post("/save/user-review", website_controller.save_user_review)
+
 		// post details routes
 		.get("/post/:id", website_controller.post_details)
 

@@ -2159,6 +2159,7 @@ html ::-webkit-scrollbar-thumb:hover {
   left: 0px;
 }
 .user_review_area .heading_part p {
+  margin-top: 30px;
   width: 80%;
   font-size: 18px;
   font-weight: 400;

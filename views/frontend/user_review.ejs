@@ -34,20 +34,20 @@
                                             <div class="first_name_area">
                                                 <label>পুরো নাম</label>
                                                 <input type="text" placeholder="পুরো নাম" 
-                                                name="full_name" ">
+                                                name="title" ">
                                             </div>
                                             <div class="second_name_area">
-                                                <label>বিষয়</label>
-                                                <input type="text" placeholder="বিষয়" name="subject"  >
+                                                <label>রেটিংস</label>
+                                                <input type="text" placeholder="বিষয়" name="ratings"  >
                                             </div>
                                         </div>
                                         <div class="email_area form_item">
-                                            <label>ইমেইল</label>
-                                            <input type="email" placeholder="abc@gmail.com"  name="email" >
+                                            <label>সাব টাইটেল</label>
+                                            <input type="text" placeholder="সাব টাইটেল"  name="sub_title" >
                                         </div>
                                         <div class="message_area form_item">
-                                            <label>মেসেজ</label>
-                                            <textarea  id="#" cols="10" rows="4" name="message" placeholder="আপনার লেখা লিখুন . . .">
+                                            <label>আপনার মতামত</label>
+                                            <textarea  cols="" rows="" name="description" placeholder="আপনার লেখা লিখুন . . .">
                                             </textarea>
                                         </div>
                                         <button class="submit_button"><i class="fa-regular fa-paper-plane"></i> Submit
@@ -67,23 +67,23 @@
                 function messageSubmit(event) {
                     event.preventDefault();
                     console.log('comment submit hoyche');
-                    let full_name = event.target.full_name.value;
-                    let subject = event.target.subject.value;
-                    let email = event.target.email.value;
-                    let message = event.target.message.value;
-                    console.log(full_name, subject, email, message);
+                    let title = event.target.title.value;
+                    let ratings = event.target.ratings.value;
+                    let sub_title = event.target.sub_title.value;
+                    let description = event.target.description.value;
+                    console.log(title, ratings, sub_title, description);
 
-                    event.target.full_name.value = '';
-                    event.target.email.value = '';
-                    event.target.subject.value = '';
-                    event.target.message.value = '';
+                    event.target.title.value = '';
+                    event.target.ratings.value = '';
+                    event.target.sub_title.value = '';
+                    event.target.description.value = '';
                     // axios.post('/api/v1/blog-comment/store', {
-                    axios.post('/save/contact-message', {
+                    axios.post('/save/user-review', {
 
-                        full_name: full_name,
-                        subject:subject,
-                        email:email,
-                        message:message,
+                        title: title,
+                        ratings:ratings,
+                        sub_title:sub_title,
+                        description:description,
                     })
                         .then(function (response) {
                             console.log(response);

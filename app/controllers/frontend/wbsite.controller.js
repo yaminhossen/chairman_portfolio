@@ -272,6 +272,12 @@ const controllers = {
 		const new_contact_message = await contactModel.create(data);
 		// console.log('find comment blog', blog);
 	},
+	
+	save_user_review: async function(req, res) {
+		let data = req.body;
+		console.log('find user review blog', data);
+		const new_contact_message = await userReviewModel.create(data);
+	},
 
 	/* contemporary: async function (req, res) {
 
