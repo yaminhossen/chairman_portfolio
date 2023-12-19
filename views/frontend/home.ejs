@@ -160,6 +160,71 @@
         </div>
         <!-- banner_area end -->
 
+        <!-- owner intro start -->
+        <div class="video_gallery_are">
+            <div class="container">
+                <div class="video_gallery_are_content">
+
+                    <!-- content_title start -->
+                    <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
+                        <h2 class="title_text mb-3">চেয়ারম্যানের ভাষণ </h2>
+                        <!-- <p class="description_text">নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের
+                            মাধ্যম।
+                            সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও
+                            বরকতের
+                            মাধ্যম। </p> -->
+                    </div>
+                    <!-- content_title end -->
+
+                    <!-- all_blog_card start -->
+                    <div class="all_video_card">
+                        <% video_gallery_video.splice(0,1).map( (video,index)=>{ %>
+                            <!--card start -->
+                            <a href="<%= video.url %>" data-gall="myGallery2" data-autoplay="true" data-vbtype="video"
+                                class="venobox video_card video_card2" data-aos="fade-up" data-aos-duration="300">
+                                <img src="<%= video.photo %>" alt="<%= video.photo_alt %>">
+                                <!-- overlay-area start -->
+                                <div class="overlay-area">
+                                    <div class="overlay-area_content">
+                                        <div class="video_icon_area">
+                                            <div class="video_icon">
+                                                <!-- <i class="fa-solid fa-play"></i> -->
+                                            </div>
+                                        </div>
+                                        <div class="image_title">
+                                            <h2 class="title_text">
+                                                <div class="video_icon">
+                                                    <i class="fa-solid fa-play"></i>
+                                                </div>
+                                                <%= video.title %>
+                                            </h2>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- overlay-area end -->
+                            </a>
+                            <!--card end -->
+                            <% })%>
+                    </div>
+                    <!-- all_blog_card end -->
+
+                    <!-- button_area start-->
+                    <!-- <div class="button_area" style="text-align: center;" data-aos="fade-up" data-aos-duration="1000">
+                        <a href="/video-gallery" class="button_text_area">
+                            <span class="button_text">
+                                <%= banner[0].button_text %>
+                                    <span class="dash_icon"></span>
+                            </span>
+                        </a>
+                    </div> -->
+                    <!-- button_area end-->
+
+                </div>
+            </div>
+        </div>
+        <!-- owner intro end -->
         <!-- contemporary-area start -->
         <div class="contemporary-area news-area">
             <div class="dote_bg_image" style="background-image: url(/assets/images/bg_dote_image/bg_dote.png);">

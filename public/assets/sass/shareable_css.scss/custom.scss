@@ -128,3 +128,108 @@
  .owl-item {
     width: 100%; /* Adjust the width of each carousel item */
  }
+
+//  owmer intro
+.video_card2 {
+    width: 100%;
+    height: 560px;
+    position: relative;
+    overflow: hidden;
+    &:hover {
+        img {
+            scale: 1.1;
+        }
+        .overlay-area {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition-duration: 0.4s;
+    }
+    // overlay-area start
+    .overlay-area {
+        border: $border;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        padding: 40px;
+        transition-duration: 0.4s;
+
+        // align-items: center;
+        display: grid;
+        width: 100%;
+        padding: 20px;
+        // justify-content: center;
+        .overlay-area_content {
+            background-color: $button_transfarent_black;
+            background-color: #000000b0;
+            height: 100%;
+            padding: 10px;
+            border: 1px solid $brand_color;
+            align-items: end;
+            display: grid;
+            // position: relative;
+            align-items: center;
+            justify-content: center;
+            .video_icon_area {
+                // border: $border;
+                // position: absolute;
+                // top: 10px;
+                // left: 10px;
+                // border: 2px solid red;
+                .video_icon {
+                    border: $border;
+                    width: 35px;
+                    height: 35px;
+                    // border: 1px solid $brand_color;
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                    border-radius: 50%;
+                    i {
+                        border: $border;
+                        color: $brand_color;
+                    }
+                }
+            }
+            .image_title {
+                border: $border;
+                padding-top: 50px;
+                .title_text {
+                    border: $border;
+                    font-family: $font_bangla;
+                    font-size: 26px;
+                    // font-weight: bold;
+                    // color: $brand_color;
+                    color: $brand_color;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 20px;
+                    .video_icon{
+                        border: $border;
+                    width: 65px;
+                    height: 65px;
+                    border: 1px solid $brand_color;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+
+                    i {
+                        border: $border;
+                        color: $brand_color;
+                    }
+                    }
+                }
+            }
+        }
+    }
+    // overlay-area end
+}
