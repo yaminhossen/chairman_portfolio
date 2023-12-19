@@ -21,7 +21,7 @@ function Details() {
 
 
     if (data_store) {
-        const { _id, title, description, sub_title,subject,message, createdAt, updatedAt, last_id } = data_store;
+        const { _id, title, ratings, description, sub_title,subject,message, createdAt, updatedAt, last_id } = data_store;
         let formedDate1 = new Date(createdAt).toISOString().substring(0, 10);
         let formedDate2 = new Date(updatedAt).toISOString().substring(0, 10);
         return (
@@ -54,11 +54,19 @@ function Details() {
                                             {title}
                                         </div>
                                     </div>
+                                    
                                     <div className="custom_form_el">
                                         <div>Sub-title</div>
                                         <div>:</div>
                                         <div>
                                             {sub_title}
+                                        </div>
+                                    </div>
+                                    <div className="custom_form_el">
+                                        <div>Ratings</div>
+                                        <div>:</div>
+                                        <div>
+                                            {ratings}
                                         </div>
                                     </div>
                                     <div className="custom_form_el">

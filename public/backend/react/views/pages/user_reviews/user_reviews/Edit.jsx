@@ -40,7 +40,7 @@ function Edit() {
 
 
   if (data_store) {
-    const { _id, title, description, date, sub_title, message, createdAt, updatedAt, last_id } = data_store;
+    const { _id, title, ratings, description, date, sub_title, message, createdAt, updatedAt, last_id } = data_store;
     // let formedDate = new Date(date).toISOString().substring(0, 10);
     return (
       <div className="card list_card">
@@ -65,20 +65,25 @@ function Edit() {
                       <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
                     </div>
                     <div className="custom_form_el">
-                    <label htmlFor="">Description</label>
-                    <div>:</div>
-                    <div>
-                      <textarea
-                        name="description"
-                        className="form-control"
-                        id=""
-                      >{description}</textarea>
+                      <label htmlFor="">Description</label>
+                      <div>:</div>
+                      <div>
+                        <textarea
+                          name="description"
+                          className="form-control"
+                          id=""
+                        >{description}</textarea>
+                      </div>
                     </div>
-                  </div>
                     <div className="custom_form_el">
                       <label htmlFor="">Sub-title</label>
                       <div>:</div>
                       <div><input name="sub_title" type="text" className="form-control" defaultValue={sub_title} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Ratings</label>
+                      <div>:</div>
+                      <div><input name="ratings" type="text" className="form-control" defaultValue={ratings} /></div>
                     </div>
 
                   </div>

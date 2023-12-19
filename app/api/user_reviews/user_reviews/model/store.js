@@ -18,6 +18,11 @@ const data_validation = async (request_data) => {
         .isEmpty()
         .withMessage("the description field is required")
         .run(request_data);
+    await body("ratings")
+        .not()
+        .isEmpty()
+        .withMessage("the ratings field is required")
+        .run(request_data);
 
     //  console.log("body data",body("title") );
     let result = validationResult(request_data);

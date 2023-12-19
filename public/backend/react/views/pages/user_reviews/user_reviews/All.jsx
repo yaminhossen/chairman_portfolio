@@ -35,6 +35,10 @@ function All() {
                                 </th>
 
                                 <th className="cursor_n_resize">
+                                    Ratings
+                                </th>
+
+                                <th className="cursor_n_resize">
                                     Sub-Title
                                 </th>
                                 <th className="cursor_n_resize">
@@ -53,6 +57,11 @@ function All() {
                                             <td>
                                                 <span onClick={() => set_data(data._id)} className="cursor_pointer text-warning">
                                                     {data.title}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    {data?.ratings}
                                                 </span>
                                             </td>
                                             <td>

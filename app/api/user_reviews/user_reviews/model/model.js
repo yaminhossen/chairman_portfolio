@@ -15,6 +15,10 @@ let userReviewSchema = mongoose.Schema({
 		type: String,
 		require: true,
 	},
+	ratings: {
+		type: String,
+		require: true,
+	},
 	sub_title: {
 		type: String,
 		require: true,

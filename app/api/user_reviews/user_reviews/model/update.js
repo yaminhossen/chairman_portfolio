@@ -17,6 +17,11 @@ const data_validation = async (request_data) => {
         .isEmpty()
         .withMessage("the description field is required")
         .run(request_data);
+    await body("ratings")
+        .not()
+        .isEmpty()
+        .withMessage("the ratings field is required")
+        .run(request_data);
 
     let result = validationResult(request_data);
     return {
@@ -43,6 +48,7 @@ module.exports = async (data) => {
         const model_data = await model.findOne({ _id: data.id });
         model_data.title = data.title;
         model_data.description = data.description;
+        model_data.ratings = data.ratings;
         model_data.sub_title = data.sub_title;
         await model_data.save();
         // console.log(data);

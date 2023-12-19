@@ -67,7 +67,7 @@ const seed = async () => {
     // await apiUserReviewSeeder();
 
     // owner intro seeder!!
-    await apiOwnerIntroSeeder();
+    // await apiOwnerIntroSeeder();
 
     // banner seeder!!
     // await apiBannerSeeder();
