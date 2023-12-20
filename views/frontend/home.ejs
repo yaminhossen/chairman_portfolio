@@ -289,7 +289,7 @@
 
                                                 <div class="date_area">
                                                     <p class="date_text">
-                                                        <%= cm.published_date.toISOString().substring(0, 10)%>
+                                                        <%= convertToBanglaDate(cm.published_date.toISOString().substring(0, 10))[0] %>
                                                     </p>
                                                 </div>
 
@@ -321,7 +321,7 @@
 
                                             <div class="date_area">
                                                 <p class="date_text">
-                                                    <%= cm.published_date.toISOString().substring(0, 10)%>
+                                                    <%= convertToBanglaDate(cm.published_date.toISOString().substring(0, 10))[0] %>
                                                 </p>
                                             </div>
 
