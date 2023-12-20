@@ -256,6 +256,14 @@ const controllers = {
 		// });
 	},
 
+	notice_details: async function(req, res) {
+		let notice_details = await noticeModel.findOne({ _id: req.params.id });
+		return res.render(`frontend/notice_details`,{
+			notice_details,
+		})
+	},
+	
+
 	save_comment: async function(req, res) {
 		let data = req.body;
 		const new_comment = await blogCommentModel.create(data);

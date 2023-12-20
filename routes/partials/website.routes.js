@@ -51,6 +51,9 @@ module.exports = (mainserver) => {
 		// post details routes
 		.get("/post/:id", website_controller.post_details)
 
+		// notice details routes
+		.get("/notice/:id", website_controller.notice_details)
+
 		// photo gallery routes
 		.get("/photo-gallery", website_controller.photo_gallery)
 

@@ -2256,6 +2256,12 @@ html ::-webkit-scrollbar-thumb:hover {
   }
 }
 
+.notice_details_date {
+  font-size: 28px;
+  font-family: "bangla-font";
+  color: #5dabbe;
+}
+
 .banner_area {
   border: 0px solid red;
   background-repeat: no-repeat;
