@@ -1,0 +1,159 @@
+<!-- head area include -->
+<%- include('../../layouts/frontend/head.ejs',{title:'posts'}) %>
+
+<!-- navbar area include -->
+<%- include('../../layouts/frontend/navbar.ejs') %>
+<% 
+                                        
+                                        // Function to convert English digits to Bengali (Bangla) digits
+                                        function englishToBanglaDigits(number) {
+                                            const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+                                            return number.toString().replace(/\d/g, digit => banglaDigits[digit]);
+                                        }
+
+                                        // Function to convert English month names to Bengali (Bangla) month names
+                                        function getBanglaMonthName(month) {
+                                        const banglaMonths = [
+                                            'জানুয়ারি', 'ফেব্রুয়ারি', 'মার্চ', 'এপ্রিল',
+                                            'মে', 'জুন', 'জুলাই', 'আগস্ট',
+                                            'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর'
+                                        ];
+                                        return banglaMonths[month];
+                                        }
+
+                                        // Function to convert English date string to Bangla (Bengali) date format
+                                        function convertToBanglaDate(englishDateString) {
+                                            const englishDate = new Date(englishDateString);
+                                            const banglaDay = englishToBanglaDigits(englishDate.getDate());
+                                            const banglaMonth = getBanglaMonthName(englishDate.getMonth());
+                                            const banglaYear = englishToBanglaDigits(englishDate.getFullYear());
+                                        
+                                            const banglaDate = `${banglaDay} ${banglaMonth}, ${banglaYear}`;
+                                            const aa = `${banglaDay}`;
+                                            const bb = `${banglaMonth}`;
+                                            const cc = `${banglaYear}`;
+                                            return [banglaDate, aa, bb, cc];
+                                        }
+
+                                        // English date string
+                                        // const englishDateString = post_details.date.toISOString().substring(0, 10);
+
+                                        // Convert English date string to Bangla date format
+                                        // const banglaDate = convertToBanglaDate(englishDateString);
+                                        
+                                        %>
+
+    <div class="inner-page_and_side-ber-area">
+        <div class="container">
+            <div class="inner-page_and_side-ber-area_content">
+                <!-- inner_page_area start -->
+                <div class="inner_page_area">
+                    <div class="inner_page_area_content">
+                        <!-- content_title start -->
+                        <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
+                            <h2 class="title_text">সব নোটিশ</h2>
+                            <p class="description_text">এখানে সব নোটিশ আছে।</p>
+                        </div>
+                        <!-- content_title end -->
+
+                        <!-- inner_page_all_content start -->
+                        <div class="inner_page_all_content" data-aos="fade-up" data-aos-duration="1000">
+                            <!-- blog_card start -->
+                           
+                                <!-- overlay_area start -->
+                                <!-- <div class="overlay_area">
+                                    
+                                    <div class="blog_title">
+                                        <div class="title_area">
+                                            <h2 class="title_text">
+                                                <%= %>
+                                            </h2>
+                                        </div>
+
+                                    </div>
+                                </div> -->
+                                
+                                    <!-- all_notice_item start -->
+                                    <div class="all_notice_item2">
+                                        <% notice_all.map( (notice)=>{ %>
+                                            <!-- notice_item start -->
+                                            <div class="notice_item">
+                                                <div class="notice_date_area">
+                                                    <div class="date_month">
+                                                        <p class="date_text date_month_text">
+                                                            <%= convertToBanglaDate(notice.date.toISOString().substring(0, 10))[1] %>
+                                                        </p>
+                                                        <p class="month_text date_month_text">
+                                                            <%= convertToBanglaDate(notice.date.toISOString().substring(0, 10))[2] %>
+                                                        </p>
+                                                    </div>
+                                                    <div class="year">
+                                                        <p class="year_text">
+                                                            <%= convertToBanglaDate(notice.date.toISOString().substring(0, 10))[3] %>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="notice_text_area">
+                                                    <h6 class="fw-bold single_notice bn"><%= notice.title %></h6>
+                                                    <p class="notice_text bn">
+                                                        <%- notice.description.slice(0,150) %>
+                                                            <span class="read_more_button_area"> <a href="/notice/<%= notice._id %>"
+                                                                    class="button_text bn">বিস্তারিত পড়ুন . . .
+                                                                </a> </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <!-- notice_item end -->
+                                            <% })%>
+
+                                    </div>
+                                    <!-- all_notice_item end -->
+                                <!-- overlay_area end -->
+                           
+                            
+                        </div>
+                        <!-- inner_page_all_content end -->
+
+                        <!-- pagination_area start -->
+                        <div class="pagination_area" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="pagination_area_content">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="pagination_text">পূর্ববর্তী</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="pagination_text pagination_number">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="pagination_text pagination_number">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="pagination_text pagination_number">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="pagination_text">পরবর্তী</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- pagination-area end -->
+
+                    </div>
+                </div>
+                <!-- inner_page_area end -->
+
+                
+            </div>
+        </div>
+    </div>
+
+
+    <!-- scroll_button_area start -->
+    <a href="#scroll_top" class="scroll-button">
+        <span class="icon">
+            <i class="fa-solid fa-angle-up"></i>
+        </span>
+    </a>
+    <!-- scroll_button_area end -->
+
+    <%- include('../../layouts/frontend/footer.ejs') %>

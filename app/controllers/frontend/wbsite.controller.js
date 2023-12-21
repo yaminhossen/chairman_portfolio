@@ -262,6 +262,16 @@ const controllers = {
 			notice_details,
 		})
 	},
+
+	notice_all: async function(req, res) {
+		let notice_all = await noticeModel.find();
+		let reqUrl = 'search-items';
+		console.log('first url', req.params)
+		return res.render(`frontend/blog/notice_all`, {
+			notice_all,
+			reqUrl,
+		});
+	},
 	
 
 	save_comment: async function(req, res) {

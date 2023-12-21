@@ -381,3 +381,81 @@
     font-family: $font_bangla;
     color: $brand_color;
 }
+
+.bn{
+    font-family: $font_bangla;
+}
+.all_notice_item2 {
+    border: $border;
+    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    z-index: 1;
+    // notice_item start
+    .notice_item {
+        border: $border;
+        display: flex;
+        background-color: $blue_white;
+        padding: 15px;
+        .notice_date_area {
+            border: $border;
+            width: 120px;
+            text-align: center;
+            margin-right: 15px;
+            // padding: 10px;
+            .date_month {
+                border: $border;
+                background-color: $brand_color;
+                padding: 5px 10px;
+                .date_month_text {
+                    border: $border;
+                    font-family: $font_bangla;
+                    font-size: 16px;
+                    color: $black;
+                }
+            }
+            .year {
+                border: $border;
+                background-color: $black;
+                padding: 3px 10px;
+
+                .year_text {
+                    border: $border;
+                    font-family: $font_bangla;
+                    font-size: 16px;
+                    color: $white;
+                }
+            }
+        }
+        .notice_text_area {
+            border: $border;
+            flex: 1;
+
+            .notice_text {
+                border: $border;
+                font-family: $font_bangla;
+                font-size: 18px;
+                color: $black;
+                // font-weight: bold;
+                text-align: justify;
+                .read_more_button_area {
+                    border: $border;
+                    &:hover {
+                        .button_text {
+                            color: $light_black;
+                        }
+                    }
+                    .button_text {
+                        border: $border;
+                        font-family: $font_bangla;
+                        font-size: 16px;
+                        font-weight: bold;
+                        color: $brand_color;
+                        transition-duration: 0.4s;
+                    }
+                }
+            }
+        }
+    }
+    // notice_item end
+}

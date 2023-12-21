@@ -2262,6 +2262,77 @@ html ::-webkit-scrollbar-thumb:hover {
   color: #5dabbe;
 }
 
+.bn {
+  font-family: "bangla-font";
+}
+
+.all_notice_item2 {
+  border: 0px solid red;
+  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  z-index: 1;
+}
+.all_notice_item2 .notice_item {
+  border: 0px solid red;
+  display: flex;
+  background-color: #f2f4f8;
+  padding: 15px;
+}
+.all_notice_item2 .notice_item .notice_date_area {
+  border: 0px solid red;
+  width: 120px;
+  text-align: center;
+  margin-right: 15px;
+}
+.all_notice_item2 .notice_item .notice_date_area .date_month {
+  border: 0px solid red;
+  background-color: #5dabbe;
+  padding: 5px 10px;
+}
+.all_notice_item2 .notice_item .notice_date_area .date_month .date_month_text {
+  border: 0px solid red;
+  font-family: "bangla-font";
+  font-size: 16px;
+  color: black;
+}
+.all_notice_item2 .notice_item .notice_date_area .year {
+  border: 0px solid red;
+  background-color: black;
+  padding: 3px 10px;
+}
+.all_notice_item2 .notice_item .notice_date_area .year .year_text {
+  border: 0px solid red;
+  font-family: "bangla-font";
+  font-size: 16px;
+  color: #ffffff;
+}
+.all_notice_item2 .notice_item .notice_text_area {
+  border: 0px solid red;
+  flex: 1;
+}
+.all_notice_item2 .notice_item .notice_text_area .notice_text {
+  border: 0px solid red;
+  font-family: "bangla-font";
+  font-size: 18px;
+  color: black;
+  text-align: justify;
+}
+.all_notice_item2 .notice_item .notice_text_area .notice_text .read_more_button_area {
+  border: 0px solid red;
+}
+.all_notice_item2 .notice_item .notice_text_area .notice_text .read_more_button_area:hover .button_text {
+  color: #999;
+}
+.all_notice_item2 .notice_item .notice_text_area .notice_text .read_more_button_area .button_text {
+  border: 0px solid red;
+  font-family: "bangla-font";
+  font-size: 16px;
+  font-weight: bold;
+  color: #5dabbe;
+  transition-duration: 0.4s;
+}
+
 .banner_area {
   border: 0px solid red;
   background-repeat: no-repeat;
