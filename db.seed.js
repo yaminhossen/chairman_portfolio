@@ -30,6 +30,7 @@ const apiSiteUrlSeeder = require("./app/api/site_url/site_urls/seeder/seeder")
 const apiSiteUrlViewCountSeeder = require("./app/api/site_url/stie_url_view_counts/seeder/seeder")
 const apiTagSeeder = require("./app/api/tag/tags/seeder/seeder")
 const apiOwnerIntroSeeder = require("./app/api/owner_intro/owner_intro/seeder/seeder")
+const apiQuotesSeeder = require("./app/api/quotes/quotes/seeder/seeder")
 
 const seed = async () => {
 
@@ -68,6 +69,9 @@ const seed = async () => {
 
     // owner intro seeder!!
     // await apiOwnerIntroSeeder();
+
+    // quotes seeder!!
+    // await apiQuotesSeeder();
 
     // banner seeder!!
     // await apiBannerSeeder();
