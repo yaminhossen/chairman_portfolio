@@ -856,29 +856,56 @@
         <!-- text_slider_area start -->
         <div class="text_slider_area" data-aos="fade-up" data-aos-duration="1000">
             <div class="container">
-                <div class="text_slider_area_content" data-aos="fade-up" data-aos-duration="900">
-                    <div class="slider_text_area">
-                        <p class="slider_text">
-                            সততায় অন্তরের প্রশান্তি। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের
-                            মাধ্যম। সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। মানবজীবনে এর প্রয়োজনীয়তা অপরিসীম। সততায় অন্তরের
-                            প্রশান্তি। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের মাধ্যম। সততা মানব
-                            চরিত্রের শ্রেষ্ঠ গুণ। মানবজীবনে এর প্রয়োজনীয়তা অপরিসীম।
-
-                        </p>
-
-                        <div class="left_quotetion_area">
-                            <i class="fa-solid fa-quote-left"></i>
+                <div id="owl-demo" class="owl-carousel">
+                    <div class="text_slider_area_content item">
+                        <div class="slider_text_area  ">
+                                <p class="slider_text bn">
+                                    সততায় অন্তরের প্রশান্তি। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের
+                                    মাধ্যম। সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। মানবজীবনে এর প্রয়োজনীয়তা অপরিসীম। সততায় অন্তরের
+                                    প্রশান্তি। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের মাধ্যম। সততা মানব
+                                    চরিত্রের শ্রেষ্ঠ গুণ। মানবজীবনে এর প্রয়োজনীয়তা অপরিসীম।
+        
+                                </p>
+        
+                                <div class="left_quotetion_area">
+                                    <i class="fa-solid fa-quote-left"></i>
+                                </div>
+                                <div class="right_quotetion_area">
+                                    <i class="fa-solid fa-quote-right"></i>
+                                </div>
+                            
+                           
                         </div>
-                        <div class="right_quotetion_area">
-                            <i class="fa-solid fa-quote-right"></i>
+                       
+                    </div>
+                    <div class="text_slider_area_content item">
+                        <div class="slider_text_area  ">
+                                <p class="slider_text bn">
+                                    সততায় অন্তরের প্রশান্তি। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের
+                                    মাধ্যম। সততা মানব চরিত্রের শ্রেষ্ঠ গুণ। মানবজীবনে এর প্রয়োজনীয়তা অপরিসীম। সততায় অন্তরের
+                                    প্রশান্তি। নাজাত লাভ, জান্নাত অর্জন, খোদার সন্তুষ্টি এবং ধনসম্পদেও বরকতের মাধ্যম। সততা মানব
+                                    চরিত্রের শ্রেষ্ঠ গুণ। মানবজীবনে এর প্রয়োজনীয়তা অপরিসীম।
+        
+                                </p>
+        
+                                <div class="left_quotetion_area">
+                                    <i class="fa-solid fa-quote-left"></i>
+                                </div>
+                                <div class="right_quotetion_area">
+                                    <i class="fa-solid fa-quote-right"></i>
+                                </div>
+                            
+                           
                         </div>
+                       
                     </div>
                 </div>
+                
             </div>
         </div>
         <!-- text_slider_area end -->
 
-
+        
 
         <!-- photo_gallery_are start -->
         <div class="photo_gallery_are">
@@ -1001,20 +1028,22 @@
             </div>
         </div>
         <!-- video_gallery_are end -->
-        <script src="jquery.min.js"></script>
+        <!-- <script src="jquery.min.js"></script> -->
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <script src="path/to/owl.carousel.min.js"></script>
+        <script src="/assets/assets/owlcarousel/owl.carousel.min.js"></script>
         <script>
-            $(document).ready(function () {
-                $('.owl-carousel').owlCarousel({
-                    items: 1, // Number of items to display
-                    loop: true, // Infinite loop
-                    margin: 10, // Margin between items
-                    autoplay: true, // Autoplay the carousel
-
-                });
+            $(document).ready(function(){
+              $('.owl-carousel').owlCarousel({
+                items: 1, // Adjust the number of items to display
+                loop: true, // Enable loop
+                autoplay: true,
+                margin: 10,
+                autoplayTimeout:4000,
+                autoplayHoverPause:true // Adjust margin between items
+                // Add other Owl Carousel options as needed
+              });
             });
-        </script>
+          </script>
 
 
         <script>

@@ -120,14 +120,20 @@
 
 // coatation carousel
 
-.owl-carousel {
-    display: flex;
-    flex-wrap: nowrap;
- }
+// .owl-carousel {
+//     display: flex;
+//     flex-wrap: nowrap;
+//  }
  
- .owl-item {
-    width: 100%; /* Adjust the width of each carousel item */
- }
+//  .owl-item {
+//     width: 100%; /* Adjust the width of each carousel item */
+//  }
+
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
 
 //  owmer intro
 .video_card2 {

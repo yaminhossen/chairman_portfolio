@@ -1050,6 +1050,7 @@ html ::-webkit-scrollbar-thumb:hover {
   display: flex;
   z-index: 1;
   position: relative;
+  width: 100%;
 }
 .text_slider_area .text_slider_area_content .slider_text_area {
   border: 0px solid red;
@@ -1065,6 +1066,7 @@ html ::-webkit-scrollbar-thumb:hover {
 }
 .text_slider_area .text_slider_area_content .slider_text_area .slider_text {
   border: 0px solid red;
+  font-size: 20px;
 }
 .text_slider_area .text_slider_area_content .slider_text_area .left_quotetion_area {
   position: absolute;
@@ -2034,13 +2036,10 @@ html ::-webkit-scrollbar-thumb:hover {
   left: 0px;
 }
 
-.owl-carousel {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.owl-item {
-  width: 100%; /* Adjust the width of each carousel item */
+#owl-demo .item img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .video_card2 {
