@@ -2196,6 +2196,13 @@ html ::-webkit-scrollbar-thumb:hover {
   width: 100%;
   border-radius: 50%;
 }
+.user_review_area .description_part .reviews .review .reviewer_details .user_img .fa-user {
+  width: 90px;
+  border-radius: 50%;
+  width: 100%;
+  border-radius: 50%;
+  font-size: 22px;
+}
 .user_review_area .description_part .reviews .review .reviewer_details .user_name .title {
   font-size: 18px;
   font-weight: bold;

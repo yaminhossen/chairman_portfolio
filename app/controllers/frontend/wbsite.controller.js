@@ -105,8 +105,10 @@ const controllers = {
 		let video_gallery_category = await videoGalleryCategoriyModel.find();
 		let video_gallery_video = await videoGalleryVideoModel.find();
 		let blog_category = await blogCategoriesModel.find();
-		let settingTitle = await settingModel.findOne({ title: "banner_at_a_glance_title" });
-		let settingValue = await settingModel.findOne({ title: "banner_at_a_glance_value" });
+		let settingTitle1 = await settingModel.findOne({ title: "সর্বমোট বই পর্যালোচনা" });
+		let settingTitle2 = await settingModel.findOne({ title: "সর্বমোট গাছ লাগানো" });
+		let settingTitle3 = await settingModel.findOne({ title: "সাক্ষরতা অভিযান" });
+		let settingTitle4 = await settingModel.findOne({ title: "জনপ্রিয়তা" });
 		let banner = await bannerModel.find();
 		let notices = await noticeModel.find();
 		let userReview = await userReviewModel.find();
@@ -155,8 +157,10 @@ const controllers = {
 			video_gallery_video,
 			blog_category,
 			banner,
-			settingTitle,
-			settingValue,
+			settingTitle1,
+			settingTitle3,
+			settingTitle2,
+			settingTitle4,
 			contemp,
 			contems,
 			social_work,
