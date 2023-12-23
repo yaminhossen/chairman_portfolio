@@ -2190,6 +2190,7 @@ html ::-webkit-scrollbar-thumb:hover {
 .user_review_area .description_part .reviews .review .reviewer_details .user_img {
   width: 90px;
   border-radius: 50%;
+  height: 70px;
   background-color: rgb(124, 180, 202);
 }
 .user_review_area .description_part .reviews .review .reviewer_details .user_img img {
@@ -2197,11 +2198,14 @@ html ::-webkit-scrollbar-thumb:hover {
   border-radius: 50%;
 }
 .user_review_area .description_part .reviews .review .reviewer_details .user_img .fa-user {
-  width: 90px;
+  width: 30px;
   border-radius: 50%;
   width: 100%;
-  border-radius: 50%;
-  font-size: 22px;
+  height: 100%;
+  font-size: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .user_review_area .description_part .reviews .review .reviewer_details .user_name .title {
   font-size: 18px;

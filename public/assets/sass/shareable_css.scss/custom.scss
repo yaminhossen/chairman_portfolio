@@ -306,17 +306,24 @@
                     .user_img{
                         width: 90px;
                         border-radius: 50%;
+                        height: 70px;
                         background-color: rgb(124, 180, 202);
+                        // border: 1px solid red;
                         img{
                             width: 100%;
                             border-radius: 50%;
                         }
                         .fa-user{
-                            width: 90px;
+                            width: 30px;
                             border-radius: 50%;
                             width: 100%;
-                            border-radius: 50%;
-                            font-size: 22px;
+                            height: 100%;
+                            // border-radius: 20%;
+                            font-size: 42px;
+                            // border: 1px solid red;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
                         }
                     }
                     .user_name{
