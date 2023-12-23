@@ -56,8 +56,7 @@ import tagSlice from "../views/pages/tag/tags/config/store";
 import ownerIntroSlice from "../views/pages/owner_intro/owner_intro/config/store";
 
 // quotes
-import quotesSlice from "../views/pages/quotes/quotes/config/store";
-
+import speakerQuoteSlice from "../views/pages/speaker_quotes/config/store";
 
 import { configureStore } from "@reduxjs/toolkit";
 
@@ -97,7 +96,7 @@ const store = configureStore({
         user_review: userReviewSlice.reducer,
 
         // quotes
-        quotes: quotesSlice.reducer,
+        speaker_quote: speakerQuoteSlice.reducer,
 
         // owner intro
         owner_intro: ownerIntroSlice.reducer,

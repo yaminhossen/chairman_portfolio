@@ -31,7 +31,7 @@ const site_url_view_count_routes = require("../app/api/site_url/stie_url_view_co
 const tag_routes = require("../app/api/tag/tags/router/routes");
 const user_review_routes = require("../app/api/user_reviews/user_reviews/router/routes");
 const owner_intro_routes = require("../app/api/owner_intro/owner_intro/router/routes");
-const quotes_routes = require("../app/api/quotes/quotes/router/routes");
+const speaker_quotes_routes = require("../app/api/speaker_quotes/router/routes");
 const router = express.Router();
 
 
@@ -69,7 +69,7 @@ router.use(union_porishod_notice_routes());
 router.use(user_review_routes());
 
 // quotes review
-router.use(quotes_routes());
+router.use(speaker_quotes_routes());
 
 // owner intro
 router.use(owner_intro_routes());
