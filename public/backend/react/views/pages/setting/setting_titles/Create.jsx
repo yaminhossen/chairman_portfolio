@@ -54,6 +54,11 @@ function Create() {
                     <div>:</div>
                     <div><input name="title" type="text" className="form-control" /></div>
                   </div>
+                  <div className="custom_form_el">
+                    <label htmlFor="">Value</label>
+                    <div>:</div>
+                    <div><input name="value" type="text" className="form-control" /></div>
+                  </div>
                   {/* <div className="custom_form_el">
                     <label htmlFor="">Photo</label>
                     <div>:</div>

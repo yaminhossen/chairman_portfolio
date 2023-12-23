@@ -37,7 +37,7 @@ function Edit() {
   
 
   if(data_store){
-    const{serial, title, date} = data_store;
+    const{serial, title,value, date} = data_store;
     return (
       <div className="card list_card">
         <div className="card-header ">
@@ -59,6 +59,11 @@ function Edit() {
                       <label htmlFor="">Title</label>
                       <div>:</div>
                       <div><input name="title" type="text" className="form-control" defaultValue={title} /></div>
+                    </div>
+                    <div className="custom_form_el">
+                      <label htmlFor="">Value</label>
+                      <div>:</div>
+                      <div><input name="value" type="text" className="form-control" defaultValue={value} /></div>
                     </div>
                   </div>
                   <input type="submit" value="Create" />

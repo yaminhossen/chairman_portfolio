@@ -7,6 +7,11 @@ const data_validation = async (request_data) => {
         .isEmpty()
         .withMessage("the title field is required")
         .run(request_data);
+    await body("value")
+        .not()
+        .isEmpty()
+        .withMessage("the value field is required")
+        .run(request_data);
 
 
     let result = validationResult(request_data);
@@ -33,6 +38,7 @@ module.exports = async ( data) => {
     try {
         const model_data = await model.findOne({ _id: data.id });
         model_data.title = data.title;
+        model_data.value = data.value;
         console.log('mdoel data dot value', model_data.value);
         await model_data.save();
         // console.log(data);

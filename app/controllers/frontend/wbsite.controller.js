@@ -26,6 +26,7 @@ const contactModel = require("../../api/contact_message/contact_messages/model/m
 const noticeModel = require("../../api/union_porishod_notice/union_porishod_notice/model/model")
 const ownerIntroModel = require("../../api/owner_intro/owner_intro/model/model")
 const userReviewModel = require("../../api/user_reviews/user_reviews/model/model")
+const speakerQuoteModel = require("../../api/speaker_quotes/model/model")
 
 const { async } = require("q");
 const controllers = {
@@ -110,6 +111,7 @@ const controllers = {
 		let notices = await noticeModel.find();
 		let userReview = await userReviewModel.find();
 		let ownerIntros = await ownerIntroModel.find();
+		let speakerQuotes = await speakerQuoteModel.find();
 
 		let contemp = await blogCategoriesModel.findOne({ title: "সংবাদ" });
 
@@ -174,6 +176,7 @@ const controllers = {
 			notices,
 			ownerIntros,
 			userReview,
+			speakerQuotes,
 
 		});
 	},

@@ -78,7 +78,7 @@ const seed = async () => {
     // await apiBannerSeeder();
 
     // // setting seeder!!
-    // await apiSettingTitleSeeder();
+    await apiSettingTitleSeeder();
     // await apiSettingValueSeeder();
 
     // // photo gallery
