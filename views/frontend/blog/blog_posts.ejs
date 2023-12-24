@@ -118,8 +118,8 @@
 
                         <!-- search_area start -->
                         <div class="search_area">
-                            <form action="#">
-                                <input type="text" placeholder="Search . . .">
+                            <form action="/search/posts">
+                                <input name="searchValue" type="text" placeholder="খুজুন . . .">
                                 <button class="button_area">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
@@ -236,5 +236,24 @@
         </span>
     </a>
     <!-- scroll_button_area end -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function searchSubmit(event) {
+            event.preventDefault();
+            console.log('comment submit hoyche');
+            let data = event.target.searchValue.value;
+            console.log(data);
+
+            // axios.post('/api/v1/blog-comment/store', {
+                axios.get(`/search/posts?q=${data}`)
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.error(error);
+                });
+                event.target.searchValue.value = '';
+            };
+    </script>
 
     <%- include('../../layouts/frontend/footer.ejs') %>

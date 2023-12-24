@@ -479,3 +479,14 @@
     }
     // notice_item end
 }
+.pagination_area{
+
+    .pagination_item{
+        display: flex;
+        justify-content: center;
+        li{
+           padding: 0px;
+           margin: 0px;
+        }
+    }
+}

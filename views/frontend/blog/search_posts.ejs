@@ -49,26 +49,12 @@
                         <!-- pagination_area start -->
                         <div class="pagination_area" data-aos="fade-up" data-aos-duration="1000">
                             <div class="pagination_area_content">
-                                <div class="left">
-                                    Showing <span id="start_limit"></span> to <span id="end_limit"></span> of
-                                    <%= count %> entries
+                                <div class="left bn">
+                                    দেখাচ্ছে <span id="start_limit"></span> থেকে <span id="end_limit"></span> টা
+                                    <%= count %> আইটেমের মদ্ধে ।
                                 </div>
-                                <ul id="paginate">
-                                    <!-- <li>
-                                        <a href="#" class="pagination_text">পূর্ববর্তী</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="pagination_text pagination_number">1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="pagination_text pagination_number">2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="pagination_text pagination_number">3</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="pagination_text">পরবর্তী</a>
-                                    </li> -->
+                                <ul class="mt-4 pagination_item" id="paginate">
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -84,8 +70,8 @@
 
                         <!-- search_area start -->
                         <div class="search_area">
-                            <form >
-                                <input type="text" placeholder="খুজুন . . .">
+                            <form  action="/search/posts">
+                                <input name="searchValue" type="text" placeholder="খুজুন . . .">
                                 <button class="button_area">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
@@ -194,6 +180,26 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+                <script>
+                    function searchSubmit(event) {
+                        event.preventDefault();
+                        console.log('comment submit hoyche');
+                        let data = event.target.searchValue.value;
+                        console.log(data);
+    
+                        // axios.post('/api/v1/blog-comment/store', {
+                            axios.get(`/search/posts?q=${data}`)
+                            .then(function (response) {
+                                console.log(response);
+                            })
+                            .catch(function (error) {
+                                console.error(error);
+                            });
+                            event.target.searchValue.value = '';
+                        };
+                </script>
+
     <script>
         function createPagination(paginationAmount = 10, dataCount = 0, currentPage = 1) {
                     const pageCount = Math.ceil(dataCount / paginationAmount); // Calculate the total number of pages
@@ -218,21 +224,21 @@
 
                     // Generate the HTML for the pagination
                     paginationHTML += `
-                        <li class="page-item">
-                            <a class="page-link" onclick="goToPage(${currentPage - 1})"  href="/dashboard/category?page=${currentPage - 1}" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
+                        <li class="page-item ">
+                            <a class="page-link pagination_text py-4" onclick="goToPage(${currentPage - 1})"  href="/dashboard/category?page=${currentPage - 1}" aria-label="Previous">
+                                <span aria-hidden="true">পুর্ববর্তী</span>
                             </a>
                         </li>
                     `;
 
                     if (startPage > 1) {
                         paginationHTML += `
-                            <li class="page-item">
-                                <a class="page-link" onclick="goToPage(${1})"  href="/dashboard/category?page=1">1</a>
+                            <li class="page-item ">
+                                <a class="page-link pagination_text" onclick="goToPage(${1})"  href="/dashboard/category?page=1">1</a>
                             </li>
                          `;
                         if (startPage > 2) {
-                            paginationHTML += '<li class="page-item">... </li>';
+                            paginationHTML += '<li class="page-item ">... </li>';
                         }
                     }
 
@@ -241,27 +247,27 @@
 
                     for (let i = startPage; i <= endPage; i++) {
                         paginationHTML += `
-                            <li class="page-item">
-                                <a class="page-link" onclick="goToPage(${i})"  href="/dashboard/category?page=${i}">${i}</a>
+                            <li class="page-item ">
+                                <a class="page-link pagination_text" onclick="goToPage(${i})"  href="/dashboard/category?page=${i}">${i}</a>
                             </li>
                         `;
                     }
 
                     if (endPage < pageCount) {
                         if (endPage < pageCount - 1) {
-                            paginationHTML += '<li class="page-item">... </li>';
+                            paginationHTML += '<li class="page-item ">... </li>';
                         }
                         paginationHTML += `
-                        <li class="page-item">
-                            <a class="page-link" onclick="goToPage(${pageCount})" href="/dashboard/category?page=${pageCount}">${pageCount}</a>
+                        <li class="page-item ">
+                            <a class="page-link pagination_text" onclick="goToPage(${pageCount})" href="/dashboard/category?page=${pageCount}">${pageCount}</a>
                         </li>
                       `;
                     }
 
                     paginationHTML += `
-                        <li class="page-item">
-                            <a class="page-link" onclick="goToPage(${currentPage + 1})" href="/dashboard/category?page=${currentPage + 1}" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
+                        <li class="page-item ">
+                            <a class="page-link pagination_text py-4" onclick="goToPage(${currentPage + 1})" href="/dashboard/category?page=${currentPage + 1}" aria-label="Next">
+                                <span aria-hidden="true">পরবর্তী</span>
                             </a> 
                         </li>
                     `;

@@ -2343,6 +2343,15 @@ html ::-webkit-scrollbar-thumb:hover {
   transition-duration: 0.4s;
 }
 
+.pagination_area .pagination_item {
+  display: flex;
+  justify-content: center;
+}
+.pagination_area .pagination_item li {
+  padding: 0px;
+  margin: 0px;
+}
+
 .banner_area {
   border: 0px solid red;
   background-repeat: no-repeat;
