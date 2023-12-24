@@ -207,15 +207,23 @@ const controllers = {
 	},
 
 	search_posts: async function(req, res) {
-		// let skip = 0;
-		// if (page && page > 0) {
-		// 	page = parseInt(page);
-		// 	paginate = parseInt(paginate);
-		// 	skip = page * paginate - paginate;
-		// }
+		let page = 1;
+		let skip = 0;
+		let limit = 6;
+		let key = "";
 
-		let blog2 = await blogsModel.find().limit(5).skip(1);
+		if (req.query.limit && req.query.limit > 0) {
+			limit = parseInt(req.query.limit);
+		}
+
+		if (req.query.page && req.query.page > 0) {
+			page = parseInt(req.query.page);
+			skip = page * limit - limit;
+		}
+
+		let blog2 = await blogsModel.find().limit(limit).skip(skip).exec();
 		let blog = await blogsModel.find();
+		let count = await blogsModel.count();
 		let blogs = blog2.filter((bb) => bb.title.includes(req.query.searchValue));
 		// let blogs = blog.filter((bb) => bb.title.includes('কেমন আছেন আল মাহমুদ'));
 		// let blog = await blogsModel.find().where({ _id: new_comment.post_id });
@@ -226,6 +234,9 @@ const controllers = {
 		return res.render(`frontend/blog/search_posts`, {
 			reqUrl,
 			blogs,
+			count,
+			page,
+			limit,
 		});
 	},
 

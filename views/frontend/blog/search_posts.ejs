@@ -13,7 +13,7 @@
                         <!-- content_title start -->
                         <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
                             <h2 class="title_text">অনুসন্ধান</h2>
-                            <h4 class="description_tex my-5 ">আপনার অনুসন্ধানকৃত ফলাফলের সংখা <%= blogs.length %></h4>
+                            <h4 class="description_tex my-5 ">আপনার অনুসন্ধানকৃত ফলাফল</h4>
                         </div>
                         <!-- content_title end -->
 
@@ -49,8 +49,12 @@
                         <!-- pagination_area start -->
                         <div class="pagination_area" data-aos="fade-up" data-aos-duration="1000">
                             <div class="pagination_area_content">
-                                <ul>
-                                    <li>
+                                <div class="left">
+                                    Showing <span id="start_limit"></span> to <span id="end_limit"></span> of
+                                    <%= count %> entries
+                                </div>
+                                <ul id="paginate">
+                                    <!-- <li>
                                         <a href="#" class="pagination_text">পূর্ববর্তী</a>
                                     </li>
                                     <li>
@@ -64,7 +68,7 @@
                                     </li>
                                     <li>
                                         <a href="#" class="pagination_text">পরবর্তী</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                         </div>
@@ -80,8 +84,8 @@
 
                         <!-- search_area start -->
                         <div class="search_area">
-                            <form action="#">
-                                <input type="text" placeholder="Search . . .">
+                            <form >
+                                <input type="text" placeholder="খুজুন . . .">
                                 <button class="button_area">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
@@ -258,12 +262,25 @@
                         <li class="page-item">
                             <a class="page-link" onclick="goToPage(${currentPage + 1})" href="/dashboard/category?page=${currentPage + 1}" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
-                            </a>
+                            </a> 
                         </li>
                     `;
 
                     return paginationHTML;
                 }
+                
+                function goToPage(pageNumber) {
+                    // Perform actions to load data for the specified page
+                    console.log(`Loading data for page ${pageNumber}`);
+                    // Add your code here to load the data or perform any other necessary actions
+                    event.preventDefault();
+                    let url = new URL(location.href);
+                    url.searchParams.set("page", pageNumber);
+                    location.href = url.href;
+                }
+
+              
+                document.getElementById("paginate").innerHTML = createPagination(+`<%= limit %>`, +`<%= count %>`, +`<%= page %>`);
     </script>
 
     <!-- scroll_button_area start -->
