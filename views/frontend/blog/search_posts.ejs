@@ -190,6 +190,81 @@
         </div>
     </div>
 
+    <script>
+        function createPagination(paginationAmount = 10, dataCount = 0, currentPage = 1) {
+                    const pageCount = Math.ceil(dataCount / paginationAmount); // Calculate the total number of pages
+                    const maxDisplayedPages = 5; // Maximum number of displayed page links
+                    let paginationHTML = '';
+
+                    // Calculate the starting and ending page numbers for the displayed links
+                    let startPage = 1;
+                    let endPage = pageCount;
+
+                    if (pageCount > maxDisplayedPages) {
+                        const middlePage = Math.ceil(maxDisplayedPages / 2);
+                        if (currentPage <= middlePage) {
+                            endPage = maxDisplayedPages;
+                        } else if (currentPage >= pageCount - middlePage + 1) {
+                            startPage = pageCount - maxDisplayedPages + 1;
+                        } else {
+                            startPage = currentPage - middlePage + 1;
+                            endPage = currentPage + middlePage - 1;
+                        }
+                    }
+
+                    // Generate the HTML for the pagination
+                    paginationHTML += `
+                        <li class="page-item">
+                            <a class="page-link" onclick="goToPage(${currentPage - 1})"  href="/dashboard/category?page=${currentPage - 1}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    `;
+
+                    if (startPage > 1) {
+                        paginationHTML += `
+                            <li class="page-item">
+                                <a class="page-link" onclick="goToPage(${1})"  href="/dashboard/category?page=1">1</a>
+                            </li>
+                         `;
+                        if (startPage > 2) {
+                            paginationHTML += '<li class="page-item">... </li>';
+                        }
+                    }
+
+                    document.getElementById("start_limit").innerHTML = (currentPage * paginationAmount) - paginationAmount + 1;
+                    document.getElementById("end_limit").innerHTML = (currentPage * paginationAmount);
+
+                    for (let i = startPage; i <= endPage; i++) {
+                        paginationHTML += `
+                            <li class="page-item">
+                                <a class="page-link" onclick="goToPage(${i})"  href="/dashboard/category?page=${i}">${i}</a>
+                            </li>
+                        `;
+                    }
+
+                    if (endPage < pageCount) {
+                        if (endPage < pageCount - 1) {
+                            paginationHTML += '<li class="page-item">... </li>';
+                        }
+                        paginationHTML += `
+                        <li class="page-item">
+                            <a class="page-link" onclick="goToPage(${pageCount})" href="/dashboard/category?page=${pageCount}">${pageCount}</a>
+                        </li>
+                      `;
+                    }
+
+                    paginationHTML += `
+                        <li class="page-item">
+                            <a class="page-link" onclick="goToPage(${currentPage + 1})" href="/dashboard/category?page=${currentPage + 1}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    `;
+
+                    return paginationHTML;
+                }
+    </script>
 
     <!-- scroll_button_area start -->
     <a href="#scroll_top" class="scroll-button">
