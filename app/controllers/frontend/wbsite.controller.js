@@ -186,12 +186,27 @@ const controllers = {
 	},
 
 	blog_posts: async function (req, res) {
+		let page = 1;
+		let skip = 0;
+		let limit = 6;
+		let key = "";
+
+		if (req.query.limit && req.query.limit > 0) {
+			limit = parseInt(req.query.limit);
+		}
+
+		if (req.query.page && req.query.page > 0) {
+			page = parseInt(req.query.page);
+			skip = page * limit - limit;
+		}
 		// console.log('url', req.params.url);
 		// const model_data = await model.findOne({ _id: data.id });
 		let blog = await blogCategoriesModel.findOne({ url: "/"+req.params.url });
 		// let datas = await blogCategoriesModel.findOne({ url: "/"+req.params.url });
 
-		let blogs = await blogsModel.find().where({ categories: blog?._id });
+		let blogs = await blogsModel.find().where({ categories: blog?._id }).limit(limit).skip(skip).exec();
+		let blogsExact = await blogsModel.find().where({ categories: blog?._id });
+		let count = await blogsExact.length;
 		let reqUrl = req.params.url;
 		controllers.server.locals.seo_title = blog?.seo_title;
 		controllers.server.locals.seo_description = blog?.seo_description;
@@ -203,6 +218,9 @@ const controllers = {
 			blog,
 			blogs,
 			reqUrl,
+			count,
+			page,
+			limit,
 		});
 	},
 
