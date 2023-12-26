@@ -239,16 +239,27 @@ const controllers = {
 			skip = page * limit - limit;
 		}
 
-		let blog2 = await blogsModel.find().limit(limit).skip(skip).exec();
+		let searchItem = req.query.searchValue;
+
+		let filter = {
+			status: 1,
+		};
+	
+		if (searchItem.length) {
+			filter.title = { $regex: searchItem, $options: "i" };
+		}
+
+		let blogs = await blogsModel.find().where(filter).limit(limit).skip(skip).exec();
+		
 		let blog = await blogsModel.find();
 		let count = await blogsModel.count();
-		let blogs = blog2.filter((bb) => bb.title.includes(req.query.searchValue));
+		// let blogs = blog2.filter((bb) => bb.title.includes(req.query.searchValue));
 		// let blogs = blog.filter((bb) => bb.title.includes('কেমন আছেন আল মাহমুদ'));
 		// let blog = await blogsModel.find().where({ _id: new_comment.post_id });
 		let reqUrl = 'search-items';
-		console.log('find blogs', blogs?.length);
+		console.log('find blogs', blogs);
+		console.log('find blogs len', blogs?.length);
 		console.log('find  blog data',req.query);
-		console.log('find  blog2222 data',blog2);
 		return res.render(`frontend/blog/search_posts`, {
 			reqUrl,
 			blogs,
