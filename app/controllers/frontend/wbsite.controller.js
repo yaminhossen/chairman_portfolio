@@ -309,12 +309,29 @@ const controllers = {
 	},
 
 	notice_all: async function(req, res) {
-		let notice_all = await noticeModel.find();
+		let page = 1;
+		let skip = 0;
+		let limit = 6;
+		let key = "";
+
+		if (req.query.limit && req.query.limit > 0) {
+			limit = parseInt(req.query.limit);
+		}
+
+		if (req.query.page && req.query.page > 0) {
+			page = parseInt(req.query.page);
+			skip = page * limit - limit;
+		}
+		let notice_all = await noticeModel.find().limit(limit).skip(skip).exec();
+		let count = await noticeModel.count();
 		let reqUrl = 'search-items';
 		console.log('first url', req.params)
 		return res.render(`frontend/blog/notice_all`, {
 			notice_all,
 			reqUrl,
+			count,
+			page,
+			limit,
 		});
 	},
 	
