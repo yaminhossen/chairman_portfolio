@@ -15,6 +15,29 @@
     .about_area_content {
         border: $border;
         position: relative;
+        .title-area {
+            border: $border;
+            margin: 40px 0px 30px 0px;
+
+            .title-area_text {
+                border: $border;
+                font-family: $font_bangla;
+                font-size: 30px;
+                color: $brand_color;
+                font-weight: bold;
+            }
+        }
+        .item_description_area {
+            border: $border;
+            gap: 25px;
+            display: grid;
+            .description_text {
+                border: $border;
+                font-family: $font_bangla;
+                font-size: 18px;
+                color: $deep_black;
+            }
+        }
         // personsl_info_area start
         .personsl_info_area {
             border: $border;

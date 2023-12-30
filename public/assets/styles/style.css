@@ -2130,8 +2130,8 @@ html ::-webkit-scrollbar-thumb:hover {
 .user_review_area .heading_part {
   text-align: center;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
   flex-direction: column;
   gap: 20px;
   font-family: "bangla-font";
@@ -3154,6 +3154,28 @@ html ::-webkit-scrollbar-thumb:hover {
 .about_area .about_area_content {
   border: 0px solid red;
   position: relative;
+}
+.about_area .about_area_content .title-area {
+  border: 0px solid red;
+  margin: 40px 0px 30px 0px;
+}
+.about_area .about_area_content .title-area .title-area_text {
+  border: 0px solid red;
+  font-family: "bangla-font";
+  font-size: 30px;
+  color: #5dabbe;
+  font-weight: bold;
+}
+.about_area .about_area_content .item_description_area {
+  border: 0px solid red;
+  gap: 25px;
+  display: grid;
+}
+.about_area .about_area_content .item_description_area .description_text {
+  border: 0px solid red;
+  font-family: "bangla-font";
+  font-size: 18px;
+  color: #666;
 }
 .about_area .about_area_content .personsl_info_area {
   border: 0px solid red;

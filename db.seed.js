@@ -31,6 +31,7 @@ const apiSiteUrlViewCountSeeder = require("./app/api/site_url/stie_url_view_coun
 const apiTagSeeder = require("./app/api/tag/tags/seeder/seeder")
 const apiOwnerIntroSeeder = require("./app/api/owner_intro/owner_intro/seeder/seeder")
 const apiSpeakerQuotesSeeder = require("./app/api/speaker_quotes/seeder/seeder")
+const apiAboutUsersSeeder = require("./app/api/about_users/seeder/seeder")
 
 
 const seed = async () => {
@@ -74,11 +75,14 @@ const seed = async () => {
     // quotes seeder!!
     // await apiSpeakerQuotesSeeder();
 
+    // about us  seeder!!
+    // await apiAboutUsersSeeder();
+
     // banner seeder!!
     // await apiBannerSeeder();
 
     // // setting seeder!!
-    await apiSettingTitleSeeder();
+    // await apiSettingTitleSeeder();
     // await apiSettingValueSeeder();
 
     // // photo gallery

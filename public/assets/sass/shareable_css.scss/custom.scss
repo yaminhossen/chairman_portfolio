@@ -245,8 +245,8 @@
     .heading_part{
         text-align: center;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        align-items: start;
+        justify-content: start;
         flex-direction: column;
         gap: 20px;
         font-family: $font_bangla;

@@ -58,6 +58,9 @@ import ownerIntroSlice from "../views/pages/owner_intro/owner_intro/config/store
 // quotes
 import speakerQuoteSlice from "../views/pages/speaker_quotes/config/store";
 
+// about user
+import aboutUserSlice from "../views/pages/about_users/config/store";
+
 import { configureStore } from "@reduxjs/toolkit";
 
 
@@ -97,6 +100,9 @@ const store = configureStore({
 
         // quotes
         speaker_quote: speakerQuoteSlice.reducer,
+
+        // quotes
+        about_user: aboutUserSlice.reducer,
 
         // owner intro
         owner_intro: ownerIntroSlice.reducer,

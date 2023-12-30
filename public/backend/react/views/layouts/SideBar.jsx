@@ -69,6 +69,7 @@ function SideBar() {
                         <SingleLink to={'/user-review'} text={'user-review'} icon={'trip_origin'}></SingleLink>
                         <SingleLink to={'/owner-intro'} text={'owner-intro'} icon={'trip_origin'}></SingleLink>
                         <SingleLink to={'/speaker-quote'} text={'speaker-quote'} icon={'trip_origin'}></SingleLink>
+                        <SingleLink to={'/about-user'} text={'about-user'} icon={'trip_origin'}></SingleLink>
 
                     </ul>
                 </li>
