@@ -141,6 +141,11 @@
     height: 560px;
     position: relative;
     overflow: hidden;
+    @include xs(){
+        height: 120px;
+        // border: 3px solid red;
+        // z-index: 120000;
+    }
     &:hover {
         img {
             scale: 1.1;
@@ -155,6 +160,9 @@
         height: 100%;
         object-fit: cover;
         transition-duration: 0.4s;
+        @include xs(){
+            height: auto;
+        }
     }
     // overlay-area start
     .overlay-area {
@@ -170,6 +178,9 @@
         display: grid;
         width: 100%;
         padding: 20px;
+        @include xs(){
+            height: 100px;
+        }
         // justify-content: center;
         .overlay-area_content {
             background-color: $button_transfarent_black;
@@ -182,6 +193,9 @@
             // position: relative;
             align-items: center;
             justify-content: center;
+            @include xs(){
+                height: 80px;
+            }
             .video_icon_area {
                 // border: $border;
                 // position: absolute;
@@ -197,6 +211,7 @@
                     display: flex;
                     justify-content: center;
                     border-radius: 50%;
+                   
                     i {
                         border: $border;
                         color: $brand_color;
@@ -206,6 +221,9 @@
             .image_title {
                 border: $border;
                 padding-top: 50px;
+                @include xs(){
+                    padding-top: 10px;
+                }
                 .title_text {
                     border: $border;
                     font-family: $font_bangla;
@@ -218,6 +236,11 @@
                     align-items: center;
                     justify-content: center;
                     gap: 20px;
+                    @include xs(){
+                        font-size: 12px;
+                        gap: 10px;
+                        z-index: 10000;
+                    }
                     .video_icon{
                         border: $border;
                     width: 65px;
@@ -227,10 +250,16 @@
                     align-items: center;
                     justify-content: center;
                     border-radius: 50%;
-
+                    @include xs(){
+                        width: 20px;
+                    height: 20px;
+                    }
                     i {
                         border: $border;
                         color: $brand_color;
+                        @include xs(){
+                            font-size: 10px;
+                        }
                     }
                     }
                 }

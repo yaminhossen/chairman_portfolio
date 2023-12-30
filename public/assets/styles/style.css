@@ -746,6 +746,12 @@ html ::-webkit-scrollbar-thumb:hover {
   padding: 10px 0px 10px 30px;
   display: inline-block;
 }
+@media screen and (max-width: 575.9px) {
+  .content_title_and_description .title_text {
+    font-size: 12px;
+    padding: 8px 0px 8px 10px;
+  }
+}
 .content_title_and_description .title_text::before {
   content: "";
   width: 65%;
@@ -756,6 +762,19 @@ html ::-webkit-scrollbar-thumb:hover {
   position: absolute;
   top: 0px;
   left: 0px;
+}
+@media screen and (max-width: 575.9px) {
+  .content_title_and_description .title_text::before {
+    content: "";
+    width: 65%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid #5dabbe;
+    border-right: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
 }
 .content_title_and_description .description_text {
   border: 0px solid red;
@@ -2048,6 +2067,11 @@ html ::-webkit-scrollbar-thumb:hover {
   position: relative;
   overflow: hidden;
 }
+@media screen and (max-width: 575.9px) {
+  .video_card2 {
+    height: 120px;
+  }
+}
 .video_card2:hover img {
   scale: 1.1;
 }
@@ -2061,6 +2085,11 @@ html ::-webkit-scrollbar-thumb:hover {
   object-fit: cover;
   transition-duration: 0.4s;
 }
+@media screen and (max-width: 575.9px) {
+  .video_card2 img {
+    height: auto;
+  }
+}
 .video_card2 .overlay-area {
   border: 0px solid red;
   position: absolute;
@@ -2073,6 +2102,11 @@ html ::-webkit-scrollbar-thumb:hover {
   width: 100%;
   padding: 20px;
 }
+@media screen and (max-width: 575.9px) {
+  .video_card2 .overlay-area {
+    height: 100px;
+  }
+}
 .video_card2 .overlay-area .overlay-area_content {
   background-color: rgba(41, 41, 41, 0.5);
   background-color: rgba(0, 0, 0, 0.6901960784);
@@ -2083,6 +2117,11 @@ html ::-webkit-scrollbar-thumb:hover {
   display: grid;
   align-items: center;
   justify-content: center;
+}
+@media screen and (max-width: 575.9px) {
+  .video_card2 .overlay-area .overlay-area_content {
+    height: 80px;
+  }
 }
 .video_card2 .overlay-area .overlay-area_content .video_icon_area .video_icon {
   border: 0px solid red;
@@ -2101,6 +2140,11 @@ html ::-webkit-scrollbar-thumb:hover {
   border: 0px solid red;
   padding-top: 50px;
 }
+@media screen and (max-width: 575.9px) {
+  .video_card2 .overlay-area .overlay-area_content .image_title {
+    padding-top: 10px;
+  }
+}
 .video_card2 .overlay-area .overlay-area_content .image_title .title_text {
   border: 0px solid red;
   font-family: "bangla-font";
@@ -2112,6 +2156,13 @@ html ::-webkit-scrollbar-thumb:hover {
   justify-content: center;
   gap: 20px;
 }
+@media screen and (max-width: 575.9px) {
+  .video_card2 .overlay-area .overlay-area_content .image_title .title_text {
+    font-size: 12px;
+    gap: 10px;
+    z-index: 10000;
+  }
+}
 .video_card2 .overlay-area .overlay-area_content .image_title .title_text .video_icon {
   border: 0px solid red;
   width: 65px;
@@ -2122,9 +2173,20 @@ html ::-webkit-scrollbar-thumb:hover {
   justify-content: center;
   border-radius: 50%;
 }
+@media screen and (max-width: 575.9px) {
+  .video_card2 .overlay-area .overlay-area_content .image_title .title_text .video_icon {
+    width: 20px;
+    height: 20px;
+  }
+}
 .video_card2 .overlay-area .overlay-area_content .image_title .title_text .video_icon i {
   border: 0px solid red;
   color: #5dabbe;
+}
+@media screen and (max-width: 575.9px) {
+  .video_card2 .overlay-area .overlay-area_content .image_title .title_text .video_icon i {
+    font-size: 10px;
+  }
 }
 
 .user_review_area .heading_part {
@@ -2384,8 +2446,9 @@ html ::-webkit-scrollbar-thumb:hover {
 @media screen and (max-width: 575.9px) {
   .banner_area .banner_area_bg_color .banner_area_content .left-area_content {
     display: block;
-    height: calc(100vh - 48px);
+    height: 100%;
     margin-top: 50px;
+    padding-bottom: 40px;
   }
 }
 .banner_area .banner_area_bg_color .banner_area_content .left-area_content .left-area {
@@ -3114,6 +3177,12 @@ html ::-webkit-scrollbar-thumb:hover {
   margin-top: 80px;
   position: relative;
 }
+@media screen and (max-width: 575.9px) {
+  .video_gallery_are {
+    padding: 0px;
+    margin-top: 20px;
+  }
+}
 .video_gallery_are::after {
   content: "";
   width: 50%;
@@ -3135,6 +3204,11 @@ html ::-webkit-scrollbar-thumb:hover {
   flex-wrap: wrap;
   margin-top: 80px;
   margin-bottom: 40px;
+}
+@media screen and (max-width: 575.9px) {
+  .video_gallery_are .video_gallery_are_content .all_video_card {
+    margin-top: 20px;
+  }
 }
 
 .about_area {

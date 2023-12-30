@@ -12,6 +12,10 @@
         position: relative;
         padding: 10px 0px 10px 30px;
         display: inline-block;
+        @include xs(){
+            font-size: 12px;
+            padding: 8px 0px 8px 10px;
+        }
 
         &::before{
             content: "";
@@ -23,6 +27,17 @@
             position: absolute;
             top: 0px;
             left: 0px;
+            @include xs(){
+                content: "";
+            width: 65%;
+            height: 100%;
+            background-color: transparent;
+            border: 2px solid $brand_color;
+            border-right: none;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            }
            
 
         }
