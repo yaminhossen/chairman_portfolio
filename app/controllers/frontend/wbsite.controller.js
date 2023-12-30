@@ -27,6 +27,7 @@ const noticeModel = require("../../api/union_porishod_notice/union_porishod_noti
 const ownerIntroModel = require("../../api/owner_intro/owner_intro/model/model")
 const userReviewModel = require("../../api/user_reviews/user_reviews/model/model")
 const speakerQuoteModel = require("../../api/speaker_quotes/model/model")
+const aboutUserModel = require("../../api/about_users/model/model")
 
 const { async } = require("q");
 const controllers = {
@@ -47,6 +48,7 @@ const controllers = {
 		let user_educations = await uesrEducationModel.find();
 		let profile_info = await uesrProfileInfosModel.find();
 		let banner = await bannerModel.find();
+		let abouts = await aboutUserModel.find();
 
 		controllers.server.locals.seo_title = 'আমার তথ্যাদি';
 
@@ -57,6 +59,7 @@ const controllers = {
 			profile_info,
 			user_educations,
 			banner,
+			abouts,
 		});
 	},
 	photo_gallery: async function (req, res) {

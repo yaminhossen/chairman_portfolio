@@ -19,14 +19,20 @@
                 <!-- content_title end -->
                 <!-- details area start -->
                 <div class="title-area">
-                    <h2 class="title-area_text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dicta a minima, similique, laudantium at nostrum minus atque cum beatae repudiandae eaque tempora.
-                    </h2>
+                    
+                        <% abouts.map( (about)=>{ %>
+                            <h2 class="title-area_text bn"></h2>
+                            <%- about.short_description %>
+                        </h2>
+                            <% })%>
+                    
                 </div>
                 <div class="item_description_area">
-                    <p class="description_text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, quibusdam facilis mollitia eligendi laborum tempore error magnam dicta deserunt nulla officia, pariatur nam!
+                    <% abouts.map( (about)=>{ %>
+                    <p class="description_text bn">
+                       <%- about.long_description %>
                     </p>
+                    <% })%>
                 </div>
                 <!-- details area end -->
 
