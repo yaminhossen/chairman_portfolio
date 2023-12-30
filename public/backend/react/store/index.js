@@ -58,6 +58,9 @@ import ownerIntroSlice from "../views/pages/owner_intro/owner_intro/config/store
 // quotes
 import speakerQuoteSlice from "../views/pages/speaker_quotes/config/store";
 
+// heading title
+import headingTitlesSlice from "../views/pages/heading_titles/config/store";
+
 // about user
 import aboutUserSlice from "../views/pages/about_users/config/store";
 
@@ -101,7 +104,10 @@ const store = configureStore({
         // quotes
         speaker_quote: speakerQuoteSlice.reducer,
 
-        // quotes
+        // haeding title
+        heading_title: headingTitlesSlice.reducer,
+
+        // about user
         about_user: aboutUserSlice.reducer,
 
         // owner intro

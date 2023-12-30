@@ -32,6 +32,7 @@ const tag_routes = require("../app/api/tag/tags/router/routes");
 const user_review_routes = require("../app/api/user_reviews/user_reviews/router/routes");
 const owner_intro_routes = require("../app/api/owner_intro/owner_intro/router/routes");
 const speaker_quotes_routes = require("../app/api/speaker_quotes/router/routes");
+const heading_titles_routes = require("../app/api/heading_titles/router/routes");
 const about_users_routes = require("../app/api/about_users/router/routes");
 const router = express.Router();
 
@@ -71,6 +72,9 @@ router.use(user_review_routes());
 
 // quotes review
 router.use(speaker_quotes_routes());
+
+// heading title review
+router.use(heading_titles_routes());
 
 // about users
 router.use(about_users_routes());

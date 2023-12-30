@@ -48,6 +48,7 @@ import tag_routes from '../views/pages/tag/tags/config/routes.js';
 
 import owner_intro_routes from '../views/pages/owner_intro/owner_intro/config/routes.js';
 import speaker_quote_routes from '../views/pages/speaker_quotes/config/routes.js';
+import heading_title_routes from '../views/pages/heading_titles/config/routes.js';
 import about_user from '../views/pages/about_users/config/routes.js';
 
 const router = {
@@ -85,6 +86,7 @@ const router = {
         union_porishod_notice_routes,
         user_review_routes,
         speaker_quote_routes,
+        heading_title_routes,
         about_user,
 
         owner_intro_routes,
