@@ -5,6 +5,10 @@
     margin: 80px 40px 0px 40px;
     padding: 80px 0px;
     position: relative;
+    @include xs(){
+        margin: 40px 40px 0px 40px;
+        padding: 0px 0px;
+    }
     .dote_bg_image {
         width: 40%;
         height: 40%;
@@ -20,10 +24,17 @@
         .news_item-all {
             border: $border;
             margin: 80px 0px 40px 0px;
+            @include xs(){
+                margin: 40px 0px 40px 0px;
+            }
             .top_item_area {
                 border: $border;
                 display: flex;
                 gap: 10px;
+                @include xs(){
+                    display: flex;
+                    flex-direction: column;
+                }
 
                 .left_area {
                     border: $border;
@@ -54,8 +65,13 @@
                 .right_area {
                     gap: 10px;
                     display: grid;
+                    @include xs(){
+                        display: flex;
+                        flex-direction: column;
+                    }
                     .item {
                         display: block;
+
                     }
                 }
             }
@@ -65,6 +81,10 @@
                 height: 240px;
                 position: relative;
                 overflow: hidden;
+                @include xs(){
+                    width: 196px;
+                    height: 104px;
+                }
                 &:hover {
                     img {
                         scale: 1.1;

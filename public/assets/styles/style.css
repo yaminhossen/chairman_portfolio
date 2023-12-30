@@ -784,6 +784,13 @@ html ::-webkit-scrollbar-thumb:hover {
   color: #666;
   padding: 40px 0px 40px 33px;
 }
+@media screen and (max-width: 575.9px) {
+  .content_title_and_description .description_text {
+    font-size: 12px;
+    padding: 10px 0px 10px 10px;
+    width: 100%;
+  }
+}
 
 .box_content_area {
   border: 0px solid red;
@@ -2624,6 +2631,12 @@ html ::-webkit-scrollbar-thumb:hover {
   padding: 80px 0px;
   position: relative;
 }
+@media screen and (max-width: 575.9px) {
+  .news-area {
+    margin: 40px 40px 0px 40px;
+    padding: 0px 0px;
+  }
+}
 .news-area .dote_bg_image {
   width: 40%;
   height: 40%;
@@ -2640,10 +2653,21 @@ html ::-webkit-scrollbar-thumb:hover {
   border: 0px solid red;
   margin: 80px 0px 40px 0px;
 }
+@media screen and (max-width: 575.9px) {
+  .news-area .news-area_content .news_item-all {
+    margin: 40px 0px 40px 0px;
+  }
+}
 .news-area .news-area_content .news_item-all .top_item_area {
   border: 0px solid red;
   display: flex;
   gap: 10px;
+}
+@media screen and (max-width: 575.9px) {
+  .news-area .news-area_content .news_item-all .top_item_area {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .news-area .news-area_content .news_item-all .top_item_area .left_area {
   border: 0px solid red;
@@ -2669,6 +2693,12 @@ html ::-webkit-scrollbar-thumb:hover {
   gap: 10px;
   display: grid;
 }
+@media screen and (max-width: 575.9px) {
+  .news-area .news-area_content .news_item-all .top_item_area .right_area {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .news-area .news-area_content .news_item-all .top_item_area .right_area .item {
   display: block;
 }
@@ -2678,6 +2708,12 @@ html ::-webkit-scrollbar-thumb:hover {
   height: 240px;
   position: relative;
   overflow: hidden;
+}
+@media screen and (max-width: 575.9px) {
+  .news-area .news-area_content .news_item-all .item {
+    width: 196px;
+    height: 104px;
+  }
 }
 .news-area .news-area_content .news_item-all .item:hover img {
   scale: 1.1;
@@ -2735,6 +2771,12 @@ html ::-webkit-scrollbar-thumb:hover {
   margin: 0px 40px 0px 40px;
   overflow: hidden;
   position: relative;
+}
+@media screen and (max-width: 575.9px) {
+  .social_work_area {
+    padding: 40px 0px;
+    margin: 0px;
+  }
 }
 .social_work_area::after {
   content: "";

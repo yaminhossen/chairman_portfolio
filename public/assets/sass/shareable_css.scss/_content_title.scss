@@ -49,6 +49,11 @@
         font-size: 14px;
         color: $deep_black;
         padding: 40px 0px 40px 33px;
+        @include xs(){
+            font-size: 12px;
+            padding: 10px 0px 10px 10px;
+            width: 100%;
+        }
     }
 }
 // content_title end

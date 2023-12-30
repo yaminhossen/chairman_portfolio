@@ -6,6 +6,10 @@
     margin: 0px 40px 0px 40px;
     overflow: hidden;
     position: relative;
+    @include xs(){
+        padding: 40px  0px;
+        margin: 0px;
+    }
     &::after {
         content: "";
         width: 50%;
