@@ -2,6 +2,9 @@
  .book_review_area{
     border: $border;
     position: relative;
+    @include xs(){
+        margin: 0px 40px 0px 40px;
+    }
     &::after {
         content: "";
         width: 50%;

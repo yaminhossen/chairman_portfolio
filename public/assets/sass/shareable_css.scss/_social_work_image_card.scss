@@ -5,6 +5,10 @@
     height: 392px;
     position: relative;
     overflow: hidden;
+    @include xs(){
+        width: 196px;
+        height: 104px;
+    }
     &:hover{
         img{
             scale: 1.1;
@@ -29,6 +33,9 @@
         height: 100%;
         padding: 40px;   
         transition-duration: .4s; 
+        @include xs(){
+            padding: 15px;
+        }
         .overlay-area_content {
             background-color: $button_transfarent_black;
             background-color: #000000b0;
@@ -38,6 +45,10 @@
             align-items: end;
             display: grid;
             position: relative;
+            @include xs(){
+                padding: 5px;
+                align-items: start;
+            }
             .video_icon_area {
                 border: $border;
                 position: absolute;
@@ -67,6 +78,9 @@
                     // font-weight: bold;
                     // color: $brand_color;
                     color: $brand_color;
+                    @include xs(){
+                        font-size: 10px;
+                    }
                 }
             }
         }
