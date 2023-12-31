@@ -652,6 +652,7 @@ html ::-webkit-scrollbar-thumb:hover {
 @media screen and (max-width: 575.9px) {
   .footer_area .footer_area_content .copy-write_and_social-media_area {
     flex-direction: column;
+    justify-content: space-evenly;
   }
 }
 .footer_area .footer_area_content .copy-write_and_social-media_area .copy-write_area {

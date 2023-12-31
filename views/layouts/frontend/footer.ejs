@@ -149,15 +149,7 @@
 
             <!-- copy-write_and_social-media_area start -->
             <div class="copy-write_and_social-media_area">
-                <!-- copy-write_area start -->
-                <div class="copy-write_area">
-                    <span class="copy-write_text">
-                        <% const foundUser = commonData.address.find(user => user.title === 'copy_right'); %>
-                        <%= foundUser.value %>
-                     © <a href="/home" class="text"> নুর মোহাম্মদ আবু তাহের</a>
-                    </span>
-                </div>
-                <!-- copy-write_area end -->
+               
 
                 <!-- social-media_area start -->
                 <div class="social-media_area">
@@ -175,6 +167,15 @@
                     </ul>
                 </div>
                 <!-- social-media_area end -->
+                 <!-- copy-write_area start -->
+                 <div class="copy-write_area">
+                    <span class="copy-write_text">
+                        <% const foundUser = commonData.address.find(user => user.title === 'copy_right'); %>
+                        <%= foundUser.value %>
+                     © <a href="/home" class="text"> নুর মোহাম্মদ আবু তাহের</a>
+                    </span>
+                </div>
+                <!-- copy-write_area end -->
 
             </div>
             <!-- copy-write_and_social-media_area end -->
