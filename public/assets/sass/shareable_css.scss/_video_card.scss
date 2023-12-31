@@ -3,6 +3,11 @@
     height: 360px;
     position: relative;
     overflow: hidden;
+    @include xs(){
+        width: 100%;
+        min-height: 100px;
+        max-height: 110px;
+    }
     &:hover {
         img {
             scale: 1.1;
@@ -55,15 +60,27 @@
                     display: flex;
                     justify-content: center;
                     border-radius: 50%;
+                    @include xs(){
+                        width: 15px;
+                        height: 15px;
+
+                    }
                     i {
                         border: $border;
                         color: $brand_color;
+                        @include xs(){
+                            font-size: 8px;
+                        }
                     }
                 }
             }
             .image_title {
                 border: $border;
                 padding-top: 50px;
+                @include xs(){
+                    padding-top: 20px;
+                }
+                
                 .title_text {
                     border: $border;
                     font-family: $font_bangla;
@@ -71,6 +88,9 @@
                     // font-weight: bold;
                     // color: $brand_color;
                     color: $brand_color;
+                    @include xs(){
+                        font-size: 12px;
+                    }
                 }
             }
         }

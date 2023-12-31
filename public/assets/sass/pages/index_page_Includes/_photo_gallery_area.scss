@@ -6,6 +6,10 @@
     padding: 80px 0px;
     margin-top: 80px;
     position: relative;
+    @include xs(){
+        margin-top: 0px;
+        padding: 20px 0px;
+    }
     &::after {
         content: "";
         width: 50%;
@@ -26,6 +30,9 @@
             flex-wrap: wrap;
             margin-top: 80px;
             margin-bottom: 40px;
+            @include xs(){
+                margin-top: 20px;
+            }
         }
     }
 }

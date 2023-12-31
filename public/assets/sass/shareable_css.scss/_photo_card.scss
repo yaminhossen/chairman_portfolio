@@ -3,6 +3,11 @@
     height: 360px;
     position: relative;
     overflow: hidden;
+    @include xs(){
+        width: 100%;
+        min-height: 100px;
+        max-height: 110px;
+    }
     &:hover {
         img {
             scale: 1.1;
@@ -51,6 +56,9 @@
                     // font-weight: bold;
                     // color: $brand_color;
                     color: $brand_color;
+                    @include xs(){
+                        font-size: 12px;
+                    }
                 }
             }
         }
