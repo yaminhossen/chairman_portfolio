@@ -271,6 +271,10 @@
 
 // user reviews
 .user_review_area{
+    @include xs(){
+    //     margin: 40px 40px 40px 40px;
+    // padding: 40px 0px 40px 0px;
+    }
     .heading_part{
         text-align: center;
         display: flex;

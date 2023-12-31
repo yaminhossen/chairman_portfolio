@@ -6,8 +6,8 @@
     position: relative;
     overflow: hidden;
     @include xs(){
-        width: 196px;
-        height: 104px;
+        width: 100%;
+        height: 100%;
     }
     &:hover{
         img{
@@ -35,6 +35,8 @@
         transition-duration: .4s; 
         @include xs(){
             padding: 15px;
+            width: 100%;
+            height: 70%;
         }
         .overlay-area_content {
             background-color: $button_transfarent_black;
@@ -48,6 +50,8 @@
             @include xs(){
                 padding: 5px;
                 align-items: start;
+                // width: 160px;
+                // height: 100%;
             }
             .video_icon_area {
                 border: $border;

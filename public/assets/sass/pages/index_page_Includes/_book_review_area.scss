@@ -27,6 +27,9 @@
             flex-wrap: wrap;
             gap: 32px;
             margin: 80px 0px 40px 0px;
+            @include xs(){
+                margin: 40px 0px 20px 0px;
+            }
         }
         // book_card_area_all end
      }

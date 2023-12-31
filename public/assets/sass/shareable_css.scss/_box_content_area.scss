@@ -7,6 +7,9 @@
     background-color: $blue_white;
     padding-top: 40px;
     padding-bottom: 0px;
+    @include xs(){
+        padding-top: 20px;
+    }
     &::after {
         content: "";
         background-image: url(../images/bg_dote_image/bg_dote.png);
@@ -38,6 +41,9 @@
             justify-content: space-between;
             li {
                 border: $border;
+                @include xs(){
+                    width: 100%;
+                }
                 .box {
                     border: $border;
                     display: flex;
@@ -49,6 +55,10 @@
                     padding: 15px;
                     overflow: hidden;
                     position: relative;
+                    @include xs(){
+                        width: 100%;
+                        padding: 8px;
+                    }
                     &:hover{
                         .box_text_area{
                             .number_text{
@@ -68,6 +78,10 @@
                         background-color: $blue_white;
                         // border: 1px solid $brand_color;
                         margin-right: 20px;
+                        @include xs(){
+                            padding: 4px;
+                            margin-right: 10px;
+                        }
                         img {
                             border: $border;
                             width: 100%;
@@ -87,12 +101,18 @@
                             color: $black;
                             transition-duration: .4s;
                             // color: $brand_color;
+                            @include xs(){
+                                font-size: 25px;
+                            }
                         }
                         .title_text {
                             border: $border;
                             font-size: 14px;
                             font-family: $font_bangla;
                             color: $deep_black;
+                            @include xs(){
+                                font-size: 10px;
+                            }
                         }
                     }
                     .bg_number {

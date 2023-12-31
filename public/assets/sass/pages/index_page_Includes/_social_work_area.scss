@@ -48,6 +48,9 @@
                 }
                 .item_area {
                     border: $border;
+                    @include xs(){
+                        width: 100%;
+                    }
                 }
             }
         }

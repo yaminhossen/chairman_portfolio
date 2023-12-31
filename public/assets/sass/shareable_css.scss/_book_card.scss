@@ -7,7 +7,9 @@
         background-color: $white;
         width: 300px;
         border: 1px solid $border_black;
-
+        @include xs(){
+            width: 100%;
+        }
         &:hover {
             .image_area {
                 img {
@@ -30,7 +32,9 @@
                 overflow: hidden;
                 border-bottom: 1px solid $border_black;
                 position: relative;
-
+                @include xs(){
+                    height: 150px;
+                }
                 &::after {
                     content: '';
                     background-image: url("../images/bg_dote_image/bg_dote.png");
@@ -60,6 +64,10 @@
             min-height: 160px;
             transition-duration: .4s;
             // background-color: $border_black;
+            @include xs(){
+                padding: 15px 10px;
+                min-height: 100px;
+            }
 
             .title_text {
                 a {
@@ -70,13 +78,14 @@
                     color: $brand_color;
                     font-weight: bold;
                     margin-bottom: 10px;
+                    @include xs() {
+                        font-size: 14px;
+                    }
                 }
             }
 
             a {
                 .description_text {
-                   
-
                         border: $border;
                         font-family: $font_bangla;
                         font-size: 14px;
@@ -84,8 +93,9 @@
                         // color: black;
                         text-align: justify;
                         text-decoration: none;
-                    
-
+                    @include xs(){
+                        font-size: 12px;
+                    }
                 }
             }
 
