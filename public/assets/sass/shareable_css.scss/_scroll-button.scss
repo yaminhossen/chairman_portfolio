@@ -14,6 +14,11 @@
     bottom: 60px;
     z-index: 99;
     transition-duration: .4s;
+    @include xs(){
+        // left: 100px;
+        right: 40px;
+        // border: 2px solid red;
+    }
     &:hover{
         background-color: $black;
         

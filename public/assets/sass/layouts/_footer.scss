@@ -5,6 +5,9 @@
     background-color: $brand_color;
     margin-top: 80px;
     position: relative;
+    @include xs(){
+        margin-top: 20px;
+    }
     &::after {
         content: "";
         width: 40%;
@@ -252,6 +255,7 @@
             @include xs(){
                 flex-direction: column;
                 justify-content: space-evenly;
+                align-items: center;
             }
             .copy-write_area {
                 border: $border;
@@ -265,6 +269,9 @@
                     // font-weight: bold;
                     color: $black;
                     color: $white;
+                    @include xs(){
+                        text-align: center;
+                    }
                     .text {
                         border: $border;
                         color: $black;

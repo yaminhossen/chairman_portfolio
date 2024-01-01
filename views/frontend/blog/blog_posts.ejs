@@ -92,7 +92,7 @@
                                     দেখাচ্ছে <span id="start_limit"></span> থেকে <span id="end_limit"></span> টা
                                     <%= count %> আইটেমের মদ্ধে ।
                                 </div>
-                                <ul class="mt-4 pagination_item" id="paginate">
+                                <ul class=" pagination_item" id="paginate">
                                     
                                 </ul>
                             </div>
@@ -271,7 +271,7 @@
                     // Generate the HTML for the pagination
                     paginationHTML += `
                         <li class="page-item ">
-                            <a class="page-link pagination_text py-4" onclick="goToPage(${currentPage - 1})"  href="/dashboard/category?page=${currentPage - 1}" aria-label="Previous">
+                            <a class="page-link pagination_text " onclick="goToPage(${currentPage - 1})"  href="/dashboard/category?page=${currentPage - 1}" aria-label="Previous">
                                 <span aria-hidden="true">পুর্ববর্তী</span>
                             </a>
                         </li>
@@ -280,7 +280,7 @@
                     if (startPage > 1) {
                         paginationHTML += `
                             <li class="page-item ">
-                                <a class="page-link pagination_text" onclick="goToPage(${1})"  href="/dashboard/category?page=1">1</a>
+                                <a class="page-link pagination_number pagination_text" onclick="goToPage(${1})"  href="/dashboard/category?page=1">1</a>
                             </li>
                          `;
                         if (startPage > 2) {
@@ -294,7 +294,7 @@
                     for (let i = startPage; i <= endPage; i++) {
                         paginationHTML += `
                             <li class="page-item ">
-                                <a class="page-link pagination_text" onclick="goToPage(${i})"  href="/dashboard/category?page=${i}">${i}</a>
+                                <a class="page-link pagination_number pagination_text" onclick="goToPage(${i})"  href="/dashboard/category?page=${i}">${i}</a>
                             </li>
                         `;
                     }
@@ -305,14 +305,14 @@
                         }
                         paginationHTML += `
                         <li class="page-item ">
-                            <a class="page-link pagination_text" onclick="goToPage(${pageCount})" href="/dashboard/category?page=${pageCount}">${pageCount}</a>
+                            <a class="page-link pagination_number pagination_text" onclick="goToPage(${pageCount})" href="/dashboard/category?page=${pageCount}">${pageCount}</a>
                         </li>
                       `;
                     }
 
                     paginationHTML += `
                         <li class="page-item ">
-                            <a class="page-link pagination_text py-4" onclick="goToPage(${currentPage + 1})" href="/dashboard/category?page=${currentPage + 1}" aria-label="Next">
+                            <a class="page-link pagination_text " onclick="goToPage(${currentPage + 1})" href="/dashboard/category?page=${currentPage + 1}" aria-label="Next">
                                 <span aria-hidden="true">পরবর্তী</span>
                             </a> 
                         </li>

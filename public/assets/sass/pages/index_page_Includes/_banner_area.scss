@@ -71,7 +71,7 @@
                             font-family: "bangla-font";
                             color: $white;
                             @include xs{
-                                font-size: 16px;
+                                font-size: 12px;
                             }
                         }
                         .name_text {
@@ -82,8 +82,8 @@
                             color: $brand_color;
                             padding: 30px 0px 50px 0px;
                             @include xs{
-                                font-size: 22px;
-                                padding: 10px 0px 30px 0px;
+                                font-size: 16px;
+                                padding: 10px 0px 10px 0px;
                             }
                         }
                         .description_text {
@@ -94,7 +94,8 @@
                             text-align: justify;
                             margin-bottom: 50px;
                             @include xs{
-                                font-size: 14px;
+                                font-size: 12px;
+                                margin-bottom: 10px;
                             }
                         }
                     }

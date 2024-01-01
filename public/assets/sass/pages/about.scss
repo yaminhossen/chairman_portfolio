@@ -3,6 +3,9 @@
     border: $border;
     margin-top: 80px;
     position: relative;
+    @include xs(){
+        margin-top: 20px;
+    }
     &::before {
         content: "";
         width: 55%;
@@ -18,19 +21,27 @@
         .title-area {
             border: $border;
             margin: 40px 0px 30px 0px;
-
+            @include xs(){
+                margin: 14px 0px 20px 0px;
+            }
             .title-area_text {
                 border: $border;
                 font-family: $font_bangla;
                 font-size: 30px;
                 color: $brand_color;
                 font-weight: bold;
+                @include xs(){
+                    font-size: 18px;
+                }
             }
         }
         .item_description_area {
             border: $border;
             gap: 25px;
             display: grid;
+            @include xs(){
+                gap: 15px;
+            }
             .description_text {
                 border: $border;
                 font-family: $font_bangla;

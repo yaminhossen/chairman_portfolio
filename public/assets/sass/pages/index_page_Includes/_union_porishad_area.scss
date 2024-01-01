@@ -218,12 +218,18 @@
                             border-bottom: 1px solid $brand_color;
                             padding-bottom: 15px;
                             margin-bottom: 15px;
+                            @include xs(){
+                                margin-bottom: 0px;
+                            }
                             .notice_text {
                                 border: $border;
                                 font-family: $font_bangla;
                                 font-size: 25px;
                                 font-weight: bold;
                                 color: $brand_color;
+                                @include xs(){
+                                    font-size: 16px;
+                                }
                             }
                         }
                         .all_notice_item {
@@ -250,7 +256,7 @@
                                     margin-right: 15px;
                                     // padding: 10px;
                                    @include xs(){
-                                    width: 100px;
+                                    width: 80px;
                                    }
                                     .date_month {
                                         border: $border;
@@ -261,6 +267,9 @@
                                             font-family: $font_bangla;
                                             font-size: 16px;
                                             color: $black;
+                                            @include xs(){
+                                                font-size: 12px;
+                                            }
                                         }
                                     }
                                     .year {
@@ -273,6 +282,9 @@
                                             font-family: $font_bangla;
                                             font-size: 16px;
                                             color: $white;
+                                            @include xs(){
+                                                font-size: 12px;
+                                            }
                                         }
                                     }
                                 }
@@ -286,7 +298,11 @@
                                     //    margin-bottom: 10px;
                                         }
                                     } 
-                                   
+                                   .single_notice{
+                                    @include xs(){
+                                        font-size: 14px;
+                                    }
+                                   }
 
                                     .notice_text {
                                         border: $border;
