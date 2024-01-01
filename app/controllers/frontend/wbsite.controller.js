@@ -28,6 +28,7 @@ const ownerIntroModel = require("../../api/owner_intro/owner_intro/model/model")
 const userReviewModel = require("../../api/user_reviews/user_reviews/model/model")
 const speakerQuoteModel = require("../../api/speaker_quotes/model/model")
 const aboutUserModel = require("../../api/about_users/model/model")
+const headingTitleModel = require("../../api/heading_titles/model/model")
 
 const { async } = require("q");
 const controllers = {
@@ -67,11 +68,13 @@ const controllers = {
 		let photo_gallery_category = await photoGalleryCategoriyModel.find();
 		let tags = await tagsModel.find();
 		let blog_category = await blogCategoriesModel.find();
+		let PhotoGallery = await headingTitleModel.findOne({title: "ফটো গ্যালারি"});
 
 		return res.render(`frontend/gallery/photo_gallery`, {
 			photo_gallery_category,
 			tags,
 			blog_category,
+			PhotoGallery,
 		});
 	},
 	video_gallery: async function (req, res) {
@@ -80,12 +83,14 @@ const controllers = {
 		let tags = await tagsModel.find();
 		let blog_category = await blogCategoriesModel.find();
 		let video_gallery_video = await videoGalleryVideoModel.find();
+		let VideoGallery = await headingTitleModel.findOne({title: "ভিডিও গ্যালারি"});
 
 		return res.render(`frontend/gallery/video_gallery`, {
 			video_gallery_category,
 			tags,
 			blog_category,
 			video_gallery_video,
+			VideoGallery,
 		});
 	},
 	audio_gallery: async function (req, res) {
@@ -94,12 +99,14 @@ const controllers = {
 		let tags = await tagsModel.find();
 		let blog_category = await blogCategoriesModel.find();
 		let video_gallery_video = await videoGalleryVideoModel.find();
+		let AudioGallery = await headingTitleModel.findOne({title: "অডিও গ্যালারি"});
 
 		return res.render(`frontend/gallery/audio_gallery`, {
 			video_gallery_category,
 			tags,
 			blog_category,
 			video_gallery_video,
+			AudioGallery,
 		});
 	},
 	home_page: async function (req, res) {
@@ -117,7 +124,9 @@ const controllers = {
 		let userReview = await userReviewModel.find();
 		let ownerIntros = await ownerIntroModel.find();
 		let speakerQuotes = await speakerQuoteModel.find();
-
+		let PhotoGallery = await headingTitleModel.findOne({title: "ফটো গ্যালারি"});
+		let VideoGallery = await headingTitleModel.findOne({title: "ভিডিও গ্যালারি"});
+		// console.log("heading titile",PhotoGallery);
 		let contemp = await blogCategoriesModel.findOne({ title: "সংবাদ" });
 
 		let contems = await blogsModel.find().where({ categories: contemp._id });
@@ -184,7 +193,8 @@ const controllers = {
 			ownerIntros,
 			userReview,
 			speakerQuotes,
-
+			PhotoGallery,
+			VideoGallery,
 		});
 	},
 

@@ -57,7 +57,7 @@ function Create() {
                   <div className="custom_form_el">
                     <label htmlFor="">Description</label>
                     <div>:</div>
-                    <div><input name="description" type="Date" className="form-control" /></div>
+                    <div><input name="description" type="text" className="form-control" /></div>
                   </div>
                   
                 </div>
