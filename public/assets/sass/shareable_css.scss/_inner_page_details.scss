@@ -202,9 +202,15 @@ h4{
                     font-family: $font_bangla;
                     font-size: 16px;
                     color: $brand_color;
+                    @include xs(){
+                        font-size: 12px;
+                    }
                     .color_text {
                         border: $border;
                         color: $light_black;
+                        @include xs(){
+                            font-size: 12px;
+                        }
                     }
                 }
             }

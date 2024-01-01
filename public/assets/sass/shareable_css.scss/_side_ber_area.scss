@@ -9,6 +9,9 @@
         font-weight: bold;
         color: $brand_color;
         margin-bottom: 15px;
+        @include xs(){
+            font-size: 14px;
+        }
     }
 }
 // side_ber_area_title end
@@ -180,6 +183,9 @@
                                 color: $deep_black;
                                 color: $brand_color;
                                 font-weight: bold;
+                                @include xs(){
+                                    font-size: 10px;
+                                }
                             }
                         }
                         .date_area {

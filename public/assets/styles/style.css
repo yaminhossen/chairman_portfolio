@@ -1706,6 +1706,11 @@ html ::-webkit-scrollbar-thumb:hover {
   color: #5dabbe;
   margin-bottom: 15px;
 }
+@media screen and (max-width: 575.9px) {
+  .side_ber_area_title .title_text {
+    font-size: 14px;
+  }
+}
 
 .side_ber_area {
   border: 0px solid red;
@@ -1867,6 +1872,11 @@ html ::-webkit-scrollbar-thumb:hover {
   color: #666;
   color: #5dabbe;
   font-weight: bold;
+}
+@media screen and (max-width: 575.9px) {
+  .side_ber_area .side_ber_area_content .recently_posted_area .recently_posted_item_all .posted_item .title_and_dete_area .title_area .title_text {
+    font-size: 10px;
+  }
 }
 .side_ber_area .side_ber_area_content .recently_posted_area .recently_posted_item_all .posted_item .title_and_dete_area .date_area {
   border: 0px solid red;
@@ -2166,9 +2176,19 @@ html ::-webkit-scrollbar-thumb:hover {
   font-size: 16px;
   color: #5dabbe;
 }
+@media screen and (max-width: 575.9px) {
+  .inner_details_page .inner_item_details .date_and_comment_area .date_comment_area .date_comment_area_text {
+    font-size: 12px;
+  }
+}
 .inner_details_page .inner_item_details .date_and_comment_area .date_comment_area .date_comment_area_text .color_text {
   border: 0px solid red;
   color: #999;
+}
+@media screen and (max-width: 575.9px) {
+  .inner_details_page .inner_item_details .date_and_comment_area .date_comment_area .date_comment_area_text .color_text {
+    font-size: 12px;
+  }
 }
 .inner_details_page .inner_item_details .title-area {
   border: 0px solid red;
@@ -2240,6 +2260,7 @@ html ::-webkit-scrollbar-thumb:hover {
 @media screen and (max-width: 575.9px) {
   .comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area {
     display: grid;
+    gap: 5px;
   }
 }
 .comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area .user-image_area {
@@ -2250,12 +2271,30 @@ html ::-webkit-scrollbar-thumb:hover {
   border: 1px solid #5dabbe;
   background-color: #5dabbe;
 }
+@media screen and (max-width: 575.9px) {
+  .comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area .user-image_area {
+    width: 25px;
+    height: 25px;
+  }
+}
 .comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area .user-image_area img {
   border: 0px solid red;
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+}
+.comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area .user-image_area .fa-user {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+}
+@media screen and (max-width: 575.9px) {
+  .comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area .user-image_area .fa-user {
+    font-size: 12px;
+  }
 }
 .comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area .user_name_and_comment_area {
   width: 100%;
@@ -2284,6 +2323,11 @@ html ::-webkit-scrollbar-thumb:hover {
   background-color: transparent;
   margin: 10px 0px;
 }
+@media screen and (max-width: 575.9px) {
+  .comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area .user_name_and_comment_area .comment_form_area {
+    font-size: 12px;
+  }
+}
 .comment-area form .user-image_area_and_comment_form_and_button_area .cancel_and_submit_button_area {
   border: 0px solid red;
   justify-content: end;
@@ -2301,6 +2345,11 @@ html ::-webkit-scrollbar-thumb:hover {
   padding: 3px 8px;
   border-radius: 3px;
   transition-duration: 0.4s;
+}
+@media screen and (max-width: 575.9px) {
+  .comment-area form .user-image_area_and_comment_form_and_button_area .cancel_and_submit_button_area .cancel_and_submit_button {
+    font-size: 10px;
+  }
 }
 .comment-area form .user-image_area_and_comment_form_and_button_area .cancel_and_submit_button_area .cancel_and_submit_button:hover {
   background-color: transparent;
@@ -2324,11 +2373,29 @@ html ::-webkit-scrollbar-thumb:hover {
   border: 1px solid #5dabbe;
   background-color: #5dabbe;
 }
+@media screen and (max-width: 575.9px) {
+  .comment-area form .comment_text_area .user-image_area_and_comment_text_area .user-image_area {
+    width: 25px;
+    height: 25px;
+  }
+}
 .comment-area form .comment_text_area .user-image_area_and_comment_text_area .user-image_area img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+}
+.comment-area form .comment_text_area .user-image_area_and_comment_text_area .user-image_area .fa-user {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+}
+@media screen and (max-width: 575.9px) {
+  .comment-area form .comment_text_area .user-image_area_and_comment_text_area .user-image_area .fa-user {
+    font-size: 12px;
+  }
 }
 .comment-area form .comment_text_area .user-image_area_and_comment_text_area .comment_text {
   margin-left: 15px;
@@ -2341,6 +2408,11 @@ html ::-webkit-scrollbar-thumb:hover {
   font-family: "bangla-font";
   font-size: 15px;
   color: #999;
+}
+@media screen and (max-width: 575.9px) {
+  .comment-area form .comment_text_area .user-image_area_and_comment_text_area .comment_text .text {
+    font-size: 12px;
+  }
 }
 .comment-area form .comment_text_area .user-image_area_and_comment_text_area .comment_text .button_area {
   position: absolute;
@@ -2416,6 +2488,12 @@ html ::-webkit-scrollbar-thumb:hover {
 @media screen and (max-width: 575.9px) {
   .related_item_areaa {
     grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 575.9px) {
+  .related_item_areaa .item_areaa {
+    max-height: 100px;
   }
 }
 .related_item_areaa .social_work_image_carda {
@@ -2452,9 +2530,19 @@ html ::-webkit-scrollbar-thumb:hover {
   font-size: 18px;
   color: #5dabbe;
 }
+@media screen and (max-width: 575.9px) {
+  .related_item_areaa .social_work_image_carda .overlay-areaa .overlay-area_contenta .image_titlea .title_texta {
+    font-size: 12px;
+  }
+}
 .related_item_areaa .social_work_image_carda:hover .overlay-areaa .overlay-area_contenta .image_titlea .title_texta {
   font-size: 18px;
   color: black;
+}
+@media screen and (max-width: 575.9px) {
+  .related_item_areaa .social_work_image_carda:hover .overlay-areaa .overlay-area_contenta .image_titlea .title_texta {
+    font-size: 12px;
+  }
 }
 .related_item_areaa .social_work_image_carda:hover img {
   scale: 1.1;

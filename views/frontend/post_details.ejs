@@ -105,7 +105,16 @@
                                                 <div class="user-image_and_comment_form_area">
 
                                                     <div class="user-image_area">
-                                                        <img src="/assets/images/profile_image/img1.png" alt="img">
+                                                        <!-- <div class="user_img"> -->
+                                                            <!-- <img src="/uploads/posts/bnu.png" alt=""> -->
+                                                            <% if (post_details?.photos) { %>
+                                                                <!-- If you have a photo URL, display the image -->
+                                                                <img src="<%= post_details.photos %>" alt="User Photo">
+                                                              <% } else { %>
+                                                                <!-- If no photo URL, display a Font Awesome icon -->
+                                                                <i class="fa-solid fa-user"></i>
+                                                              <% } %>
+                                                        <!-- </div> -->
                                                     </div>
 
                                                     <div class="user_name_and_comment_area">
@@ -136,7 +145,13 @@
                                                 <% post_comments?.comments.slice(-2).map( (pc)=>{ %>
                                                     <div class="user-image_area_and_comment_text_area">
                                                         <div class="mb-3 user-image_area">
-                                                            <img src="/assets/images/profile_image/img2.png" alt="img">
+                                                            <% if (post_details?.photos) { %>
+                                                                <!-- If you have a photo URL, display the image -->
+                                                                <img src="<%= post_details.photos %>" alt="User Photo">
+                                                              <% } else { %>
+                                                                <!-- If no photo URL, display a Font Awesome icon -->
+                                                                <i class="fa-solid fa-user"></i>
+                                                              <% } %>
                                                         </div>
                                                         <div class="comment_text">
                                                             <p class="text">
