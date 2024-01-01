@@ -4,6 +4,10 @@
     border-top: 1px solid $brand_color;
     padding: 40px 0px 0px 0px;
     margin-top: 50px;
+    @include xs(){
+        padding: 20px 0px 0px 0px;
+        margin-top: 30px;
+    }
 
     form {
         border: $border;
@@ -19,6 +23,9 @@
                 align-items: center;
                 gap: 30px;
                 width: 100%;
+                @include xs(){
+                    display: grid;
+                }
 
                 .user-image_area {
                     border: $border;
@@ -41,6 +48,9 @@
                     .user_name_area{
                         display: flex;
                         gap: 15px;
+                        @include xs(){
+                            display: grid;
+                        }
                     }
                     .comment_form_area {
                         border: $border;
@@ -92,7 +102,9 @@
         // comment_text_area start
         .comment_text_area {
             padding: 30px 0px 68px 0px;
-
+            @include xs(){
+                padding: 20px 0px 20px 0px;
+            }
             .user-image_area_and_comment_text_area {
                 display: flex;
 

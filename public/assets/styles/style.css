@@ -1326,6 +1326,7 @@ html ::-webkit-scrollbar-thumb:hover {
   .blog_card {
     width: 100%;
     height: 100%;
+    max-height: 150px;
   }
 }
 .blog_card:hover .blog_image img {
@@ -1350,11 +1351,17 @@ html ::-webkit-scrollbar-thumb:hover {
   border: 0px solid red;
   width: 100%;
   height: 100%;
+  border: 2px solid red;
+}
+@media screen and (max-width: 575.9px) {
+  .blog_card .book_image {
+    height: 50%;
+  }
 }
 .blog_card .book_image img {
   border: 0px solid red;
   width: 100%;
-  height: 70%;
+  height: 100%;
   object-fit: contain;
   transition-duration: 0.4s;
 }
@@ -2095,6 +2102,12 @@ html ::-webkit-scrollbar-thumb:hover {
   font-weight: 600;
   padding: 20px 0px;
 }
+@media screen and (max-width: 575.9px) {
+  .related_item_area_top h4 {
+    font-size: 14px;
+    padding: 10px 0px;
+  }
+}
 
 .inner_details_page {
   border: 0px solid red;
@@ -2103,11 +2116,21 @@ html ::-webkit-scrollbar-thumb:hover {
   border: 0px solid red;
   margin-top: 40px;
 }
+@media screen and (max-width: 575.9px) {
+  .inner_details_page .inner_item_details {
+    margin-top: 20px;
+  }
+}
 .inner_details_page .inner_item_details .image_area {
   border: 0px solid red;
   width: 100%;
   height: 450px;
   padding: 20px 0px;
+}
+@media screen and (max-width: 575.9px) {
+  .inner_details_page .inner_item_details .image_area {
+    height: 100%;
+  }
 }
 .inner_details_page .inner_item_details .image_area img {
   border: 0px solid red;
@@ -2126,6 +2149,11 @@ html ::-webkit-scrollbar-thumb:hover {
   justify-content: space-between;
   padding: 20px 0px;
   border-bottom: 1px solid #5dabbe;
+}
+@media screen and (max-width: 575.9px) {
+  .inner_details_page .inner_item_details .date_and_comment_area {
+    padding: 10px 0px;
+  }
 }
 .inner_details_page .inner_item_details .date_and_comment_area .date_comment_area {
   border: 0px solid red;
@@ -2146,6 +2174,11 @@ html ::-webkit-scrollbar-thumb:hover {
   border: 0px solid red;
   margin: 40px 0px 30px 0px;
 }
+@media screen and (max-width: 575.9px) {
+  .inner_details_page .inner_item_details .title-area {
+    margin: 20px 0px 10px 0px;
+  }
+}
 .inner_details_page .inner_item_details .title-area .title-area_text {
   border: 0px solid red;
   font-family: "bangla-font";
@@ -2153,10 +2186,20 @@ html ::-webkit-scrollbar-thumb:hover {
   color: #5dabbe;
   font-weight: bold;
 }
+@media screen and (max-width: 575.9px) {
+  .inner_details_page .inner_item_details .title-area .title-area_text {
+    font-size: 16px;
+  }
+}
 .inner_details_page .inner_item_details .item_description_area {
   border: 0px solid red;
   gap: 25px;
   display: grid;
+}
+@media screen and (max-width: 575.9px) {
+  .inner_details_page .inner_item_details .item_description_area {
+    gap: 15px;
+  }
 }
 .inner_details_page .inner_item_details .item_description_area .description_text {
   border: 0px solid red;
@@ -2164,12 +2207,23 @@ html ::-webkit-scrollbar-thumb:hover {
   font-size: 18px;
   color: #666;
 }
+@media screen and (max-width: 575.9px) {
+  .inner_details_page .inner_item_details .item_description_area .description_text {
+    font-size: 2px;
+  }
+}
 
 .comment-area {
   border: 0px solid red;
   border-top: 1px solid #5dabbe;
   padding: 40px 0px 0px 0px;
   margin-top: 50px;
+}
+@media screen and (max-width: 575.9px) {
+  .comment-area {
+    padding: 20px 0px 0px 0px;
+    margin-top: 30px;
+  }
 }
 .comment-area form {
   border: 0px solid red;
@@ -2182,6 +2236,11 @@ html ::-webkit-scrollbar-thumb:hover {
   align-items: center;
   gap: 30px;
   width: 100%;
+}
+@media screen and (max-width: 575.9px) {
+  .comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area {
+    display: grid;
+  }
 }
 .comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area .user-image_area {
   border: 0px solid red;
@@ -2204,6 +2263,11 @@ html ::-webkit-scrollbar-thumb:hover {
 .comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area .user_name_and_comment_area .user_name_area {
   display: flex;
   gap: 15px;
+}
+@media screen and (max-width: 575.9px) {
+  .comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area .user_name_and_comment_area .user_name_area {
+    display: grid;
+  }
 }
 .comment-area form .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area .user_name_and_comment_area .comment_form_area {
   border: 0px solid red;
@@ -2244,6 +2308,11 @@ html ::-webkit-scrollbar-thumb:hover {
 }
 .comment-area form .comment_text_area {
   padding: 30px 0px 68px 0px;
+}
+@media screen and (max-width: 575.9px) {
+  .comment-area form .comment_text_area {
+    padding: 20px 0px 20px 0px;
+  }
 }
 .comment-area form .comment_text_area .user-image_area_and_comment_text_area {
   display: flex;
@@ -2344,6 +2413,11 @@ html ::-webkit-scrollbar-thumb:hover {
   grid-template-columns: repeat(2, 1fr);
   gap: 50px;
 }
+@media screen and (max-width: 575.9px) {
+  .related_item_areaa {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .related_item_areaa .social_work_image_carda {
   display: flex;
   width: 100%;
@@ -2359,6 +2433,12 @@ html ::-webkit-scrollbar-thumb:hover {
   width: 100%;
   height: 100%;
   transition-duration: 0.4s;
+}
+@media screen and (max-width: 575.9px) {
+  .related_item_areaa .social_work_image_carda .item_area_image_div img {
+    height: 80px;
+    width: 100px;
+  }
 }
 .related_item_areaa .social_work_image_carda .overlay-areaa {
   width: 50%;

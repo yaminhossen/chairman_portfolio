@@ -5,6 +5,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
+    @include xs(){
+        grid-template-columns: repeat(1, 1fr);
+    }
 
     // border: 2px solid red;
     .social_work_image_carda {
@@ -23,6 +26,10 @@
                 width: 100%;
                 height: 100%;
                 transition-duration: .4s;
+                @include xs(){
+                    height: 80px;
+                    width: 100px;
+                }
             }
 
         }
