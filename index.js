@@ -39,7 +39,6 @@ server.use(express.static("public"));
 server.use((req, res, next) => {
 	server.locals.error = {};
 	server.locals.old = {};
-	
 	if(req.session.error){
 		server.locals.error = req.session.error;
 		req.session.error = {}
