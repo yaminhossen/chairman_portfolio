@@ -79,6 +79,7 @@ const controllers = {
 			});
 		} catch (error) {
 			console.error("Error in photo_gallery:", error);
+			console.error("Error in somewhere:", error);
 			return res.status(500).send("Internal Server Error");
 		}
 	},
