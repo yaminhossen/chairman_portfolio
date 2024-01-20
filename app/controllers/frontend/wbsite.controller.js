@@ -83,34 +83,8 @@ const controllers = {
 				title: "",
 				description: "",
 			};
-			photo_gallery_category = [
-				{
-					photo: "",
-					title: "",
-				},
-				{
-					photo: "",
-					title: "",
-				},
-				{
-					photo: "",
-					title: "",
-				},
-			];
-			tags = [
-				{
-					photo: "",
-					title: "",
-				},
-				{
-					photo: "",
-					title: "",
-				},
-				{
-					photo: "",
-					title: "",
-				},
-			];
+			photo_gallery_category = [];
+			tags = [];
 			return res.render(`frontend/gallery/photo_gallery`, {
 				photo_gallery_category,
 				tags,
@@ -123,7 +97,7 @@ const controllers = {
 
 		try {
 			let video_gallery_category = await videoGalleryCategoriyModel.find();
-			let tags = await tagsModel.find();
+			let tags = await tagsModels.find();
 			let blog_category = await blogCategoriesModel.find();
 			let video_gallery_video = await videoGalleryVideoModel.find();
 			let VideoGallery = await headingTitleModel.findOne({ title: "ভিডিও গ্যালারি" });
@@ -140,40 +114,8 @@ const controllers = {
 				title: "",
 				description: "",
 			};
-			video_gallery_video = [
-				{
-					photo: "",
-					photo_alt: "",
-					url: "",
-					title: "",
-				},
-				{
-					photo: "",
-					photo_alt: "",
-					url: "",
-					title: "",
-				},
-				{
-					photo: "",
-					photo_alt: "",
-					url: "",
-					title: "",
-				},
-			];
-			tags = [
-				{
-					photo: "",
-					title: "",
-				},
-				{
-					photo: "",
-					title: "",
-				},
-				{
-					photo: "",
-					title: "",
-				},
-			];
+			video_gallery_video = [];
+			tags = [];
 			return res.render(`frontend/gallery/video_gallery`, {
 				video_gallery_video,
 				tags,
@@ -294,54 +236,53 @@ const controllers = {
 			});
 
 		} catch (error) {
-			photo_gallery_category = [
-				{
-					photo: "",
-					title: "",
-				},
-				{
-					photo: "",
-					title: "",
-				},
-				{
-					photo: "",
-					title: "",
-				},
-			];
-			blog_category = [
-				{
-					url: "",
-					title: "",
-				},
-				{
-					url: "",
-					title: "",
-				},
-				{
-					url: "",
-					title: "",
-				},
-			];
-			video_gallery_video = [
-				{
-					photo: "",
-					photo_alt: "",
-					url: "",
-					title: "",
-				},
-				{
-					photo: "",
-					photo_alt: "",
-					url: "",
-					title: "",
-				},
-				{
-					photo: "",
-					photo_alt: "",
-					url: "",
-					title: "",
-				},
-			];
+			photo_gallery_category = [];
+			blog_category = [];
+			video_gallery_video = [];
+			banner = [];
+			contems = [];
+			social_works = [];
+			book_reviews = [];
+			notices = [];
+			ownerIntros = [];
+			userReview = [];
+			speakerQuotes = [];
+			settingTitle1 ={
+				title:"",
+				value:"",
+			}
+			settingTitle2 ={
+				title:"",
+				value:"",
+			}
+			settingTitle3 ={
+				title:"",
+				value:"",
+			}
+			settingTitle4 ={
+				title:"",
+				value:"",
+			}
+			contemp ={
+				title:"",
+				short_description:"",
+			}
+			social_work ={
+				title:"",
+				short_description:"",
+			}
+			book_review ={
+				title:"",
+				short_description:"",
+			}
+			PhotoGallery ={
+				title:"",
+				short_description:"",
+			}
+			VideoGallery ={
+				title:"",
+				short_description:"",
+			}
 			return res.render(`frontend/home`, {
 				photo_gallery_category,
 				// video_gallery_category,
@@ -358,16 +299,6 @@ const controllers = {
 				social_works,
 				book_review,
 				book_reviews,
-				blog_islam,
-				blog_islams,
-				blog_islamic_movement,
-				blog_islamic_movements,
-				blog_bangladesh,
-				blog_bangladeshs,
-				blog_politics,
-				blog_politicss,
-				blog_history,
-				blog_historys,
 				notices,
 				ownerIntros,
 				userReview,
@@ -418,8 +349,24 @@ const controllers = {
 			});
 
 		} catch (error) {
-			console.error("Error in blog post:", error);
-			return res.status(500).send("Internal Server Error");
+			blogs = [];
+			blog ={
+				title:"",
+				short_description:"",
+			}
+			let reqUrl = req.params.url;
+			console.log('requrl', reqUrl);
+			let count = 3;
+			let page = 1;
+			let limit = 6;
+			return res.render(`frontend/blog/blog_posts`, {
+				blog,
+				blogs,
+				reqUrl,
+				count,
+				page,
+				limit,
+			});
 		}
 	},
 
