@@ -52,6 +52,7 @@ server.use((req, res, next) => {
 	next();
 });
 
+log(server);
 // routes
 server.use(allRoutes(server));
 
