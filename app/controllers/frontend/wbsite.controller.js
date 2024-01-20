@@ -166,7 +166,7 @@ const controllers = {
 
 
 
-		// console.log("photo_gallery",photo_gallery_category);
+		console.log("photo_gallery",photo_gallery_category);
 		return res.render(`frontend/home`, {
 			profile_info,
 			photo_gallery_category,
