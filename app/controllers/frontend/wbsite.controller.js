@@ -416,8 +416,19 @@ const controllers = {
 			});
 
 		} catch (error) {
-			console.error("Error in search post:", error);
-			return res.status(500).send("Internal Server Error");
+			blogs = [];
+			let reqUrl = req.params.url;
+			console.log('requrl', reqUrl);
+			let count = 3;
+			let page = 1;
+			let limit = 6;
+			return res.render(`frontend/blog/search_posts`, {
+				reqUrl,
+				blogs,
+				count,
+				page,
+				limit,
+			});
 		}
 	},
 
@@ -451,6 +462,7 @@ const controllers = {
 			controllers.server.locals.seo_description = post_details?.seo_description;
 			controllers.server.locals.seo_image = post_details?.photo;
 			controllers.server.locals.seo_keyword = post_details?.seo_keyword;
+			console.log('post_details', post_details);
 			return res.render(`frontend/post_details`, {
 				post_details,
 				posts,
@@ -460,8 +472,38 @@ const controllers = {
 			});
 
 		} catch (error) {
-			console.error("Error in post details:", error);
-			return res.status(500).send("Internal Server Error");
+			let currentDate = new Date('2023-06-14T00:00:00.000Z');
+			post_details ={
+				title:"",
+				subtitle:"",
+				published_date: currentDate,
+				photo:"",
+				photo_alt:"",
+				short_description:"",
+				description:"",
+				photos:"",
+				_id:"",
+			}
+			post = {
+				title: "",
+			}
+			posts = [];
+			filterPost = [
+				{
+					photo:"",
+					_id:"",
+					title:"",
+					published_date:currentDate
+				}
+			];
+			post_comments = [];
+			return res.render(`frontend/post_details`, {
+				post_details,
+				posts,
+				post_comments,
+				post,
+				filterPost,
+			});
 		}
 
 
@@ -475,8 +517,18 @@ const controllers = {
 			});
 
 		} catch (error) {
-			console.error("Error in notice details:", error);
-			return res.status(500).send("Internal Server Error");
+			let currentDate = new Date('2023-06-14T00:00:00.000Z');
+			notice_details ={
+				title:"",
+				subtitle:"",
+				date: currentDate,
+				description:"",
+				photos:"",
+				_id:"",
+			}
+			return res.render(`frontend/notice_details`, {
+				notice_details,
+			});
 		}
 	},
 
@@ -508,8 +560,27 @@ const controllers = {
 			});
 
 		} catch (error) {
-			console.error("Error in notice:", error);
-			return res.status(500).send("Internal Server Error");
+			let currentDate = new Date('2023-06-14T00:00:00.000Z');
+			notice_all = [
+				{
+					photo:"",
+					_id:"all",
+					title:"",
+					description:"",
+					date:currentDate
+				}
+			];
+			let count = 3;
+			let reqUrl = 'search-items';
+			let page = 1;
+			let limit = 6;
+			return res.render(`frontend/blog/notice_all`, {
+				notice_all,
+				reqUrl,
+				count,
+				page,
+				limit,
+			});
 		}
 	},
 

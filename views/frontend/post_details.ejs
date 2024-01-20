@@ -142,7 +142,7 @@
 
                                             <!-- comment_text_area start -->
                                             <div class="comment_text_area">
-                                                <% post_comments?.comments.slice(-2).map( (pc)=>{ %>
+                                                <% post_comments?.comments?.slice(-2).map( (pc)=>{ %>
                                                     <div class="user-image_area_and_comment_text_area">
                                                         <div class="mb-3 user-image_area">
                                                             <% if (post_details?.photos) { %>

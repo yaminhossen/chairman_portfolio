@@ -96,7 +96,7 @@
                                                 <div class="notice_text_area">
                                                     <h6 class="fw-bold single_notice bn"><%= notice.title %></h6>
                                                     <p class="notice_text bn">
-                                                        <%- notice.description.slice(0,150) %>
+                                                        <%- notice.description?.slice(0,150) %>
                                                             <span class="read_more_button_area"> <a href="/notice/<%= notice._id %>"
                                                                     class="button_text bn">বিস্তারিত পড়ুন . . .
                                                                 </a> </span>
