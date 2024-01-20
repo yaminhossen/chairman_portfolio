@@ -9,12 +9,14 @@ var jwt = require('jsonwebtoken');
 
 router
 	.post("/login-submit", async function (req, res) {
-		// console.log(req.body);
+		console.log(req.body);
+		
 		const { email, password } = req.body;
 		console.log('pre pass', password);
-		let user = await userModel.where({ email: email }).populate('role').findOne();
-		console.log('last pass', user?.password);
+		let user = await userModel.where({ email: email }).findOne();
+		console.log('last pass', user);
 		// console.log(user);
+		// return ;
 		if (user) {
 			console.log(user);
 			// console.log(user?.role[0]?.title);
@@ -23,6 +25,7 @@ router
 			console.log('title', title);
 			let passMatch = await bcrypt.compare(password, user?.password);
 			console.log(passMatch);
+			// return;
 			if (passMatch) {
 				// console.log(passMatch);
 				let data = {
@@ -40,6 +43,9 @@ router
 				res.cookie('token', token)
 				// console.log('prev_auth_url',req.session.prev_auth_url);
 				let prevUrl = req.session.prev_auth_url;
+				console.log('prevurl',prevUrl);
+				console.log('token',token);
+				// return;
 				if (prevUrl) {
 					delete req.session.prev_auth_url;
 					if (prevUrl != "/favicon.ico") {
@@ -129,7 +135,7 @@ router
 		}
 		res.redirect("/dashboard");
 	})
-	// .use(isAuthMiddleware())
+	.use(isAuthMiddleware())
 	.get("/logout", function (req, res) {
 		req.session.isAuth = false;
 		return res.redirect("/");
