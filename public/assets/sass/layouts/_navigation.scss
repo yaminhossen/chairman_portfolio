@@ -51,6 +51,11 @@
                         display: none;
                     }
                 }
+                .extra_link_li{
+                    @include xxl{
+                        display: none;
+                    }
+                }
 
                 li {
                     border: $border;

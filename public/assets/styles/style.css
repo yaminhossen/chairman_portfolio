@@ -178,6 +178,11 @@ html ::-webkit-scrollbar-thumb:hover {
     display: none;
   }
 }
+@media (min-width: 1400px) {
+  .navigation_area .navigation_area_content .navigation_menu_area ul .extra_link_li {
+    display: none;
+  }
+}
 .navigation_area .navigation_area_content .navigation_menu_area ul li {
   border: 0px solid red;
   border-right: 1px solid #999;
@@ -1412,7 +1417,6 @@ html ::-webkit-scrollbar-thumb:hover {
   border: 0px solid red;
   width: 100%;
   height: 100%;
-  border: 2px solid red;
 }
 @media screen and (max-width: 575.9px) {
   .blog_card .book_image {
