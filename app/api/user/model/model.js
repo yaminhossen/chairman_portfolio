@@ -56,7 +56,6 @@ let userSchema = mongoose.Schema({
 	role: {
 		type: Number,
 		required: true,
-		ref: 'user_roles',
 	}
 }, {
 	timestamps: true,

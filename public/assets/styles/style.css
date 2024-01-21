@@ -173,6 +173,11 @@ html ::-webkit-scrollbar-thumb:hover {
   display: flex;
   background-color: #f2f4f8;
 }
+@media (min-width: 992px) and (max-width: 1199.9px) {
+  .navigation_area .navigation_area_content .navigation_menu_area ul .dlgnone {
+    display: none;
+  }
+}
 .navigation_area .navigation_area_content .navigation_menu_area ul li {
   border: 0px solid red;
   border-right: 1px solid #999;
@@ -223,6 +228,11 @@ html ::-webkit-scrollbar-thumb:hover {
 }
 .navigation_area .navigation_area_content .navigation_menu_area ul li ul li:last-child {
   border-bottom: unset;
+}
+@media (min-width: 992px) and (max-width: 1199.9px) {
+  .navigation_area .navigation_area_content .navigation_menu_area ul li ul li {
+    display: block;
+  }
 }
 .navigation_area .navigation_area_content .navigation_menu_area ul li ul li .menu_text {
   border: 0px solid red;
@@ -405,6 +415,7 @@ html ::-webkit-scrollbar-thumb:hover {
 }
 .navigation_area .navigation_area_content .responsive_menu_area .navigation_menu_area2 {
   background-color: rgba(31, 24, 24, 0.807);
+  overflow-y: scroll;
 }
 .navigation_area .navigation_area_content .responsive_menu_area .navigation_menu_area2 .cross_button {
   text-align: end;

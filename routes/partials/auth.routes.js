@@ -22,6 +22,7 @@ router
 			// console.log(user?.role[0]?.title);
 			// let title = user?.role[0]?.title;
 			let title = user?.username;
+			let role = user?.role;
 			console.log('title', title);
 			let passMatch = await bcrypt.compare(password, user?.password);
 			console.log(passMatch);
@@ -52,7 +53,7 @@ router
 						return res.redirect(prevUrl);
 					}
 				}
-				return res.status(201).json({ code: 'password match', message: 'your password match', title: title });
+				return res.status(201).json({ code: 'password match', message: 'your password match', title: title, role: role });
 			}
 			return res.status(401).json({ code: 'password does not match', message: 'your crediential does not match' });
 		}
@@ -136,7 +137,8 @@ router
 		res.redirect("/dashboard");
 	})
 	.use(isAuthMiddleware())
-	.get("/logout", function (req, res) {
+	.post("/logout", function (req, res) {
+		console.log("logoutlogo9ut");
 		req.session.isAuth = false;
 		return res.redirect("/");
 	});

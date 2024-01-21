@@ -11,7 +11,7 @@ let server = null;
 module.exports = (mainserver) => {
 	website_controller.server = mainserver;
 	router
-		// .get("/", website_controller.home)
+		.get("/", website_controller.home_page)
 		// .get("/category/:category_name/:category_id", website_controller.category_post)
 		// .get("/about", function (req, res) {
 		// 	return res.render("about");

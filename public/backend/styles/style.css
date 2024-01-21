@@ -547,6 +547,15 @@ nav ul li ul li .nav_link.active a .icon::after, nav ul li ul li .nav_link:hover
 .dark nav ul li ul li .nav_link.active a .icon::after, .dark nav ul li ul li .nav_link:hover a .icon::after {
   background-color: var(--black_800);
 }
+nav .logout_button {
+  text-align: center;
+  margin-top: 10px;
+}
+nav .logout_button button {
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-weight: 600;
+}
 
 .custom_scroll, .canvas_backdrop .content .cotent_body, .list_card .card-body {
   overflow: auto;

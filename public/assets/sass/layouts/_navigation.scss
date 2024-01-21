@@ -46,6 +46,11 @@
                 border: $border;
                 display: flex;
                 background-color: $blue_white;
+                .dlgnone{
+                    @include lg{
+                        display: none;
+                    }
+                }
 
                 li {
                     border: $border;
@@ -56,6 +61,7 @@
                     &:last-child {
                         border-right: unset;
                     }
+                    
                     .menu_text {
                         border: $border;
                         color: $deep_black;
@@ -90,6 +96,7 @@
                         opacity: 0;
                         // gap: 10px;
                         // display: grid;
+                        
 
                         li {
                             border: $border;
@@ -99,6 +106,9 @@
 
                             &:last-child {
                                 border-bottom: unset;
+                            }
+                            @include lg{
+                                display: block;
                             }
                             .menu_text {
                                 border: $border;
@@ -184,6 +194,7 @@
                             padding: 11px 13px;
                             background-color: $off_white;
                         }
+                       
                         input {
                             border: $border;
                             width: 100%;
@@ -286,6 +297,7 @@
                     cursor: pointer;
                     color: rgb(248, 245, 245);
                 }
+                overflow-y: scroll;
                 ul{
                     padding: 4px;
                     li{

@@ -3,6 +3,11 @@ import SingleLink from './components/SingleLink'
 import DropDownLink from './components/DropDownLink'
 
 function SideBar() {
+
+    const handleSubmit = ()=>{
+        return window.confirm('Are you sure?')
+    }
+
     return (
         <nav>
             <ul>
@@ -90,6 +95,11 @@ function SideBar() {
 
 
             </ul>
+            <div className='logout_button'>
+                <form onSubmit={handleSubmit} method='POST' action='/logout' >
+                    <button>Logout</button>
+                </form>
+            </div>
         </nav>
     )
 }

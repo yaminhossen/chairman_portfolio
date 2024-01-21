@@ -10,22 +10,42 @@
                 <div class="navigation_menu_area">
 
                     <ul>
-                        <li>
+                        <li class="dlgnone">
                             <a href="/home" class="menu_text">প্রচ্ছদ</a>
                         </li>
-                        <li>
+                        <li class="dlgnone">
                             <a href="/about" class="menu_text">আমার তথ্যাদি
                             </a>
                         </li>
-                        <li>
+                        <li class="dlgnone">
                             <a href="/posts/news" class="menu_text">সংবাদ
                             </a>
                         </li>
-                        <!-- <li>
-                            <a href="/posts/contemporary" class="menu_text">ইউনিয়ন পরিষদ
+                        <li class="dlgnone">
+                            <a href="/posts/book-review" class="menu_text">বই পর্যালোচনা</a>
+                        </li>
+                        <li class="extra_link_li">
+                            <a class="menu_text">আরো দেখুন
+                                <i class="fa-solid fa-angle-down"></i>
                             </a>
-                        </li> -->
+                            <ul class="extra_link_ul">
+                                <li>
+                                    <a href="/home" class="menu_text">প্রচ্ছদ</a>
+                                </li>
+                                <li>
+                                    <a href="/about" class="menu_text">আমার তথ্যাদি
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/posts/news" class="menu_text">সংবাদ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/posts/book-review" class="menu_text">বই পর্যালোচনা</a>
+                                </li>
+                            </ul>
 
+                        </li>
                         <li class="addClass">
                             <a href="/posts/union-porishod" class="menu_text">ইউনিয়ন পরিষদ
                                 <i class="fa-solid fa-angle-down"></i>
@@ -48,27 +68,7 @@
                             </ul>
                         </li>
 
-                        <!--   <li class="addClass">
-                            <button class="menu_text"  onclick="inner_menuuuu.classList.toggle('active_class')">ইউনিয়ন পরিষদ
-                                <i class="fa-solid fa-angle-down"></i>
-                            </button>
-                            <ul class="submenu_active" id="inner_menuuuu">
 
-                                
-
-                                <% commonData.blog_related_category?.related_categories?.map( (category)=>{ %>
-
-
-                                    <li>
-                                        <a href="/posts<%= category.url %>" class="menu_text">
-                                            <%= category.title %>
-                                        </a>
-                                    </li>
-                                    <% })%>
-
-                            </ul>
-                        </li>
- -->
                         <li class="addClass">
                             <a href="/posts/social-work" class="menu_text">সামাজিক কাজ
                                 <i class="fa-solid fa-angle-down"></i>
@@ -88,14 +88,8 @@
 
                             </ul>
                         </li>
-                        <!-- <li>
-                            <a href="/posts/social-work" class="menu_text">সামাজিক কাজ
-                            </a>
-                        </li> -->
 
-                        <li>
-                            <a href="/posts/book-review" class="menu_text">বই পর্যালোচনা</a>
-                        </li>
+
 
                         <li class="addClass">
                             <button class="menu_text">লেখালেখি
@@ -138,22 +132,26 @@
                         </li>
                         <li class="button_position">
                             <!-- search area start -->
-                            <a onclick="search_area_show.classList.toggle('active_search')" class="search_area">
+                            <a onclick="dddd.classList.toggle('active_search')" class="search_area">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                                 <!-- <div class="close_icon">
                                     <i class="fa-solid fa-xmark"></i>
                                 </div> -->
                             </a>
 
-                            <div id="search_area_show" class="search_item active_searc">
-                                <form action="/search/posts">
 
-                                    <input name="searchValue" type="text" placeholder="খুঁজুন...">
-                                    <button class="search_icon">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </button>
-                                </form>
+                            <div class="search_item" id="dddd">
+                                <div>
+                                    <form action="/search/posts">
+    
+                                        <input name="searchValue" type="text" placeholder="খুঁজুন...">
+                                        <button class="search_icon">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
+
 
                             <!-- search area end -->
                         </li>
@@ -201,7 +199,7 @@
                                 </ul>
                             </li>
 
-                       
+
                             <li class="addClass">
                                 <a href="/posts/social-work" class="menu_text">সামাজিক কাজ
                                     <i class="fa-solid fa-angle-down"></i>
@@ -274,7 +272,7 @@
                                 <!-- <button onclick="search_area_show.classList.toggle('active_search')"
                                     class="search_area">
                                     <i class="fa-solid fa-magnifying-glass"></i> -->
-                                    <!-- <div class="close_icon">
+                                <!-- <div class="close_icon">
                                             <i class="fa-solid fa-xmark"></i>
                                         </div> -->
                                 <!-- </button> -->
@@ -291,6 +289,12 @@
 
                                 <!-- search area end -->
                             </li>
+                            <!-- <li>
+                                <form onsubmit="logout()" method="POST" action="/logout" autocomplete="false">
+
+                                    <button>Logout</button>
+                                </form>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -313,6 +317,11 @@
                             });
                         event.target.searchValue.value = '';
                     };
+
+                    const logout = () => {
+                        event.preventDefault();
+                        console.log('sometinign');
+                    }
                 </script>
                 <!-- <script> -->
                 <!--   // document.querySelectorAll(".addClass").forEach((el) => {

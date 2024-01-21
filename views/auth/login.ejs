@@ -76,17 +76,22 @@
             axios.post("/login-submit", new FormData(event.currentTarget))
                 .then(res => {
                     // {{-- localStorage.token = res.data.access_token; --}}
-                    console.log('from form submit',res);
+                    console.log('from form submitddd',res.data.role);
+                    // return;
 
-                    if (res?.data?.title == 'user') {
-                        window.toaster( "success");
-                        return location.href = "/home";
-
-                    }
-                    if (res?.data?.title == 'RajiburRahman') {
+                    if (res?.data?.role === 1) {
+                        console.log('role', 1);
                         window.toaster( "success");
                         return location.href = "/dashboard";
 
+                    }
+                    // if (res?.data?.title == 'RajiburRahman') {
+                    //     window.toaster( "success");
+                    //     return location.href = "/dashboard";
+
+                    // }
+                    else{
+                        return location.href = "/home";
                     }
 
                     console.log(res);
