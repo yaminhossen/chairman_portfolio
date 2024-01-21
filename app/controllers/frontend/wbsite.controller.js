@@ -31,6 +31,7 @@ const aboutUserModel = require("../../api/about_users/model/model")
 const headingTitleModel = require("../../api/heading_titles/model/model")
 
 const { async } = require("q");
+const logger = require('../../utilites/logger');
 const controllers = {
 	folder_prefix: ``,
 	route_prefix: ``,
@@ -79,6 +80,7 @@ const controllers = {
 				PhotoGallery,
 			});
 		} catch (error) {
+			logger(error.stack, __filename);
 			PhotoGallery = {
 				title: "",
 				description: "",
@@ -110,6 +112,7 @@ const controllers = {
 				VideoGallery,
 			});
 		} catch (error) {
+			logger(error.stack, __filename);
 			VideoGallery = {
 				title: "",
 				description: "",
@@ -142,6 +145,7 @@ const controllers = {
 			});
 
 		} catch (error) {
+			logger(error.stack, __filename);
 			console.error("Error in audio_gallery:", error);
 			return res.status(500).send("Internal Server Error");
 		}
@@ -236,6 +240,8 @@ const controllers = {
 			});
 
 		} catch (error) {
+			logger(error.stack, __filename);   
+
 			photo_gallery_category = [];
 			blog_category = [];
 			video_gallery_video = [];
@@ -349,6 +355,7 @@ const controllers = {
 			});
 
 		} catch (error) {
+			logger(error.stack, __filename);
 			blogs = [];
 			blog ={
 				title:"",
@@ -416,6 +423,7 @@ const controllers = {
 			});
 
 		} catch (error) {
+			logger(error.stack, __filename);
 			blogs = [];
 			let reqUrl = req.params.url;
 			console.log('requrl', reqUrl);
@@ -472,6 +480,7 @@ const controllers = {
 			});
 
 		} catch (error) {
+			logger(error.stack, __filename);
 			let currentDate = new Date('2023-06-14T00:00:00.000Z');
 			post_details ={
 				title:"",
@@ -517,6 +526,7 @@ const controllers = {
 			});
 
 		} catch (error) {
+			logger(error.stack, __filename);
 			let currentDate = new Date('2023-06-14T00:00:00.000Z');
 			notice_details ={
 				title:"",
@@ -560,6 +570,7 @@ const controllers = {
 			});
 
 		} catch (error) {
+			logger(error.stack, __filename);
 			let currentDate = new Date('2023-06-14T00:00:00.000Z');
 			notice_all = [
 				{
@@ -597,6 +608,7 @@ const controllers = {
 			// console.log('find comment blog', blog);
 
 		} catch (error) {
+			logger(error.stack, __filename);
 			console.error("Error in comment:", error);
 			return res.status(500).send("Internal Server Error");
 		}
@@ -609,6 +621,7 @@ const controllers = {
 			// console.log('find comment blog', blog);
 
 		} catch (error) {
+			logger(error.stack, __filename);
 			console.error("Error in contact message:", error);
 			return res.status(500).send("Internal Server Error");
 		}
@@ -621,6 +634,7 @@ const controllers = {
 			const new_contact_message = await userReviewModel.create(data);
 
 		} catch (error) {
+			logger(error.stack, __filename);
 			console.error("Error in user review:", error);
 			return res.status(500).send("Internal Server Error");
 		}
@@ -687,6 +701,7 @@ const controllers = {
 			});
 
 		} catch (error) {
+			logger(error.stack, __filename);
 			console.error("Error in contact:", error);
 			return res.status(500).send("Internal Server Error");
 		}
@@ -705,6 +720,7 @@ const controllers = {
 			});
 
 		} catch (error) {
+			logger(error.stack, __filename);
 			console.error("Error in categories post:", error);
 			return res.status(500).send("Internal Server Error");
 		}

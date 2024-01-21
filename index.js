@@ -11,6 +11,7 @@ var cookieParser = require('cookie-parser')
 const formData = require('express-form-data');
 var cors = require('cors');
 const log = require("./app/utilites/log");
+const logger = require("./app/utilites/logger");
 
 // parse application/x-www-form-urlencoded
 // server.use(bodyParser.urlencoded({ extended: false }));

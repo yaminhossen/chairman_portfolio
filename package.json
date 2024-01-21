@@ -38,7 +38,8 @@
     "rotating-file-stream": "^3.1.1",
     "sass": "^1.69.5",
     "scss": "^0.2.4",
-    "vite": "^4.4.9"
+    "vite": "^4.4.9",
+    "winston": "^3.11.0"
   },
   "devDependencies": {
     "@reduxjs/toolkit": "^1.9.5",
