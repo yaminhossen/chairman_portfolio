@@ -94,7 +94,7 @@ function Edit() {
                     <div className="custom_form_el">
                       <label htmlFor="">Password</label>
                       <div>:</div>
-                      <div><input name="password" type="text" className="form-control" defaultValue={password} /></div>
+                      <div><input name="password" type="text" className="form-control"  /></div>
                     </div>
                     <div className="custom_form_el">
                       <label htmlFor="">Telegram_id</label>

@@ -3,6 +3,7 @@ const model = require("./model");
 var fs = require('fs-extra')
 const { dirname } = require('path');
 const appDir = dirname(require.main.filename);
+const bcrypt = require('bcrypt')
 
 const data_validation = async (request_data) => {
     await body("username")
@@ -123,10 +124,12 @@ module.exports = async (datas) => {
             photo_path = upload_files(files?.photo, data.telegram_id);
             console.log('form photo_path',photo_path);
         }
+        let password = data.password;
+
         model_data.username = data.username;
         model_data.full_name = data.full_name;
         model_data.email = data.email;
-        model_data.password = data.password;
+        model_data.password = await bcrypt.hash(password, 13);
         model_data.telegram_id = data.telegram_id;
         model_data.telegram_name = data.telegram_name;
         model_data.mobile_number = data.mobile_number;

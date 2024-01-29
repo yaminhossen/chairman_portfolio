@@ -4,6 +4,7 @@ const { async } = require("q");
 var fs = require('fs-extra')
 const { dirname } = require('path');
 const appDir = dirname(require.main.filename);
+const bcrypt = require('bcrypt')
 
 const data_validation = async (request_data) => {
     await body("username")
@@ -132,13 +133,13 @@ module.exports = async (datas) => {
             console.log('form photo_path', photo_path);
         }
 
-
+        let password = data.password;
         // const user = new model();
         const user = {};
         user.username = data.username;
         user.full_name = data.full_name;
         user.email = data.email;
-        user.password = data.password;
+        user.password = await bcrypt.hash(password, 13);
         user.telegram_id = data.telegram_id;
         user.telegram_name = data.telegram_name;
         user.mobile_number = data.mobile_number;
