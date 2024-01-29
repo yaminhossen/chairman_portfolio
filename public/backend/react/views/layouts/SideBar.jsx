@@ -17,7 +17,7 @@ function SideBar() {
                     <DropDownLink text={'User Management'} icon={'manage_accounts'}></DropDownLink>
                     <ul>
                         <SingleLink to={'/user'} text={'users'} icon={'trip_origin'}></SingleLink>
-                        <SingleLink to={'/user-role'} text={'user-roles'} icon={'trip_origin'}></SingleLink>
+                        {/* <SingleLink to={'/user-role'} text={'user-roles'} icon={'trip_origin'}></SingleLink> */}
                         <SingleLink to={'/user-acheivement'} text={'user-acheivements'} icon={'trip_origin'}></SingleLink>
                         <SingleLink to={'/user-contact-number'} text={'user-contact-numbers'} icon={'trip_origin'}></SingleLink>
                         <SingleLink to={'/user-education'} text={'user-educations'} icon={'trip_origin'}></SingleLink>

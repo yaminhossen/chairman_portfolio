@@ -151,7 +151,7 @@ const MultiselectDropdown = (props) => {
                                                     }
                                                     id={"checbox" + i._id + ukey}
                                                 />
-                                                <div className="">{i.serial}</div>
+                                                <div className="">{i.name}</div>
                                             </label>
                                         </li>
                                     );
