@@ -1817,10 +1817,12 @@ table td {
   margin-bottom: 5px;
 }
 .multiselect_dropdown .data_table {
-  border: 1px solid rgb(196, 195, 195);
+  border: 1px solid rgb(43, 41, 41);
   border-radius: 5px;
   min-height: 40px;
-  background-color: rgb(128, 24, 24);
+}
+.multiselect_dropdown .data_table p {
+  margin-left: 5px;
 }
 .multiselect_dropdown .data_table ul {
   display: flex;
