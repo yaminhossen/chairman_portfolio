@@ -64,6 +64,10 @@ let blogSchema = mongoose.Schema({
 		type: [Schema.Types.ObjectId],
 		ref: 'blog_categories'
 	},
+	tags: {
+		type: [Schema.Types.ObjectId],
+		ref: 'tags'
+	},
 	comments: {
 		type: [Schema.Types.ObjectId],
 		ref: 'blog_comments'

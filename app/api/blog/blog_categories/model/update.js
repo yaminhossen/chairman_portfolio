@@ -11,36 +11,36 @@ const data_validation = async (request_data) => {
         .isEmpty()
         .withMessage("the title field is required")
         .run(request_data);
-    await body("short_description")
-        .not()
-        .isEmpty()
-        .withMessage("the short_description field is required")
-        .run(request_data);
-    await body("long_description")
-        .not()
-        .isEmpty()
-        .withMessage("the long_description field is required")
-        .run(request_data);
+    // await body("short_description")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the short_description field is required")
+    //     .run(request_data);
+    // await body("long_description")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the long_description field is required")
+    //     .run(request_data);
     await body("url")
         .not()
         .isEmpty()
         .withMessage("the url field is required")
         .run(request_data);
-    await body("seo_title")
-        .not()
-        .isEmpty()
-        .withMessage("the seo_title field is required")
-        .run(request_data);
-    await body("seo_keyword")
-        .not()
-        .isEmpty()
-        .withMessage("the seo_keyword field is required")
-        .run(request_data);
-    await body("seo_description")
-        .not()
-        .isEmpty()
-        .withMessage("the seo_description field is required")
-        .run(request_data);
+    // await body("seo_title")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the seo_title field is required")
+    //     .run(request_data);
+    // await body("seo_keyword")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the seo_keyword field is required")
+    //     .run(request_data);
+    // await body("seo_description")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the seo_description field is required")
+    //     .run(request_data);
 
 
 //  console.log("body data",body("title") );

@@ -15,7 +15,7 @@ function All() {
         get_data();
     }, [data_store.search_key, data_store.show_active_data, data_store.page]);
 
-console.log(data_store?.all_data.slice().reverse());
+console.log(data_store.all_data);
 
     return (
         <>
@@ -51,7 +51,7 @@ console.log(data_store?.all_data.slice().reverse());
                         </thead>
                         <tbody className="table-border-bottom-0">
                             {
-                                data_store.all_data?.slice().reverse().map((data, index) => {
+                                data_store.all_data?.map((data, index) => {
                                     return (
                                         <tr key={data.id}>
                                             <td><input type="checkbox" className="form-check-input" /></td>

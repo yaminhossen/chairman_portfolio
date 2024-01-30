@@ -35,18 +35,18 @@ const MultiselectDropdown = (props) => {
     console.log(data);
     function addItem(item) {
         console.log(item);
-        let newData = selectedData?.find((i) => i.username == item.username);
+        let newData = selectedData?.find((i) => i.title == item.title);
 
         if (newData) {
             // console.log(selectedData);
             // console.log(item.id);
-            let uniqueData = selectedData.filter((i) => i._id != item._id);
+            let uniqueData = selectedData.filter((i) => i.title != item.title);
             setSelectedData([...uniqueData]);
             // setSelectedData(selectedData.splice(item.id, 0));
         } else {
-            let searchData = data.find((i) => i._id == item._id);
+            let searchData = data.find((i) => i.title == item.title);
             setSelectedData([...selectedData, searchData]);
-            // console.log(searchData);
+            console.log(searchData);
             // console.log(selectedData, setSelectedData([searchData]))
         }
     }
@@ -90,14 +90,14 @@ const MultiselectDropdown = (props) => {
                     })}
                     
                 </select> */}
-                <p>open</p>
+                {/* <p>open</p> */}
                 <ul className="">
                     {selectedData.length
                         ? selectedData.map((i, index) => {
                             return (
                                 <div>
                                     <li key={index}>
-                                        {i.username}
+                                        {i.title}
                                         <span
                                             onClick={() => removeData(i)}
                                             className="material-symbols-outlined"
@@ -145,13 +145,13 @@ const MultiselectDropdown = (props) => {
                                                     type="checkbox"
                                                     onChange={() => addItem(i)}
                                                     checked={
-                                                        selectedData.find((el) => el._id === i._id)
+                                                        selectedData.find((el) => el.title === i.title)
                                                             ? true
                                                             : false
                                                     }
                                                     id={"checbox" + i._id + ukey}
                                                 />
-                                                <div className="">{i.username}</div>
+                                                <div className="">{i.title}</div>
                                             </label>
                                         </li>
                                     );

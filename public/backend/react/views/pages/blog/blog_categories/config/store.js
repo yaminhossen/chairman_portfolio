@@ -65,7 +65,7 @@ export const async_actions = {
                 // console.log(error);
                 // console.log(error.response?.data?.data?.keyValue?.[key]);
                 // console.log(error.response?.status);
-                return error;
+                window.render_alert(error)
 
             }
         }

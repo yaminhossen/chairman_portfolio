@@ -19,6 +19,7 @@ module.exports = async ({ page, paginate, search_key, orderByCol, orderByAsc, sh
 
     let data = await model.find()
         .where(filter)
+        .sort({ createdAt: -1 })
         .limit(paginate)
         .skip(skip);
 

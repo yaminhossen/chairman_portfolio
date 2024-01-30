@@ -4,17 +4,27 @@ import ModalManagement from "./components/management/ModalManagement";
 import { useDispatch, useSelector } from "react-redux";
 import setup from "./config/setup";
 import userSetup from "../../users/config/setup";
+import categorySetup from "../blog_categories/config/setup";
+import tagsSetup from "../../tag/tags/config/setup";
 import MultiselectDropdown from "./components/all_data_components/Multiselect_dropdown";
 
 function Create() {
   const data_store = useSelector((state) => state[setup.prefix])
   const user_data_store = useSelector((state) => state[userSetup.prefix]);
+  const blgo_category_store = useSelector((state) => state[categorySetup.prefix]);
+  const tag_data_store = useSelector((state) => state[tagsSetup.prefix]);
   setup.dispatch = useDispatch();
   userSetup.dispatch = useDispatch();
+  categorySetup.dispatch = useDispatch();
+  tagsSetup.dispatch = useDispatch();
   const { store_data, check_unique_url } = setup.actions;
   const { get_data: get_users } = userSetup.actions;
+  const { get_data: get_category } = categorySetup.actions;
+  const { get_data: get_tags } = tagsSetup.actions;
   const [selectedRole, setselectedRole] = useState([]);
   const [tasklist, setTasklist] = useState(false);
+  const [selectedCategory, setselectedCategory] = useState([]);
+  const [tasklist1, setTasklist1] = useState(false);
 
   const short_description_ref = useRef(null);
   const description_ref = useRef(null);
@@ -26,6 +36,14 @@ function Create() {
 
   useEffect(() => {
     get_users();
+  }, []);
+
+  useEffect(() => {
+    get_category();
+  }, []);
+
+  useEffect(() => {
+    get_tags();
   }, []);
 
   console.log(selectedRole);
@@ -76,9 +94,10 @@ function Create() {
             <div className="row">
               <div className="col-lg-8">
                 <div className="form-group mb-5">
-                  <div className="custom_form_el">
-                    <label htmlFor="">Short Description</label>
-                    <div>:</div>
+                  <div className="custom_form_el desc_part">
+                  
+                    <label htmlFor="">Short Description :</label>
+                    
                     <div>
                       <Editor
                         onInit={(evt, editor) =>
@@ -104,9 +123,8 @@ function Create() {
                       />
                     </div>
                   </div>
-                  <div className="custom_form_el">
-                    <label htmlFor="">Description</label>
-                    <div>:</div>
+                  <div className="custom_form_el desc_part">
+                    <label htmlFor="">Description :</label>
                     <div>
                       <Editor
                         onInit={(evt, editor) =>
@@ -279,6 +297,26 @@ function Create() {
                         type="text"
                         className="form-control"
                       />
+                    </div>
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <div>
+                    <label htmlFor="">Category</label>
+                    <div>
+                    <div id="category">
+                     <MultiselectDropdown data={blgo_category_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist} setTaskOpen={setTasklist}></MultiselectDropdown>
+                     </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <div>
+                    <label htmlFor="">Tags</label>
+                    <div>
+                    <div id="tags">
+                     <MultiselectDropdown data={tag_data_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist} setTaskOpen={setTasklist}></MultiselectDropdown>
+                     </div>
                     </div>
                   </div>
                 </div>

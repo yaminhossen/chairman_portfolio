@@ -912,6 +912,10 @@ input.form_checkbox:checked::after {
   grid-template-columns: 200px 2px 1fr;
   gap: 30px;
 }
+.list_card .desc_part {
+  display: flex;
+  flex-direction: column;
+}
 
 .cursor_pointer {
   cursor: pointer;

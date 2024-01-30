@@ -116,6 +116,8 @@ module.exports = async (datas) => {
         user.seo_description = data.seo_description;
         user.seo_schema_tags = data.seo_schema_tags;
         user.url = data.url;
+        user.category = data.category;
+        user.tags = data.tags;
         user.published_date = data.published_date;
         // user.creator = data.creator;
         const new_data = await model.create(user);

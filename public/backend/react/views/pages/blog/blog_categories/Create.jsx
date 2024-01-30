@@ -63,7 +63,7 @@ function Create() {
                     <label htmlFor="">Url</label>
                     <div>:</div>
                     <div>
-                      <input name="url" type="text" className="form-control" />
+                      <input name="url" type="text" className="form-control" placeholder="please start with slash like  '/category-name'"/>
                     </div>
                   </div>
                   <div className="custom_form_el">

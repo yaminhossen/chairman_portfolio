@@ -26,7 +26,7 @@ function Edit() {
     let form_data = new FormData(e.target);
     form_data.append('id', id);
 
-    // [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
+    [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
     await update_data(form_data);
     // e.target.reset();
     // // e.target.serial.value = "";
