@@ -255,7 +255,7 @@
                         <div class="top_item_area">
                             <!-- left_area start -->
                             <div class="left_area">
-                                <% contems.splice(0,1).map( (cm)=>{ %>
+                                <% contems2.splice(0,1).map( (cm)=>{ %>
                                     <a href="/post/<%= cm._id %>" class="item">
                                         <img src="<%= cm.photo %>" alt="News">
 
@@ -284,7 +284,7 @@
                             <!-- left_area end -->
                             <!-- right_area start -->
                             <div class="right_area">
-                                <% contems.splice(1,2).map( (cm)=>{ %>
+                                <% contems2.splice(1,2).map( (cm)=>{ %>
                                     <a href="/post/<%= cm._id %>" class="item">
                                         <img src="<%= cm.photo %>" alt="News">
 
@@ -317,7 +317,7 @@
 
                         <!-- bottom_item_area start -->
                         <div class="bottom_item_area">
-                            <% contems.splice(0,3).map( (cm)=>{ %>
+                            <% contems2.splice(0,3).map( (cm)=>{ %>
                                 <a href="/post/<%= cm._id %>" class="item">
                                     <img src="<%= cm.photo %>" alt="News">
                                     <!-- layout_area start -->

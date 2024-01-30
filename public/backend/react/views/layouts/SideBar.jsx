@@ -20,9 +20,9 @@ function SideBar() {
                         {/* <SingleLink to={'/user-role'} text={'user-roles'} icon={'trip_origin'}></SingleLink> */}
                         <SingleLink to={'/user-acheivement'} text={'user-acheivements'} icon={'trip_origin'}></SingleLink>
                         <SingleLink to={'/user-contact-number'} text={'user-contact-numbers'} icon={'trip_origin'}></SingleLink>
-                        <SingleLink to={'/user-education'} text={'user-educations'} icon={'trip_origin'}></SingleLink>
+                        {/* <SingleLink to={'/user-education'} text={'user-educations'} icon={'trip_origin'}></SingleLink> */}
                         <SingleLink to={'/user-email'} text={'user-emails'} icon={'trip_origin'}></SingleLink>
-                        <SingleLink to={'/user-profile-info'} text={'user-profile-infos'} icon={'trip_origin'}></SingleLink>
+                        {/* <SingleLink to={'/user-profile-info'} text={'user-profile-infos'} icon={'trip_origin'}></SingleLink> */}
                         <SingleLink to={'/user-social-link'} text={'user-social-links'} icon={'trip_origin'}></SingleLink>
 
                     </ul>

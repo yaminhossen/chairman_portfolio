@@ -204,8 +204,9 @@ const controllers = {
 
 			let user_achievement = await userAchievmentModel.find();
 
+			let contems2 = contems.slice().reverse();
 
-			console.log("user_achievement", user_achievement);
+			console.log("contems", contems.slice().reverse());
 			return res.render(`frontend/home`, {
 				// profile_info,
 				photo_gallery_category,
@@ -219,6 +220,7 @@ const controllers = {
 				settingTitle4,
 				contemp,
 				contems,
+				contems2,
 				social_work,
 				social_works,
 				book_review,
