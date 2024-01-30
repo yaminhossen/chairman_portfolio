@@ -40,11 +40,11 @@ const MultiselectDropdown = (props) => {
         if (newData) {
             // console.log(selectedData);
             // console.log(item.id);
-            let uniqueData = selectedData.filter((i) => i.title != item.title);
+            let uniqueData = selectedData.filter((i) => i._id != item._id);
             setSelectedData([...uniqueData]);
             // setSelectedData(selectedData.splice(item.id, 0));
         } else {
-            let searchData = data.find((i) => i.title == item.title);
+            let searchData = data.find((i) => i._id == item._id);
             setSelectedData([...selectedData, searchData]);
             console.log(searchData);
             // console.log(selectedData, setSelectedData([searchData]))
@@ -145,7 +145,7 @@ const MultiselectDropdown = (props) => {
                                                     type="checkbox"
                                                     onChange={() => addItem(i)}
                                                     checked={
-                                                        selectedData.find((el) => el.title === i.title)
+                                                        selectedData.find((el) => el._id === i._id)
                                                             ? true
                                                             : false
                                                     }

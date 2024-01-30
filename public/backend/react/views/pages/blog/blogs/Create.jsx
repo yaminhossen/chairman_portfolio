@@ -25,6 +25,8 @@ function Create() {
   const [tasklist, setTasklist] = useState(false);
   const [selectedCategory, setselectedCategory] = useState([]);
   const [tasklist1, setTasklist1] = useState(false);
+  const [selectedTag, setselectedTag] = useState([]);
+  const [tasklist2, setTasklist2] = useState(false);
 
   const short_description_ref = useRef(null);
   const description_ref = useRef(null);
@@ -46,7 +48,7 @@ function Create() {
     get_tags();
   }, []);
 
-  console.log(selectedRole);
+  console.log(selectedCategory);
 
 
 
@@ -59,6 +61,12 @@ function Create() {
       "short_description",
       short_description_ref.current.getContent()
     );
+    selectedCategory.forEach((e,index)=>{
+      form_data.append(`category`, e._id);
+    });
+    selectedTag.forEach((e,index)=>{
+      form_data.append(`tag`, e._id);
+    });
     form_data.append("description", description_ref.current.getContent());
 
     console.log(description_ref.current.getContent());
@@ -66,6 +74,7 @@ function Create() {
     //   // form_data.append(`creator[${index}]`, e._id);
     //   console.log(e);
     // });
+    console.log("form_data",form_data);
     [...document.querySelectorAll(".form_error")].forEach((el) => el.remove());
     await store_data(form_data);
     // e.target.reset();
@@ -305,7 +314,7 @@ function Create() {
                     <label htmlFor="">Category</label>
                     <div>
                     <div id="category">
-                     <MultiselectDropdown data={blgo_category_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist} setTaskOpen={setTasklist}></MultiselectDropdown>
+                     <MultiselectDropdown data={blgo_category_store.all_data} selectedData={selectedCategory} setSelectedData={setselectedCategory} taskOpen={tasklist1} setTaskOpen={setTasklist1}></MultiselectDropdown>
                      </div>
                     </div>
                   </div>
@@ -314,8 +323,8 @@ function Create() {
                   <div>
                     <label htmlFor="">Tags</label>
                     <div>
-                    <div id="tags">
-                     <MultiselectDropdown data={tag_data_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist} setTaskOpen={setTasklist}></MultiselectDropdown>
+                    <div id="tag">
+                     <MultiselectDropdown data={tag_data_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist2} setTaskOpen={setTasklist2}></MultiselectDropdown>
                      </div>
                     </div>
                   </div>
