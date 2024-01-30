@@ -29,6 +29,7 @@ const userReviewModel = require("../../api/user_reviews/user_reviews/model/model
 const speakerQuoteModel = require("../../api/speaker_quotes/model/model")
 const aboutUserModel = require("../../api/about_users/model/model")
 const headingTitleModel = require("../../api/heading_titles/model/model")
+const userAchievmentModel = require("../../api/user_acheivements/model/model")
 
 const { async } = require("q");
 const logger = require('../../utilites/logger');
@@ -201,9 +202,10 @@ const controllers = {
 
 			let blog_historys = await blogsModel.find().where({ categories: blog_history._id });
 
+			let user_achievement = await userAchievmentModel.find();
 
 
-			console.log("photo_gallery", photo_gallery_category);
+			console.log("user_achievement", user_achievement);
 			return res.render(`frontend/home`, {
 				// profile_info,
 				photo_gallery_category,
@@ -237,6 +239,7 @@ const controllers = {
 				speakerQuotes,
 				PhotoGallery,
 				VideoGallery,
+				user_achievement,
 			});
 
 		} catch (error) {
@@ -253,6 +256,7 @@ const controllers = {
 			ownerIntros = [];
 			userReview = [];
 			speakerQuotes = [];
+			user_achievement = [];
 			settingTitle1 ={
 				title:"",
 				value:"",

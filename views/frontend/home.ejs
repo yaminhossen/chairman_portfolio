@@ -426,24 +426,24 @@
             <div class="count_area_all">
                 <div class="container">
                     <div class="count_area_content">
-
+                        <% user_achievement.map( (achievement)=>{ %>
                         <!-- count_item start -->
                         <div class="count_item">
                             <div class="count_text_area">
-                                <h2 class="count_text">
+                                <h2 class="count_text achievement_name ">
                                     
-                                    <%= settingTitle1.title %>
+                                    <%= achievement.title %>
                                 </h2>
                             </div>
                             <div class="count_number_area">
-                                <h2 class="count_number">
-                                    <%= settingTitle1?.value %>
-                                </h2>
+                                <h4 class="count_number achievement_count">
+                                    <%= convertToBanglaDate(achievement.date.toISOString().substring(0, 10))[0] %>
+                                </h4>
                             </div>
                         </div>
                         <!-- count_item end -->
                         <!-- count_item start -->
-                        <div class="count_item">
+                        <!-- <div class="count_item">
                             <div class="count_text_area">
                                 <h2 class="count_text">
                                     <%= settingTitle2.title %>+
@@ -455,10 +455,10 @@
                                     <%= settingTitle2?.value %>
                                 </h2>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- count_item end -->
                         <!-- count_item start -->
-                        <div class="count_item">
+                        <!-- <div class="count_item">
                             <div class="count_text_area">
                                 <h2 class="count_text">
                                     <%= settingTitle3.title %>
@@ -470,10 +470,10 @@
                                     <%= settingTitle3?.value %>
                                 </h2>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- count_item end -->
                         <!-- count_item start -->
-                        <div class="count_item">
+                        <!-- <div class="count_item">
                             <div class="count_text_area">
                                 <h2 class="count_text">
                                     <%= settingTitle4.title %>
@@ -485,10 +485,10 @@
                                     <%= settingTitle4?.value %>
                                 </h2>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- count_item end -->
 
-
+                        <% })%>
 
                     </div>
                 </div>

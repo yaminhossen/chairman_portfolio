@@ -21,7 +21,7 @@
             border: $border;
             display: flex;
             justify-content: center;
-            // gap: 40px;
+            gap: 40px;
             // position: relative;
             @include xs(){
                 display: flex;
@@ -50,7 +50,11 @@
                 // border: 2px solid red;
                 border: $border;
                 display: flex;
+                flex-direction: column;
                 z-index: 1;
+                // border: 2px solid red;
+                border-right: 2px solid rgb(226, 220, 220);
+               
                 @include xs(){
                     display: flex;
                     flex-direction: column;
@@ -73,6 +77,7 @@
                     &::after {
                         display: none;
                     }
+                    border: none;
                 }
                 .count_text_area {
                     border: $border;
@@ -93,6 +98,11 @@
                             font-size: 18px;
                         }
                     }
+                    .achievement_name{
+                        font-size: 32px;
+                        font-family: $font_bangla;
+                        font-weight: 600;
+                    }
                 }
                 .count_number_area {
                     border: $border;
@@ -112,6 +122,9 @@
                         @include xs(){
                             font-size: 20px;
                         }
+                    }
+                    .achievement_count{
+                        font-size: 23px;
                     }
                 }
             }

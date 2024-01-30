@@ -3515,6 +3515,7 @@ html ::-webkit-scrollbar-thumb:hover {
   border: 0px solid red;
   display: flex;
   justify-content: center;
+  gap: 40px;
 }
 @media screen and (max-width: 575.9px) {
   .count_area .count_area_all .count_area_content {
@@ -3537,7 +3538,9 @@ html ::-webkit-scrollbar-thumb:hover {
 .count_area .count_area_all .count_area_content .count_item {
   border: 0px solid red;
   display: flex;
+  flex-direction: column;
   z-index: 1;
+  border-right: 2px solid rgb(226, 220, 220);
 }
 @media screen and (max-width: 575.9px) {
   .count_area .count_area_all .count_area_content .count_item {
@@ -3554,6 +3557,9 @@ html ::-webkit-scrollbar-thumb:hover {
   background-color: #f2f4f8;
   background-color: #292929;
   margin: 0px 22px;
+}
+.count_area .count_area_all .count_area_content .count_item:last-child {
+  border: none;
 }
 .count_area .count_area_all .count_area_content .count_item:last-child::after {
   display: none;
@@ -3580,6 +3586,11 @@ html ::-webkit-scrollbar-thumb:hover {
     font-size: 18px;
   }
 }
+.count_area .count_area_all .count_area_content .count_item .count_text_area .achievement_name {
+  font-size: 32px;
+  font-family: "bangla-font";
+  font-weight: 600;
+}
 .count_area .count_area_all .count_area_content .count_item .count_number_area {
   border: 0px solid red;
   align-items: center;
@@ -3602,6 +3613,9 @@ html ::-webkit-scrollbar-thumb:hover {
   .count_area .count_area_all .count_area_content .count_item .count_number_area .count_number {
     font-size: 20px;
   }
+}
+.count_area .count_area_all .count_area_content .count_item .count_number_area .achievement_count {
+  font-size: 23px;
 }
 .count_area .count_area_all .bg_image {
   width: 25%;
