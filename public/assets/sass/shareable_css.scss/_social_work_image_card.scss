@@ -5,25 +5,21 @@
     height: 392px;
     position: relative;
     overflow: hidden;
-    @include xs(){
+
+    @include xs() {
         width: 100%;
         height: 100%;
     }
-    &:hover{
-        img{
-            scale: 1.1;
-        }
-        .overlay-area{
-            opacity: 0;
-            visibility: hidden;
-        }
-    }
+
+   
+
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         transition-duration: .4s;
     }
+
     // overlay-area start
     .overlay-area {
         border: $border;
@@ -31,13 +27,16 @@
         top: 0px;
         left: 0px;
         height: 100%;
-        padding: 40px;   
-        transition-duration: .4s; 
-        @include xs(){
+        padding: 40px;
+        transition-duration: .4s;
+        overflow: hidden;
+
+        @include xs() {
             padding: 15px;
             width: 100%;
             height: 70%;
         }
+
         .overlay-area_content {
             background-color: $button_transfarent_black;
             background-color: #000000b0;
@@ -47,17 +46,20 @@
             align-items: end;
             display: grid;
             position: relative;
-            @include xs(){
+            overflow: hidden;
+            @include xs() {
                 padding: 5px;
                 align-items: start;
                 // width: 160px;
                 // height: 100%;
             }
+
             .video_icon_area {
                 border: $border;
                 position: absolute;
                 top: 20px;
                 left: 20px;
+
                 .video_icon {
                     border: $border;
                     width: 35px;
@@ -67,28 +69,68 @@
                     display: flex;
                     justify-content: center;
                     border-radius: 50%;
+
                     i {
                         border: $border;
                         color: $brand_color;
                     }
                 }
             }
+
             .image_title {
                 border: $border;
+
                 .title_text {
                     border: $border;
                     font-family: $font_bangla;
-                    font-size: 16px;
+                    font-size: 20px;
                     // font-weight: bold;
                     // color: $brand_color;
                     color: $brand_color;
-                    @include xs(){
+                    margin-bottom: 20px;
+
+                    @include xs() {
                         font-size: 10px;
+                    }
+                }
+
+                .image_description *,
+                .image_description {
+                    font-family: $font_bangla;
+                    font-size: 16px;
+                    color: white;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition-duration: .3s;
+                    height: 0;
+                    // margin-top: 10px;
+                }
+            }
+        }
+    }
+    &:hover {
+        img {
+            scale: 1.1;
+        }
+
+        .overlay-area {
+
+            // opacity: 0;
+            // visibility: hidden;
+            .overlay-area_content {
+                .image_title {
+                    .image_description *,
+                    .image_description {
+                        opacity: 1;
+                        visibility: visible;
+                        height: unset;
                     }
                 }
             }
         }
     }
+
     // overlay-area end
 }
+
 // social_work_image_card end

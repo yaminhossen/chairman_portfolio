@@ -30,6 +30,7 @@ const speakerQuoteModel = require("../../api/speaker_quotes/model/model")
 const aboutUserModel = require("../../api/about_users/model/model")
 const headingTitleModel = require("../../api/heading_titles/model/model")
 const userAchievmentModel = require("../../api/user_acheivements/model/model")
+const allBlogsModel = require("../../api/blog/blogs/model/model")
 
 const { async } = require("q");
 const logger = require('../../utilites/logger');
@@ -154,6 +155,7 @@ const controllers = {
 	home_page: async function (req, res) {
 		try {
 			let profile_info = await uesrProfileInfosModel.find();
+			let all_blogs = await allBlogsModel.find().sort({ createdAt: -1 });
 			let photo_gallery_category = await photoGalleryCategoriyModel.find();
 			let video_gallery_category = await videoGalleryCategoriyModel.find();
 			let video_gallery_video = await videoGalleryVideoModel.find();
@@ -242,6 +244,7 @@ const controllers = {
 				PhotoGallery,
 				VideoGallery,
 				user_achievement,
+				all_blogs
 			});
 
 		} catch (error) {

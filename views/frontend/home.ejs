@@ -230,6 +230,66 @@
             </div>
         </div>
         <!-- owner intro end -->
+         <!-- social_work_area start -->
+         <div class="social_work_area" style=" margin-top: 40px;">
+            <div class="container">
+                <div class="social_work_area_content">
+
+                    <!-- content_title start -->
+                    <div class="content_title_and_description" data-aos="fade-right" data-aos-duration="1000">
+                        <h2 class="title_text">
+                            সম্প্রতি পোস্ট
+                        </h2>
+                        <p class="description_text">
+                            <%= social_work.short_description %>
+                        </p>
+                    </div>
+                    <!-- content_title end -->
+
+                    <div class="social_work_all_item">
+                        <ul>
+                            <% all_blogs.slice(0,4).map( (sw)=>{ %>
+                                <li class="item_area">
+                                    <a href="/post/<%= sw._id %>" class="social_work_image_card" data-aos="fade-up"
+                                        data-aos-duration="300">
+                                        <img src="<%= sw.photo %>" alt="<%= sw.photo_alt %>">
+                                        <!-- overlay-area start -->
+                                        <div class="overlay-area">
+                                            <div class="overlay-area_content">
+
+                                                <div class="image_title">
+                                                    <h2 class="title_text"><%- sw.title %></h2>
+                                                    <div class="image_description">
+                                                        <%- sw.short_description %>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!-- overlay-area end -->
+                                    </a>
+                                </li>
+                                <% })%>
+
+                        </ul>
+                    </div>
+
+                    <!-- button_area start-->
+                   <!--  <div class="button_area" style="text-align: center;" data-aos="fade-up" data-aos-duration="1000">
+                        <a href="/posts/social-work" class="button_text_area">
+                            <span class="button_text">
+                                আরোও দেখুন
+                                <span class="dash_icon"></span>
+                            </span>
+                        </a>
+                    </div> -->
+                    <!-- button_area end-->
+
+                </div>
+            </div>
+        </div>
+        <!-- social_work_area end -->
+
         <!-- contemporary-area start -->
         <div class="contemporary-area news-area">
             <div class="dote_bg_image" style="background-image: url(/assets/images/bg_dote_image/bg_dote.png);">

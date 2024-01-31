@@ -57,10 +57,10 @@ function Create() {
     let e = event;
     e.preventDefault();
     let form_data = new FormData(e.target);
-    form_data.append(
-      "short_description",
-      short_description_ref.current.getContent()
-    );
+    // form_data.append(
+    //   "short_description",
+    //   short_description_ref.current.getContent()
+    // );
     form_data.append("description", description_ref.current.getContent());
     selectedCategory.forEach((e,index)=>{
       form_data.append(`category`, e._id);
@@ -114,7 +114,8 @@ function Create() {
                     <label htmlFor="">Short Description :</label>
                     
                     <div>
-                      <Editor
+                    <textarea name="short_description" id="" className='form-control' rows="8"></textarea>
+                      {/* <Editor
                         onInit={(evt, editor) =>
                           (short_description_ref.current = editor)
                         }
@@ -136,7 +137,7 @@ function Create() {
                           content_style:
                             "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
                         }}
-                      />
+                      /> */}
                     </div>
                   </div>
                   <div className="custom_form_el desc_part">
