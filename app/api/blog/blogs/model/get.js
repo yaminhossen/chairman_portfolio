@@ -31,7 +31,7 @@ module.exports = async (id) => {
         }
     }
     try {
-        let data = await model.findOne({ _id: id }).populate('categories');
+        let data = await model.findOne({ _id: id }).populate('categories').populate('tags');
         return {
             status: 'success',
             data: data,

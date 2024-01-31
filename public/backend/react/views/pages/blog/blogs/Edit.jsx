@@ -51,9 +51,11 @@ function Edit() {
     if(data_store){
       console.log(data_store.categories);
       setselectedCategory(data_store.categories)
+      setselectedTag(data_store.tags)
     }
   }, [data_store]);
 
+  console.log(data_store);
   
 
   const handleSubmit = async () => {
