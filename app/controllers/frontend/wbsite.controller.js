@@ -155,34 +155,34 @@ const controllers = {
 	home_page: async function (req, res) {
 		try {
 			let profile_info = await uesrProfileInfosModel.find();
-			let all_blogs = await allBlogsModel.find().sort({ createdAt: -1 });
-			let photo_gallery_category = await photoGalleryCategoriyModel.find();
-			let video_gallery_category = await videoGalleryCategoriyModel.find();
-			let video_gallery_video = await videoGalleryVideoModel.find();
+			let all_blogs = await allBlogsModel.find().limit(4).sort({ createdAt: -1 });
+			let photo_gallery_category = await photoGalleryCategoriyModel.find().limit(4).sort({ createdAt: -1 });
+			let video_gallery_category = await videoGalleryCategoriyModel.find().limit(5).sort({ createdAt: -1 });
+			let video_gallery_video = await videoGalleryVideoModel.find().limit(4).sort({ createdAt: -1 });
 			let blog_category = await blogCategoriesModel.find();
 			let settingTitle1 = await settingModel.findOne({ title: "সর্বমোট বই পর্যালোচনা" });
 			let settingTitle2 = await settingModel.findOne({ title: "সর্বমোট গাছ লাগানো" });
 			let settingTitle3 = await settingModel.findOne({ title: "সাক্ষরতা অভিযান" });
 			let settingTitle4 = await settingModel.findOne({ title: "জনপ্রিয়তা" });
-			let banner = await bannerModel.find();
-			let notices = await noticeModel.find();
-			let userReview = await userReviewModel.find();
-			let ownerIntros = await ownerIntroModel.find();
-			let speakerQuotes = await speakerQuoteModel.find();
+			let banner = await bannerModel.find().limit(1).sort({ createdAt: -1 });
+			let notices = await noticeModel.find().limit(3).sort({ createdAt: -1 });
+			let userReview = await userReviewModel.find().limit(4).sort({ createdAt: -1 });
+			let ownerIntros = await ownerIntroModel.find().limit(1).sort({ createdAt: -1 });
+			let speakerQuotes = await speakerQuoteModel.find().limit(4).sort({ createdAt: -1 });
 			let PhotoGallery = await headingTitleModel.findOne({ title: "ফটো গ্যালারি" });
 			let VideoGallery = await headingTitleModel.findOne({ title: "ভিডিও গ্যালারি" });
 			// console.log("heading titile",PhotoGallery);
 			let contemp = await blogCategoriesModel.findOne({ title: "সংবাদ" });
 
-			let contems = await blogsModel.find().where({ categories: contemp._id });
+			let contems = await blogsModel.find().where({ categories: contemp._id }).limit(6).sort({ createdAt: -1 });
 
 			let social_work = await blogCategoriesModel.findOne({ title: "সামাজিক কাজ" });
 
-			let social_works = await blogsModel.find().where({ categories: social_work._id });
+			let social_works = await blogsModel.find().where({ categories: social_work._id }).limit(6).sort({ createdAt: -1 });
 
 			let book_review = await blogCategoriesModel.findOne({ title: "বই পর্যালোচনা" });
 
-			let book_reviews = await blogsModel.find().where({ categories: book_review._id });
+			let book_reviews = await blogsModel.find().where({ categories: book_review._id }).limit(6).sort({ createdAt: -1 });
 
 			let blog_islam = await blogCategoriesModel.findOne({ title: "ইসলাম" });
 
@@ -206,9 +206,9 @@ const controllers = {
 
 			let user_achievement = await userAchievmentModel.find();
 
-			let contems2 = contems.slice().reverse();
+			let contems2 = contems;
 
-			console.log("contems", contems.slice().reverse());
+			// console.log("contems", contems.slice().reverse());
 			return res.render(`frontend/home`, {
 				// profile_info,
 				photo_gallery_category,
