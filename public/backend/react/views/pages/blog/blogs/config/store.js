@@ -117,10 +117,10 @@ export const async_actions = {
     [`details_${store_prefix}`]: createAsyncThunk(
         `blogs/details_${store_prefix}`,
         async (id, thunkAPI) => {
-            console.log(id);
+            // console.log(id);
             try {
                 const response = await axios.get(`${app_config.api_endpoint}/${api_prefix}/details/${id}`);
-                console.log(response);
+                // console.log(response);
                 return response;
             } catch (error) {
                 return error;

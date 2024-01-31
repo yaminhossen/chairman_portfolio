@@ -11,11 +11,11 @@ const data_validation = async (request_data) => {
         .isEmpty()
         .withMessage("the title field is required")
         .run(request_data);
-    await body("subtitle")
-        .not()
-        .isEmpty()
-        .withMessage("the subtitle field is required")
-        .run(request_data);
+    // await body("subtitle")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the subtitle field is required")
+    //     .run(request_data);
     await body("short_description")
         .not()
         .isEmpty()
@@ -26,31 +26,31 @@ const data_validation = async (request_data) => {
         .isEmpty()
         .withMessage("the description field is required")
         .run(request_data);
-    await body("photo_alt_text")
-        .not()
-        .isEmpty()
-        .withMessage("the photo_alt_text field is required")
-        .run(request_data);
-    await body("seo_title")
-        .not()
-        .isEmpty()
-        .withMessage("the seo_title field is required")
-        .run(request_data);
-    await body("seo_keyword")
-        .not()
-        .isEmpty()
-        .withMessage("the seo_keyword field is required")
-        .run(request_data);
-    await body("seo_description")
-        .not()
-        .isEmpty()
-        .withMessage("the seo_description field is required")
-        .run(request_data);
-    await body("seo_schema_tags")
-        .not()
-        .isEmpty()
-        .withMessage("the seo_schema_tags field is required")
-        .run(request_data);
+    // await body("photo_alt_text")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the photo_alt_text field is required")
+    //     .run(request_data);
+    // await body("seo_title")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the seo_title field is required")
+    //     .run(request_data);
+    // await body("seo_keyword")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the seo_keyword field is required")
+    //     .run(request_data);
+    // await body("seo_description")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the seo_description field is required")
+    //     .run(request_data);
+    // await body("seo_schema_tags")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the seo_schema_tags field is required")
+    //     .run(request_data);
     await body("published_date")
         .not()
         .isEmpty()
@@ -70,7 +70,7 @@ module.exports = async (datas) => {
     let data = datas.body;
     let files = datas.files;
     console.log('from store append', data);
-    console.log('from store append', files);
+    // console.log('from store append', files);
     // console.log('from store append fdgfgdfdfile', files);
 
     const upload_files = (file, id) => {
@@ -116,8 +116,9 @@ module.exports = async (datas) => {
         user.seo_description = data.seo_description;
         user.seo_schema_tags = data.seo_schema_tags;
         user.url = data.url;
-        user.category = data.category;
-        user.tag = data.tag;
+        user.categories
+        = data.category;
+        user.tags = data.tag;
         user.published_date = data.published_date;
         // user.creator = data.creator;
         const new_data = await model.create(user);

@@ -61,13 +61,13 @@ function Create() {
       "short_description",
       short_description_ref.current.getContent()
     );
+    form_data.append("description", description_ref.current.getContent());
     selectedCategory.forEach((e,index)=>{
       form_data.append(`category`, e._id);
     });
     selectedTag.forEach((e,index)=>{
       form_data.append(`tag`, e._id);
     });
-    form_data.append("description", description_ref.current.getContent());
 
     console.log(description_ref.current.getContent());
     // selectedRole.forEach((e,index)=>{
@@ -76,8 +76,14 @@ function Create() {
     // });
     console.log("form_data",form_data);
     [...document.querySelectorAll(".form_error")].forEach((el) => el.remove());
-    await store_data(form_data);
-    // e.target.reset();
+
+    let returedata = await store_data(form_data);
+    console.log("return data from store",returedata);
+    if(returedata.payload){
+        e.target.reset();
+      location.href = '#/blog';
+    }
+   
   };
 
   const handleChange = async (e) => {
@@ -113,6 +119,7 @@ function Create() {
                           (short_description_ref.current = editor)
                         }
                         initialValue={`<p>This is short description.</p>`}
+                        apiKey='7z9basnhmks7l5aesqpiu9rtrrjv60p9rtmzhevm4oh8rdi6'
                         init={{
                           height: 300,
                           menubar: false,
@@ -140,6 +147,7 @@ function Create() {
                           (description_ref.current = editor)
                         }
                         initialValue="<p>This is the description.</p>"
+                        apiKey='7z9basnhmks7l5aesqpiu9rtrrjv60p9rtmzhevm4oh8rdi6'
                         init={{
                           height: 300,
                           menubar: false,
@@ -324,7 +332,7 @@ function Create() {
                     <label htmlFor="">Tags</label>
                     <div>
                     <div id="tag">
-                     <MultiselectDropdown data={tag_data_store.all_data} selectedData={selectedRole} setSelectedData={setselectedRole} taskOpen={tasklist2} setTaskOpen={setTasklist2}></MultiselectDropdown>
+                     <MultiselectDropdown data={tag_data_store.all_data} selectedData={selectedTag} setSelectedData={setselectedTag} taskOpen={tasklist2} setTaskOpen={setTasklist2}></MultiselectDropdown>
                      </div>
                     </div>
                   </div>

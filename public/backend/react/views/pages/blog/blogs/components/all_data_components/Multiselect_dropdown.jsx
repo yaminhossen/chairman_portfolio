@@ -16,25 +16,26 @@ const MultiselectDropdown = (props) => {
 
     useEffect(() => {
         setData([...props.data]);
-        console.log(data);
+        // console.log(data);
         
     }, [props.data]);
     
     useEffect(() => {
-        if(props.selectedData.length){
+        if(props.selectedData.length && !selectedData.length){
+            console.log(props.selectedData);
             setSelectedData([...props.selectedData]);
         }
-    }, []);
+    }, [props.selectedData]);
 
     useEffect(() => {
         props.setSelectedData(selectedData)
-        console.log(selectedData);
+        // console.log(selectedData);
     }, [selectedData]);
 
     // console.log(selectedData);
-    console.log(data);
+    // console.log(data);
     function addItem(item) {
-        console.log(item);
+        // console.log(item);
         let newData = selectedData?.find((i) => i.title == item.title);
 
         if (newData) {
