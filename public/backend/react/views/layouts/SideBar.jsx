@@ -68,7 +68,7 @@ function SideBar() {
                         <SingleLink to={'/photo-gallery-categorie'} text={'photo gallery'} icon={'trip_origin'}></SingleLink>
                         {/* <SingleLink to={'/photo-gallery-image'} text={'photos'} icon={'trip_origin'}></SingleLink> */}
                         <SingleLink to={'/video-gallery-categorie'} text={'video gallery'} icon={'trip_origin'}></SingleLink>
-                        <SingleLink to={'/site-url'} text={'site urls'} icon={'trip_origin'}></SingleLink>
+                        {/* <SingleLink to={'/site-url'} text={'site urls'} icon={'trip_origin'}></SingleLink> */}
                         <SingleLink to={'/tag'} text={'tags'} icon={'trip_origin'}></SingleLink>
                         <SingleLink to={'/union-porishod-notice'} text={'union porishod notice'} icon={'trip_origin'}></SingleLink>
                         <SingleLink to={'/user-review'} text={'user review'} icon={'trip_origin'}></SingleLink>

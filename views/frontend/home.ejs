@@ -44,7 +44,7 @@
                                         %>
 
         <!-- banner_area start -->
-        <div class="banner_area" style=" background-image: url(/assets/images/background_image/bg1.jpg);">
+        <div class="banner_area" style=" background-image: url('<%= banner[0]?.banner_photo %>');">
             <div class="banner_area_bg_color">
 
                 <div class="container">
@@ -84,7 +84,7 @@
                         <!-- right-area start -->
                         <div class="right-area" data-aos="fade-left" data-aos-duration="1000">
                             <div class="image_area">
-                                <img src="<%= commonData.setting_titles.value %>" alt="image">
+                                <img src="<%= banner[0]?.profile_photo %>" alt="image">
                             </div>
                         </div>
                         <!-- right-area end -->

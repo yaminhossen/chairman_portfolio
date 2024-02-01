@@ -49,6 +49,8 @@ module.exports = async (datas) => {
     let data = datas.body;
     let files = datas.files;
 
+    console.log("data firles", files);
+
     const upload_files = (file, id) => {
         let file_name = parseInt(Math.random() * 1000) + id + file.name;
         const path = appDir + "/public/uploads/posts/" + file_name;
@@ -89,14 +91,16 @@ module.exports = async (datas) => {
         
         var profile_photo_path = "";
 
-        if (files?.profile_photo) {
+        if (files?.profile_photo && files.profile_photo.size > 0) {
             profile_photo_path = upload_files(files?.profile_photo, data.title);
-            console.log('form profile_photo_path', profile_photo_path);
+            model_data.profile_photo = profile_photo_path;
+            // console.log('form profile_photo_path', profile_photo_path);
         }
         var banner_photo_path = "";
 
-        if (files?.banner_photo) {
+        if (files?.banner_photo && files.banner_photo.size > 0) {
             banner_photo_path = upload_files2(files?.banner_photo, data.title);
+            model_data.banner_photo = banner_photo_path;
             console.log('form banner_photo_path', banner_photo_path);
         }
 
@@ -105,8 +109,8 @@ module.exports = async (datas) => {
         model_data.sub_title = data.sub_title;
         model_data.short_description = data.short_description;
         model_data.description = data.description;
-        model_data.banner_photo = banner_photo_path;
-        model_data.profile_photo = profile_photo_path;
+        
+        
         model_data.button_text = data.button_text;
         model_data.button_url = data.button_url;
         await model_data.save();
