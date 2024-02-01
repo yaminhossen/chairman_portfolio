@@ -120,16 +120,16 @@
                                                     <div class="user_name_and_comment_area">
                                                         <div class=" user_name_area">
                                                             <input name="name" class="comment_form_area" type="text"
-                                                                placeholder="name">
+                                                                placeholder="নাম">
                                                             <input name="email" class="comment_form_area" type="text"
-                                                                placeholder="email">
+                                                                placeholder="ইমেইল">
                                                             <input name="post_id" class="comment_form_area"
                                                                 type="hidden" value="<%= post_details._id %>"
                                                                 placeholder="comment id">
                                                         </div>
 
                                                         <textarea class="comment_form_area" name="comment"
-                                                            placeholder="comment" id="" cols="20" rows="10"></textarea>
+                                                            placeholder="আপনার মতামত লিখুন" id="" cols="20" rows="10"></textarea>
                                                     </div>
                                                 </div>
 
@@ -141,8 +141,11 @@
                                             <!-- user-image_area_and_comment_form_area end -->
 
                                             <!-- comment_text_area start -->
+                                          
+                                          
+
                                             <div class="comment_text_area">
-                                                <% post_comments?.comments?.slice(-2).map( (pc)=>{ %>
+                                                <% post_comments?.comments?.map( (pc)=>{ %>
                                                     <div class="user-image_area_and_comment_text_area">
                                                         <div class="mb-3 user-image_area">
                                                             <% if (post_details?.photos) { %>
@@ -164,27 +167,6 @@
                                                     </div>
                                                     <% })%>
                                             </div>
-                                            <!-- comment_text_area end -->
-
-                                            <!-- replay_comment_area start -->
-                                            <!--  <div class="replay_comment_area">
-                                                <div class="user-image_area_and_comment_form_and_button_area">
-                                                    <div class="user-image_and_comment_form_area">
-                                                        <div class="user-image_area">
-                                                            <img src="/assets/images/profile_image/img1.png" alt="img">
-                                                        </div>
-                                                        <input name="reply" class="comment_form_area" type="text"
-                                                            placeholder="Comment . . .">
-                                                    </div>
-
-                                                    <div class="cancel_and_submit_button_area">
-                                                        <button class="cancel_and_submit_button">Cancel</button>
-                                                        <button class="cancel_and_submit_button">Submit</button>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                            <!-- replay_comment_area end -->
-
                                         </form>
                                     </div>
                                     <!-- comment_area end -->
@@ -331,7 +313,7 @@
                                 <!-- side_ber_area_title end -->
 
                                 <div class="recently_posted_item_all">
-                                    <% posts.slice(-4).map( (sw)=>{ %>
+                                    <% posts.map( (sw)=>{ %>
                                         <!-- posted_item start -->
                                         <a href="/post/<%= sw._id %>" class="posted_item">
                                             <div class="image_area">
@@ -393,12 +375,12 @@
             <script>
                 function commentSubmit(event) {
                     event.preventDefault();
-                    console.log('comment submit hoyche');
+                    // console.log('comment submit hoyche');
                     let comment = event.target.comment.value;
                     let name = event.target.name.value;
                     let email = event.target.email.value;
                     let post_id = event.target.post_id.value;
-                    console.log(comment, name, email, post_id);
+                    // console.log(comment, name, email, post_id);
 
                     event.target.name.value = '';
                     event.target.email.value = '';
@@ -412,7 +394,7 @@
                         post_id: post_id,
                     })
                         .then(function (response) {
-                            console.log(response);
+                            // console.log("respose from ejs",response);
                         })
                         .catch(function (error) {
                             console.error(error);

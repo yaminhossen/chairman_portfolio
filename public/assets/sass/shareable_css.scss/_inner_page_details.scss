@@ -226,8 +226,10 @@ h4{
                 border: $border;
                 font-family: $font_bangla;
                 font-size: 30px;
-                color: $brand_color;
+                color: $black;
                 font-weight: bold;
+                line-height: 44px;
+                text-align: justify;
                 @include xs(){
                     font-size: 16px;
                 }
@@ -243,8 +245,12 @@ h4{
             .description_text {
                 border: $border;
                 font-family: $font_bangla;
-                font-size: 18px;
-                color: $deep_black;
+                font-size: 16px;
+                // color: $deep_black;
+                color: #141414;
+                line-height: 26px;
+                text-align: justify;
+
                 @include xs(){
                     font-size: 2px;
                 }

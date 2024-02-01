@@ -32,6 +32,8 @@ const headingTitleModel = require("../../api/heading_titles/model/model")
 const userAchievmentModel = require("../../api/user_acheivements/model/model")
 const allBlogsModel = require("../../api/blog/blogs/model/model")
 
+const viewCountModel = require("../../api/view_count/view_count_model")
+
 const { async } = require("q");
 const logger = require('../../utilites/logger');
 const controllers = {
@@ -154,10 +156,8 @@ const controllers = {
 	},
 	home_page: async function (req, res) {
 		try {
-			let profile_info = await uesrProfileInfosModel.find();
 			let all_blogs = await allBlogsModel.find().limit(4).sort({ createdAt: -1 });
 			let photo_gallery_category = await photoGalleryCategoriyModel.find().limit(4).sort({ createdAt: -1 });
-			let video_gallery_category = await videoGalleryCategoriyModel.find().limit(5).sort({ createdAt: -1 });
 			let video_gallery_video = await videoGalleryVideoModel.find().limit(4).sort({ createdAt: -1 });
 			let blog_category = await blogCategoriesModel.find();
 			let settingTitle1 = await settingModel.findOne({ title: "সর্বমোট বই পর্যালোচনা" });
@@ -184,35 +184,13 @@ const controllers = {
 
 			let book_reviews = await blogsModel.find().where({ categories: book_review._id }).limit(6).sort({ createdAt: -1 });
 
-			let blog_islam = await blogCategoriesModel.findOne({ title: "ইসলাম" });
-
-			let blog_islams = await blogsModel.find().where({ categories: blog_islam._id });
-
-			let blog_islamic_movement = await blogCategoriesModel.findOne({ title: "ইসলামী আন্দোলন" });
-
-			let blog_islamic_movements = await blogsModel.find().where({ categories: blog_islamic_movement._id });
-
-			let blog_bangladesh = await blogCategoriesModel.findOne({ title: "বাংলাদেশ" });
-
-			let blog_bangladeshs = await blogsModel.find().where({ categories: blog_bangladesh._id });
-
-			let blog_politics = await blogCategoriesModel.findOne({ title: "বাংলাদেশ" });
-
-			let blog_politicss = await blogsModel.find().where({ categories: blog_politics._id });
-
-			let blog_history = await blogCategoriesModel.findOne({ title: "ইতিহাস" });
-
-			let blog_historys = await blogsModel.find().where({ categories: blog_history._id });
-
 			let user_achievement = await userAchievmentModel.find();
 
 			let contems2 = contems;
 
-			// console.log("contems", contems.slice().reverse());
+			console.log("contems", contems2.length);
 			return res.render(`frontend/home`, {
-				// profile_info,
 				photo_gallery_category,
-				// video_gallery_category,
 				video_gallery_video,
 				blog_category,
 				banner,
@@ -221,22 +199,11 @@ const controllers = {
 				settingTitle2,
 				settingTitle4,
 				contemp,
-				contems,
 				contems2,
 				social_work,
 				social_works,
 				book_review,
 				book_reviews,
-				blog_islam,
-				blog_islams,
-				blog_islamic_movement,
-				blog_islamic_movements,
-				blog_bangladesh,
-				blog_bangladeshs,
-				blog_politics,
-				blog_politicss,
-				blog_history,
-				blog_historys,
 				notices,
 				ownerIntros,
 				userReview,
@@ -248,7 +215,7 @@ const controllers = {
 			});
 
 		} catch (error) {
-			logger(error.stack, __filename);   
+			logger(error.stack, __filename);
 
 			photo_gallery_category = [];
 			blog_category = [];
@@ -262,41 +229,41 @@ const controllers = {
 			userReview = [];
 			speakerQuotes = [];
 			user_achievement = [];
-			settingTitle1 ={
-				title:"",
-				value:"",
+			settingTitle1 = {
+				title: "",
+				value: "",
 			}
-			settingTitle2 ={
-				title:"",
-				value:"",
+			settingTitle2 = {
+				title: "",
+				value: "",
 			}
-			settingTitle3 ={
-				title:"",
-				value:"",
+			settingTitle3 = {
+				title: "",
+				value: "",
 			}
-			settingTitle4 ={
-				title:"",
-				value:"",
+			settingTitle4 = {
+				title: "",
+				value: "",
 			}
-			contemp ={
-				title:"",
-				short_description:"",
+			contemp = {
+				title: "",
+				short_description: "",
 			}
-			social_work ={
-				title:"",
-				short_description:"",
+			social_work = {
+				title: "",
+				short_description: "",
 			}
-			book_review ={
-				title:"",
-				short_description:"",
+			book_review = {
+				title: "",
+				short_description: "",
 			}
-			PhotoGallery ={
-				title:"",
-				short_description:"",
+			PhotoGallery = {
+				title: "",
+				short_description: "",
 			}
-			VideoGallery ={
-				title:"",
-				short_description:"",
+			VideoGallery = {
+				title: "",
+				short_description: "",
 			}
 			return res.render(`frontend/home`, {
 				photo_gallery_category,
@@ -345,6 +312,7 @@ const controllers = {
 			// let datas = await blogCategoriesModel.findOne({ url: "/"+req.params.url });
 
 			let blogs = await blogsModel.find().where({ categories: blog?._id }).limit(limit).skip(skip).exec();
+			let sblogs = await blogsModel.find().where({ categories: blog?._id }).limit(limit).limit(3).sort({ createdAt: -1 }).skip(skip).exec();
 			let blogsExact = await blogsModel.find().where({ categories: blog?._id });
 			let count = await blogsExact.length;
 			let reqUrl = req.params.url;
@@ -357,6 +325,7 @@ const controllers = {
 			return res.render(`frontend/blog/blog_posts`, {
 				blog,
 				blogs,
+				sblogs,
 				reqUrl,
 				count,
 				page,
@@ -366,9 +335,9 @@ const controllers = {
 		} catch (error) {
 			logger(error.stack, __filename);
 			blogs = [];
-			blog ={
-				title:"",
-				short_description:"",
+			blog = {
+				title: "",
+				short_description: "",
 			}
 			let reqUrl = req.params.url;
 			console.log('requrl', reqUrl);
@@ -452,26 +421,28 @@ const controllers = {
 
 	post_details: async function (req, res) {
 		try {
-
-			// let comment_blog = await blogCommentModel.find().where({_id:})
-
-
 			let post_details = await blogsModel.findOne({ _id: req.params.id }).populate('categories');
-			let post_comments = await blogsModel.findOne({ _id: req.params.id }).populate('comments');
-			// console.log('post comment', post_comments?.comments?.length);
+
+			let post_comments = await blogsModel.findOne({ _id: req.params.id }).populate({
+				path: 'comments',
+				options: { limit: 3, sort: {createdAt: -1}}
+			});
+
 			post_details.total_view = (post_details?.total_view || 0) + 1;
 			post_details.save();
+
+		
+
 			let post = await blogCategoriesModel.findOne({ title: post_details?.categories[0]?.title });
-			let posts = await blogsModel.find().where({ categories: post?._id });
+
+			let posts = await blogsModel.find().where({ categories: post?._id }).limit(4).sort({ createdAt: -1 });
+
+			await viewCountModel.create({
+				model_name: "posts",
+				model_id: post._id
+			})
 
 			let filterPost = posts?.filter((post) => post?._id != req.params.id);
-			// let posts = await post_details.populate('categories');
-
-			// let blog = await blogCategoriesModel.findOne({ url: "/"+req.params.url });
-			// let blogs = await blogsModel.find().where({ categories: blog._id });
-
-			// console.log("postdd", filterPost);
-			// let blogs = await blogsModel.find().where({ categories: blog._id });
 
 			controllers.server.locals.seo_title = post_details?.seo_title;
 			controllers.server.locals.seo_schematags = post_details?.
@@ -491,16 +462,16 @@ const controllers = {
 		} catch (error) {
 			logger(error.stack, __filename);
 			let currentDate = new Date('2023-06-14T00:00:00.000Z');
-			post_details ={
-				title:"",
-				subtitle:"",
+			post_details = {
+				title: "",
+				subtitle: "",
 				published_date: currentDate,
-				photo:"",
-				photo_alt:"",
-				short_description:"",
-				description:"",
-				photos:"",
-				_id:"",
+				photo: "",
+				photo_alt: "",
+				short_description: "",
+				description: "",
+				photos: "",
+				_id: "",
 			}
 			post = {
 				title: "",
@@ -508,10 +479,10 @@ const controllers = {
 			posts = [];
 			filterPost = [
 				{
-					photo:"",
-					_id:"",
-					title:"",
-					published_date:currentDate
+					photo: "",
+					_id: "",
+					title: "",
+					published_date: currentDate
 				}
 			];
 			post_comments = [];
@@ -537,13 +508,13 @@ const controllers = {
 		} catch (error) {
 			logger(error.stack, __filename);
 			let currentDate = new Date('2023-06-14T00:00:00.000Z');
-			notice_details ={
-				title:"",
-				subtitle:"",
+			notice_details = {
+				title: "",
+				subtitle: "",
 				date: currentDate,
-				description:"",
-				photos:"",
-				_id:"",
+				description: "",
+				photos: "",
+				_id: "",
 			}
 			return res.render(`frontend/notice_details`, {
 				notice_details,
@@ -566,7 +537,7 @@ const controllers = {
 				page = parseInt(req.query.page);
 				skip = page * limit - limit;
 			}
-			let notice_all = await noticeModel.find().limit(limit).skip(skip).exec();
+			let notice_all = await noticeModel.find().limit(limit).sort({ createdAt: -1 }).skip(skip).exec();
 			let count = await noticeModel.count();
 			let reqUrl = 'search-items';
 			console.log('first url', req.params)
@@ -583,11 +554,11 @@ const controllers = {
 			let currentDate = new Date('2023-06-14T00:00:00.000Z');
 			notice_all = [
 				{
-					photo:"",
-					_id:"all",
-					title:"",
-					description:"",
-					date:currentDate
+					photo: "",
+					_id: "all",
+					title: "",
+					description: "",
+					date: currentDate
 				}
 			];
 			let count = 3;
@@ -613,7 +584,7 @@ const controllers = {
 
 			blog.comments.push(new_comment._id);
 			blog.save();
-			console.log('save commmetnt', new_comment);
+			// console.log('save commmetnt', new_comment);
 			// console.log('find comment blog', blog);
 
 		} catch (error) {

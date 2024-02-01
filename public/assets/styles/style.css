@@ -2283,8 +2283,10 @@ html ::-webkit-scrollbar-thumb:hover {
   border: 0px solid red;
   font-family: "bangla-font";
   font-size: 30px;
-  color: #5dabbe;
+  color: black;
   font-weight: bold;
+  line-height: 44px;
+  text-align: justify;
 }
 @media screen and (max-width: 575.9px) {
   .inner_details_page .inner_item_details .title-area .title-area_text {
@@ -2304,8 +2306,10 @@ html ::-webkit-scrollbar-thumb:hover {
 .inner_details_page .inner_item_details .item_description_area .description_text {
   border: 0px solid red;
   font-family: "bangla-font";
-  font-size: 18px;
-  color: #666;
+  font-size: 16px;
+  color: #141414;
+  line-height: 26px;
+  text-align: justify;
 }
 @media screen and (max-width: 575.9px) {
   .inner_details_page .inner_item_details .item_description_area .description_text {

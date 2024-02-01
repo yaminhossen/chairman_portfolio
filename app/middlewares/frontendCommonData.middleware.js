@@ -15,10 +15,10 @@ module.exports = async (server, req) => {
     let blog = await blogCategoriesModel.findOne({ url: "/" + 'union-porishod' });
     // let datas = await blogCategoriesModel.findOne({ url: "/"+req.params.url });
 
-    let blogs = await blogsModel.find().where({ categories: blog?._id });
+    let blogs = await blogsModel.find().where({ categories: blog?._id }).limit(6).sort({ createdAt: -1 });
 
     // console.log('blog_Related_categories', blog);
-    let tags = await tagsModel.find();
+    let tags = await tagsModel.find().limit(10).sort({createdAt: -1});
     let contact_numbers = await userContactNumbersModel.find();
     let emails = await userEmailsModel.find();
     let social_links = await userSocialLinksModel.find();
