@@ -311,9 +311,14 @@ const controllers = {
 			let blog = await blogCategoriesModel.findOne({ url: "/" + req.params.url });
 			// let datas = await blogCategoriesModel.findOne({ url: "/"+req.params.url });
 
+			let sblogs = await blogsModel.find().limit(3).sort({ createdAt: -1 }).exec();
+
 			let blogs = await blogsModel.find().where({ categories: blog?._id }).limit(limit).skip(skip).exec();
-			let sblogs = await blogsModel.find().where({ categories: blog?._id }).limit(limit).limit(3).sort({ createdAt: -1 }).skip(skip).exec();
+
+			
+
 			let blogsExact = await blogsModel.find().where({ categories: blog?._id });
+
 			let count = await blogsExact.length;
 			let reqUrl = req.params.url;
 			controllers.server.locals.seo_title = blog?.seo_title;

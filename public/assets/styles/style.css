@@ -2439,83 +2439,6 @@ html ::-webkit-scrollbar-thumb:hover {
   background-color: transparent;
   color: #5dabbe;
 }
-.comment-area form .comment_text_area {
-  padding: 30px 0px 68px 0px;
-}
-@media screen and (max-width: 575.9px) {
-  .comment-area form .comment_text_area {
-    padding: 20px 0px 20px 0px;
-  }
-}
-.comment-area form .comment_text_area .user-image_area_and_comment_text_area {
-  display: flex;
-}
-.comment-area form .comment_text_area .user-image_area_and_comment_text_area .user-image_area {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: 1px solid #5dabbe;
-  background-color: #5dabbe;
-}
-@media screen and (max-width: 575.9px) {
-  .comment-area form .comment_text_area .user-image_area_and_comment_text_area .user-image_area {
-    width: 25px;
-    height: 25px;
-  }
-}
-.comment-area form .comment_text_area .user-image_area_and_comment_text_area .user-image_area img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-.comment-area form .comment_text_area .user-image_area_and_comment_text_area .user-image_area .fa-user {
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 5px;
-}
-@media screen and (max-width: 575.9px) {
-  .comment-area form .comment_text_area .user-image_area_and_comment_text_area .user-image_area .fa-user {
-    font-size: 12px;
-  }
-}
-.comment-area form .comment_text_area .user-image_area_and_comment_text_area .comment_text {
-  margin-left: 15px;
-  align-items: center;
-  display: flex;
-  flex: 1;
-  position: relative;
-}
-.comment-area form .comment_text_area .user-image_area_and_comment_text_area .comment_text .text {
-  font-family: "bangla-font";
-  font-size: 15px;
-  color: #999;
-}
-@media screen and (max-width: 575.9px) {
-  .comment-area form .comment_text_area .user-image_area_and_comment_text_area .comment_text .text {
-    font-size: 12px;
-  }
-}
-.comment-area form .comment_text_area .user-image_area_and_comment_text_area .comment_text .button_area {
-  position: absolute;
-  bottom: -38px;
-}
-.comment-area form .comment_text_area .user-image_area_and_comment_text_area .comment_text .button_area .cancel_and_submit_button {
-  font-size: 15px;
-  font-family: "bangla-font";
-  color: #ffffff;
-  background-color: #5dabbe;
-  border: 1px solid #5dabbe;
-  padding: 3px 8px;
-  border-radius: 3px;
-  transition-duration: 0.4s;
-}
-.comment-area form .comment_text_area .user-image_area_and_comment_text_area .comment_text .button_area .cancel_and_submit_button:hover {
-  background-color: transparent;
-  color: #5dabbe;
-}
 .comment-area form .replay_comment_area {
   margin-left: 60px;
 }
@@ -2528,6 +2451,90 @@ html ::-webkit-scrollbar-thumb:hover {
 .comment-area form .replay_comment_area .user-image_area_and_comment_form_and_button_area .user-image_and_comment_form_area .user-image_area img {
   border: 0px solid red;
 }
+.comment-area .comment_text_area {
+  padding: 30px 0px 68px 0px;
+}
+@media screen and (max-width: 575.9px) {
+  .comment-area .comment_text_area {
+    padding: 20px 0px 20px 0px;
+  }
+}
+.comment-area .comment_text_area .user-image_area_and_comment_text_area {
+  display: flex;
+  align-items: center;
+}
+.comment-area .comment_text_area .user-image_area_and_comment_text_area .user-image_area {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid #5dabbe;
+  background-color: #5dabbe;
+  margin-top: 10px;
+}
+@media screen and (max-width: 575.9px) {
+  .comment-area .comment_text_area .user-image_area_and_comment_text_area .user-image_area {
+    width: 25px;
+    height: 25px;
+  }
+}
+.comment-area .comment_text_area .user-image_area_and_comment_text_area .user-image_area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.comment-area .comment_text_area .user-image_area_and_comment_text_area .user-image_area .fa-user {
+  line-height: 40px;
+  text-align: center;
+  display: block;
+}
+@media screen and (max-width: 575.9px) {
+  .comment-area .comment_text_area .user-image_area_and_comment_text_area .user-image_area .fa-user {
+    font-size: 12px;
+  }
+}
+.comment-area .comment_text_area .user-image_area_and_comment_text_area .comment_text {
+  margin-left: 15px;
+  align-items: center;
+  position: relative;
+  justify-content: start;
+}
+.comment-area .comment_text_area .user-image_area_and_comment_text_area .comment_text .name_text {
+  font-size: 16px;
+  text-align: left;
+  color: #141414;
+  font-weight: 600;
+  font-family: "bangla-font";
+}
+.comment-area .comment_text_area .user-image_area_and_comment_text_area .comment_text .text {
+  font-family: "bangla-font";
+  font-size: 15px;
+  color: #141414;
+}
+@media screen and (max-width: 575.9px) {
+  .comment-area .comment_text_area .user-image_area_and_comment_text_area .comment_text .text {
+    font-size: 12px;
+  }
+}
+.comment-area .comment_text_area .user-image_area_and_comment_text_area .comment_text .button_area {
+  position: absolute;
+  bottom: -38px;
+}
+.comment-area .comment_text_area .user-image_area_and_comment_text_area .comment_text .button_area .cancel_and_submit_button {
+  font-size: 15px;
+  font-family: "bangla-font";
+  color: #ffffff;
+  background-color: #5dabbe;
+  border: 1px solid #5dabbe;
+  padding: 3px 8px;
+  border-radius: 3px;
+  transition-duration: 0.4s;
+}
+.comment-area .comment_text_area .user-image_area_and_comment_text_area .comment_text .button_area .cancel_and_submit_button:hover {
+  background-color: transparent;
+  color: #5dabbe;
+}
+
 .scroll-button {
   border: 0px solid red;
   width: 50px;

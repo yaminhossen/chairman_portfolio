@@ -120,9 +120,9 @@
                                                     <div class="user_name_and_comment_area">
                                                         <div class=" user_name_area">
                                                             <input name="name" class="comment_form_area" type="text"
-                                                                placeholder="নাম">
+                                                                placeholder="আপনার নাম লিখুন">
                                                             <input name="email" class="comment_form_area" type="text"
-                                                                placeholder="ইমেইল">
+                                                                placeholder="আপনার ইমেইল লিখুন">
                                                             <input name="post_id" class="comment_form_area"
                                                                 type="hidden" value="<%= post_details._id %>"
                                                                 placeholder="comment id">
@@ -135,7 +135,7 @@
 
                                                 <div class="cancel_and_submit_button_area">
                                                     <!-- <button class="cancel_and_submit_button">Cancel</button> -->
-                                                    <button class="cancel_and_submit_button">Submit</button>
+                                                    <button class="cancel_and_submit_button">সাবমিট</button>
                                                 </div>
                                             </div>
                                             <!-- user-image_area_and_comment_form_area end -->
@@ -144,30 +144,29 @@
                                           
                                           
 
-                                            <div class="comment_text_area">
-                                                <% post_comments?.comments?.map( (pc)=>{ %>
-                                                    <div class="user-image_area_and_comment_text_area">
-                                                        <div class="mb-3 user-image_area">
-                                                            <% if (post_details?.photos) { %>
-                                                                <!-- If you have a photo URL, display the image -->
-                                                                <img src="<%= post_details.photos %>" alt="User Photo">
-                                                              <% } else { %>
-                                                                <!-- If no photo URL, display a Font Awesome icon -->
-                                                                <i class="fa-solid fa-user"></i>
-                                                              <% } %>
-                                                        </div>
-                                                        <div class="comment_text">
-                                                            <p class="text">
-                                                                <%= pc.comment %>
-                                                            </p>
-                                                            <div class="button_area">
-                                                                <!-- <button class="cancel_and_submit_button">Replay</button> -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <% })%>
-                                            </div>
                                         </form>
+                                        <div class="comment_text_area">
+                                            <% post_comments?.comments?.map( (pc)=>{ %>
+                                                <div class="user-image_area_and_comment_text_area">
+                                                    <div class="mb-3 user-image_area">
+                                                        <% if (post_details?.photos) { %>
+                                                            <!-- If you have a photo URL, display the image -->
+                                                            <img src="<%= post_details.photos %>" alt="User Photo">
+                                                          <% } else { %>
+                                                            <!-- If no photo URL, display a Font Awesome icon -->
+                                                            <i class="fa-solid fa-user"></i>
+                                                          <% } %>
+                                                    </div>
+                                                    <div class="comment_text">
+                                                        <h4 class="name_text"><%= pc.name %></h4>
+                                                        <p class="text">
+                                                            <%= pc.comment %>
+                                                        </p>
+                                                       
+                                                    </div>
+                                                </div>
+                                                <% })%>
+                                        </div>
                                     </div>
                                     <!-- comment_area end -->
 
