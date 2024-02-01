@@ -19,6 +19,7 @@ module.exports = async ({ page, paginate, search_key, orderByCol, orderByAsc, sh
 
     let data = await model.find()
         .where(filter)
+        .sort({createdAt: -1})
         .limit(paginate)
         .skip(skip);
 
@@ -28,13 +29,5 @@ module.exports = async ({ page, paginate, search_key, orderByCol, orderByAsc, sh
         data_count,
     };
 
-    // if (datum.key) {
-
-    //     // let data = await model.ttfind().where({ status: true });
-    //     let data = await model.find().where({ title: { $regex: datum.key, $options: "i" } });
-    //     return data;
-    // }else {
-    //     let data = await model.find().where({ status: true });
-    //     return data;
-    // }
+   
 }

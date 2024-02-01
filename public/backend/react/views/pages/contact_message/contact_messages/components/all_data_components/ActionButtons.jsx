@@ -15,16 +15,16 @@ function ActionButtons() {
     return (
         <>
             <div className="btns d-flex gap-2 align-items-center">
-                <a href={`#/${setup.route_prefix}/create`} className="btn rounded-pill btn-outline-secondary">
+                {/* <a href={`#/${setup.route_prefix}/create`} className="btn rounded-pill btn-outline-secondary">
                     <i className="material-symbols-outlined fill">edit</i>
                     Create
-                </a>
+                </a> */}
                 <div className="table_actions">
                     <a href="#" onClick={() => event.preventDefault()} className="btn p-2 btn-outline-secondary">
                         <i className="material-symbols-outlined fill">tune</i>
                     </a>
                     <ul>
-                        <li>
+                        {/* <li>
                             <a href="">
                                 <i className="material-symbols-outlined fill">keyboard_arrow_right</i>
                                 Export All
@@ -36,7 +36,7 @@ function ActionButtons() {
                                 <i className="material-symbols-outlined fill">keyboard_arrow_right</i>
                                 Import
                             </a>
-                        </li>
+                        </li> */}
                         {
                             data_store.show_active_data ?
                                 <li>

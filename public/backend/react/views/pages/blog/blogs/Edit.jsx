@@ -75,7 +75,7 @@ function Edit() {
 
     [...document.querySelectorAll('.form_error')].forEach((el => el.remove()));
 
-    console.log(short_description_ref.current.getContent());
+    // console.log(short_description_ref.current.getContent());
     // await update_data(form_data);
     let returedata = await update_data(form_data);
     console.log("return data from store",returedata);
@@ -320,6 +320,9 @@ function Edit() {
                       />
                     </div>
                   </div>
+                </div>
+                <div>
+                  <img className='w-25' src={photo} alt="" />
                 </div>
                 <div className="mb-3">
                   <div>

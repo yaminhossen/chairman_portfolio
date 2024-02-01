@@ -24,7 +24,7 @@ function ActionButtons() {
                         <i className="material-symbols-outlined fill">tune</i>
                     </a>
                     <ul>
-                        <li>
+                        {/* <li>
                             <a href="">
                                 <i className="material-symbols-outlined fill">keyboard_arrow_right</i>
                                 Export All
@@ -36,7 +36,7 @@ function ActionButtons() {
                                 <i className="material-symbols-outlined fill">keyboard_arrow_right</i>
                                 Import
                             </a>
-                        </li>
+                        </li> */}
                         {
                             data_store.show_active_data ?
                                 <li>

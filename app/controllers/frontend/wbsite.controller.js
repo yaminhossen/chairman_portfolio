@@ -608,6 +608,7 @@ const controllers = {
 			let data = req.body;
 			const new_contact_message = await contactModel.create(data);
 			// console.log('find comment blog', blog);
+			return res.json(new_contact_message)
 
 		} catch (error) {
 			logger(error.stack, __filename);

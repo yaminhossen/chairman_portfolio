@@ -127,23 +127,22 @@
                                     <form onsubmit="messageSubmit(event)">
                                         <div class="rirst_name_and_second_name_area form_item">
                                             <div class="first_name_area">
-                                                <label>পুরো নাম</label>
-                                                <input type="text" placeholder="পুরো নাম" 
-                                                name="full_name" ">
+                                                <label>সম্পূর্ন নাম</label>
+                                                <input type="text" placeholder="সম্পূর্ন নাম" 
+                                                name="full_name" required>
                                             </div>
                                             <div class="second_name_area">
                                                 <label>বিষয়</label>
-                                                <input type="text" placeholder="বিষয়" name="subject"  >
+                                                <input type="text" placeholder="বিষয়" name="subject" required >
                                             </div>
                                         </div>
                                         <div class="email_area form_item">
                                             <label>ইমেইল</label>
-                                            <input type="email" placeholder="abc@gmail.com"  name="email" >
+                                            <input type="email" placeholder="abc@gmail.com"  name="email"  >
                                         </div>
                                         <div class="message_area form_item">
                                             <label>মেসেজ</label>
-                                            <textarea  id="#" cols="10" rows="4" name="message" placeholder="আপনার লেখা লিখুন . . .">
-                                            </textarea>
+                                            <textarea  id="#" cols="10" rows="4" name="message" required placeholder="আপনার লেখা লিখুন . . ."></textarea>
                                         </div>
                                         <button class="submit_button"><i class="fa-regular fa-paper-plane"></i> সাবমিট
                                         </button>
@@ -161,12 +160,12 @@
             <script>
                 function messageSubmit(event) {
                     event.preventDefault();
-                    console.log('comment submit hoyche');
+                    // console.log('comment submit hoyche');
                     let full_name = event.target.full_name.value;
                     let subject = event.target.subject.value;
                     let email = event.target.email.value;
                     let message = event.target.message.value;
-                    console.log(full_name, subject, email, message);
+                    // console.log(full_name, subject, email, message);
 
                     event.target.full_name.value = '';
                     event.target.email.value = '';
@@ -182,6 +181,7 @@
                     })
                         .then(function (response) {
                             console.log(response);
+                            window.alert("আপনার কমেন্টের জন্য ধন্যবাদ!!")
                         })
                         .catch(function (error) {
                             console.error(error);

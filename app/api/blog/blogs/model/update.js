@@ -3,6 +3,7 @@ const model = require("./model");
 const { async } = require("q");
 var fs = require('fs-extra')
 const { dirname } = require('path');
+const { log } = require("console");
 const appDir = dirname(require.main.filename);
 
 const data_validation = async (request_data) => {
@@ -11,11 +12,11 @@ const data_validation = async (request_data) => {
         .isEmpty()
         .withMessage("the title field is required")
         .run(request_data);
-    await body("subtitle")
-        .not()
-        .isEmpty()
-        .withMessage("the subtitle field is required")
-        .run(request_data);
+    // await body("subtitle")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the subtitle field is required")
+    //     .run(request_data);
     await body("short_description")
         .not()
         .isEmpty()
@@ -26,31 +27,31 @@ const data_validation = async (request_data) => {
         .isEmpty()
         .withMessage("the description field is required")
         .run(request_data);
-    await body("photo_alt_text")
-        .not()
-        .isEmpty()
-        .withMessage("the photo_alt_text field is required")
-        .run(request_data);
-    await body("seo_title")
-        .not()
-        .isEmpty()
-        .withMessage("the seo_title field is required")
-        .run(request_data);
-    await body("seo_keyword")
-        .not()
-        .isEmpty()
-        .withMessage("the seo_keyword field is required")
-        .run(request_data);
-    await body("seo_description")
-        .not()
-        .isEmpty()
-        .withMessage("the seo_description field is required")
-        .run(request_data);
-    await body("seo_schema_tags")
-        .not()
-        .isEmpty()
-        .withMessage("the seo_schema_tags field is required")
-        .run(request_data);
+    // await body("photo_alt_text")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the photo_alt_text field is required")
+    //     .run(request_data);
+    // await body("seo_title")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the seo_title field is required")
+    //     .run(request_data);
+    // await body("seo_keyword")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the seo_keyword field is required")
+    //     .run(request_data);
+    // await body("seo_description")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the seo_description field is required")
+    //     .run(request_data);
+    // await body("seo_schema_tags")
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage("the seo_schema_tags field is required")
+    //     .run(request_data);
     await body("published_date")
         .not()
         .isEmpty()
@@ -69,6 +70,8 @@ const data_validation = async (request_data) => {
 module.exports = async (datas) => {
     let data = datas.body;
     let files = datas.files;
+
+    console.log('files form frontend', files)
 
     const upload_files = (file, id) => {
         let file_name = parseInt(Math.random() * 1000) + id + file.name;
@@ -98,15 +101,16 @@ module.exports = async (datas) => {
         // console.log('yamin2',model_data);
         // var photo_path = model_data.photo;
         
-        if (files?.photo) {
+        if (files?.photo && files.photo.size > 0) {
             photo_path = upload_files(files?.photo, data.title);
+            model_data.photo = photo_path;
             console.log('form photo_path',photo_path);
         }
         model_data.title = data.title;
         model_data.subtitle = data.subtitle;
         model_data.short_description = data.short_description;
         model_data.description = data.description;
-        model_data.photo = photo_path;
+        
         model_data.photo_alt_text = data.photo_alt_text;
         model_data.seo_title = data.seo_title;
         model_data.seo_keyword = data.seo_keyword;

@@ -375,6 +375,9 @@ html ::-webkit-scrollbar-thumb:hover {
   opacity: 1;
   visibility: visible;
 }
+.navigation_area .navigation_area_content .navigation_menu_area ul li:hover ul {
+  box-shadow: -1px 5px 17px -10px #313131;
+}
 .navigation_area .navigation_area_content .navigation_menu_area ul .button_position {
   position: relative;
 }
