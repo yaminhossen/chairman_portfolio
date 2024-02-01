@@ -440,14 +440,17 @@ const controllers = {
 
 			let post = await blogCategoriesModel.findOne({ title: post_details?.categories[0]?.title });
 
-			let posts = await blogsModel.find().where({ categories: post?._id }).limit(4).sort({ createdAt: -1 });
+			let posts = await blogsModel.find().where({ categories: post?._id }).limit(5).sort({ createdAt: -1 });
+
+			let allblogs = await blogsModel.find().limit(3).sort({ createdAt: -1 });
 
 			await viewCountModel.create({
 				model_name: "posts",
 				model_id: post._id
 			})
 
-			let filterPost = posts?.filter((post) => post?._id != req.params.id);
+			let filterPost = allblogs?.filter((post) => post?._id != req.params.id);
+			let filterPost2 = posts?.filter((post) => post?._id != req.params.id);
 
 			controllers.server.locals.seo_title = post_details?.seo_title;
 			controllers.server.locals.seo_schematags = post_details?.
@@ -462,6 +465,7 @@ const controllers = {
 				post_comments,
 				post,
 				filterPost,
+				filterPost2,
 			});
 
 		} catch (error) {

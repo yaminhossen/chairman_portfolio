@@ -12,7 +12,7 @@ module.exports = async (server, req) => {
 		} catch (error) {
 			server.locals.checkIsAuth = false;
 			server.locals.user = {}
-			console.log("wrong token");
+			// console.log("wrong token");
 		}
 	}
 }

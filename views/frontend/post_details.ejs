@@ -277,7 +277,7 @@
                                         <!-- posted_item start -->
                                         <a href="/post/<%= product._id %>" class="posted_item">
                                             <div class="image_area">
-                                                <img src="<%= product.photo %>" alt="img">
+                                                <img src="/<%= product.photo %>" alt="img">
                                             </div>
                                             <div class="title_and_dete_area">
                                                 <div class="title_area">
@@ -312,7 +312,7 @@
                                 <!-- side_ber_area_title end -->
 
                                 <div class="recently_posted_item_all">
-                                    <% posts.map( (sw)=>{ %>
+                                    <% filterPost2.map( (sw)=>{ %>
                                         <!-- posted_item start -->
                                         <a href="/post/<%= sw._id %>" class="posted_item">
                                             <div class="image_area">
